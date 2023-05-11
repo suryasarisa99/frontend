@@ -10,6 +10,7 @@ export default function App() {
   let [validRegId, setValidRegId] = useState(false);
   let [submit, setSubmit] = useState(false);
   let [labs, setLabs] = useState(false);
+  let [server, setServer] = useState("backend-39in.vercel.app");
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -21,7 +22,7 @@ export default function App() {
     } else {
       id = makeId(branch, id);
       console.log(id);
-      axios.get("https://surya-bhbj.onrender.com/data/" + id).then((res) => {
+      axios.get(`https://${server}/data/${id}`).then((res) => {
         if (
           res.data["2-1"].mssg === "InvalidRegId" ||
           res.data["1-2"].mssg === "InvalidRegId"
@@ -37,6 +38,11 @@ export default function App() {
         }
       });
     }
+  }
+  function toogleServer() {
+    if (server === "backend-39in.vercel.app")
+      setServer("surya-bhbj.onrender.com");
+    else setServer("backend-39in.vercel.app");
   }
   function onChange(e) {
     setRegTerm(e.target.value.toUpperCase());
@@ -66,6 +72,7 @@ export default function App() {
 
   return (
     <>
+      <p>on Server: {server}</p>
       <div className="page">
         {/* <div className="register-box"> */}
         <form action="POST" className="register" onSubmit={submitHandle}>
@@ -96,6 +103,13 @@ export default function App() {
               name="labs"
             />
           </div>
+          <button
+            type="button"
+            className="server-change"
+            onClick={toogleServer}
+          >
+            Change Server
+          </button>
         </form>
         {/* </div>   */}
         {validRegId && (
