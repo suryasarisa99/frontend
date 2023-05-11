@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 
 export default function App() {
-  let [labs, setLabs] = useState(false);
+  let [labs, setLabs] = useState(true);
   let { validRegId, data } = useContext(RegisterContext);
 
   return (
