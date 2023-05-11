@@ -1,41 +1,38 @@
 export default function Result({ data, labs }) {
   return (
     <div className="data-tables">
-      <table className="subjects">
-        <thead>
-          <tr>
-            <th>Subject</th>
-            <th>Grade</th>
-            <th>Internals</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="subjects data">
+        <div className="data-head">
+          <div className="cell">Subject</div>
+          <div className="cell">Grade</div>
+          <div className="cell">Internals</div>
+        </div>
+        <div className="data-body">
           {Object.entries(data.subjects).map(([subject, result]) => (
-            <tr key={subject}>
-              <td>{subject}</td>
-              <td className={result.grade == "F" ? "failed" : ""}>
-                {result.grade}
-              </td>
-              <td>{result.internals}</td>
-            </tr>
+            <div className="row" key={subject}>
+              <div className="cell">{subject}</div>
+              {/* <div className={"cell " + result.grade == "F" ? "failed" : ""}> */}
+              <div className="cell"> {result.grade}</div>
+              <div className="cell">{result.internals}</div>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
       {labs && (
         <table className="labs">
-          <thead>
+          <divead>
             <tr>
-              <th>Labs</th>
-              <th>Grade</th>
-              <th>Internals</th>
+              <div>Labs</div>
+              <div>Grade</div>
+              <div>Internals</div>
             </tr>
-          </thead>
+          </divead>
           <tbody>
             {Object.entries(data.labs).map(([subject, result]) => (
               <tr key={subject}>
-                <td>{subject}</td>
-                <td>{result.grade}</td>
-                <td>{result.internals}</td>
+                <div>{subject}</div>
+                <div>{result.grade}</div>
+                <div>{result.internals}</div>
               </tr>
             ))}
           </tbody>

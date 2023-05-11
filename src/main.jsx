@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "../styles/globals.css";
+import { BrowserRouter } from "react-router-dom";
+// import "../styles/globals.css";
 ReactDOM.createRoot(document.querySelector("#root")).render(
   <>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </>
 );

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import Result from "./Result";
+import "../styles/index.scss";
 
 export default function App() {
   let [data, setData] = useState({});
@@ -10,7 +11,7 @@ export default function App() {
   let [validRegId, setValidRegId] = useState(false);
   let [submit, setSubmit] = useState(false);
   let [labs, setLabs] = useState(false);
-  let [server, setServer] = useState("backend-39in.vercel.app");
+  let [server, setServer] = useState("get-std-res.vercel.app");
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -22,7 +23,7 @@ export default function App() {
     } else {
       id = makeId(branch, id);
       console.log(id);
-      axios.get(`https://${server}/data/${id}`).then((res) => {
+      axios.get(`https://${server}/${id}`).then((res) => {
         if (
           res.data["2-1"].mssg === "InvalidRegId" ||
           res.data["1-2"].mssg === "InvalidRegId"
@@ -72,49 +73,51 @@ export default function App() {
 
   return (
     <>
-      <p>on Server: {server}</p>
       <div className="page">
-        {/* <div className="register-box"> */}
         <form action="POST" className="register" onSubmit={submitHandle}>
           <div className="fields">
-            <select name="branch" id="">
-              <option value="cse">CSE</option>
-              <option value="csm">CSM</option>
-              <option value="csd">CSD</option>
-              <option value="ece">ECE</option>
-            </select>
-            <label htmlFor="registerId">Regester Id</label>
-            <input
-              type="text"
-              name="id"
-              onChange={onChange}
-              value={regTerm}
-              autoFocus
-            />
+            <div className="row">
+              <select name="branch" id="">
+                <option value="cse">CSE</option>
+                <option value="csm">CSM</option>
+                <option value="csd">CSD</option>
+                <option value="ece">ECE</option>
+              </select>
+              <input
+                type="text"
+                name="id"
+                onChange={onChange}
+                value={regTerm}
+                placeholder="Register Id"
+                autoFocus
+              />
+            </div>
             {emptyRegId && <p>Register Id Must Be Required</p>}
             {invalidRegId && <p>Invalid RegId</p>}
           </div>
-          <div className="checkbox-bar">
-            <label htmlFor="labs">Labs</label>
-            <input
-              type="checkbox"
-              value={labs}
-              onClick={() => setLabs((prvLabs) => !prvLabs)}
-              name="labs"
-            />
+          <div className="row">
+            <div className="checkbox-bar">
+              <label htmlFor="labs">Labs</label>
+              <input
+                type="checkbox"
+                value={labs}
+                onClick={() => setLabs((prvLabs) => !prvLabs)}
+                name="labs"
+              />
+            </div>
+            <button
+              type="button"
+              className="server-change"
+              onClick={toogleServer}
+            >
+              Change Server
+            </button>
           </div>
-          <button
-            type="button"
-            className="server-change"
-            onClick={toogleServer}
-          >
-            Change Server
-          </button>
         </form>
-        {/* </div>   */}
+
         {validRegId && (
-          <div className="data">
-            <h1>Register No: {data["2-1"].regId}</h1>
+          <div className="data2">
+            <h1>Register No: {data.regId}</h1>
             <Result data={data["2-1"]} labs={labs} />
             <Result data={data["1-2"]} labs={labs} />
           </div>
