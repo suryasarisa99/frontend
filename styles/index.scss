@@ -68,6 +68,7 @@ $acent-color: rgb(86, 173, 255);
     // background-color: red;
     display: flex;
     gap: 10px;
+    align-items: center;
     background-color: $acent-color;
     margin-bottom: 10px;
     padding: 3px 5px;
@@ -135,6 +136,30 @@ nav {
     border: none;
     &:focus {
       outline: none;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .data {
+    .data-head {
+      gap: 0;
+      .cell {
+        width: 48px;
+        font-size: 12px;
+        overflow-x: hidden;
+        &:first-child {
+          font-size: 16px;
+        }
+      }
+    }
+    .data-body {
+      .row {
+        gap: 0;
+        .cell {
+          width: 45px;
+        }
+      }
     }
   }
 }
