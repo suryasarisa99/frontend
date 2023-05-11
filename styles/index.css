@@ -61,6 +61,7 @@ body {
 .data .data-head {
   display: flex;
   gap: 10px;
+  align-items: center;
   background-color: rgb(86, 173, 255);
   margin-bottom: 10px;
   padding: 3px 5px;
@@ -122,4 +123,24 @@ nav input {
 }
 nav input:focus {
   outline: none;
+}
+
+@media (max-width: 430px) {
+  .data .data-head {
+    gap: 0;
+  }
+  .data .data-head .cell {
+    width: 48px;
+    font-size: 12px;
+    overflow-x: hidden;
+  }
+  .data .data-head .cell:first-child {
+    font-size: 16px;
+  }
+  .data .data-body .row {
+    gap: 0;
+  }
+  .data .data-body .row .cell {
+    width: 45px;
+  }
 }/*# sourceMappingURL=index.css.map */

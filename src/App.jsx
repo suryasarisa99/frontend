@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Result from "./Result";
-import "../styles/index.scss";
+import "../styles/index.css";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 
