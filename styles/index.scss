@@ -11,9 +11,11 @@ body {
 
 $acent-color: rgb(86, 173, 255);
 .register {
-  background-color: rgb(43, 43, 43);
+  background-color: black;
   padding: 12px;
   max-width: 300px;
+  border: 2px solid $acent-color;
+  border-radius: 4px;
 
   .row {
     display: flex;
@@ -31,7 +33,9 @@ $acent-color: rgb(86, 173, 255);
   input {
     background-color: rgb(52, 52, 52);
     border: none;
-    padding: 12px;
+    // padding: 3px;
+    height: 30px;
+    padding: 2px 0 2px 5px;
     &:focus {
       outline: none;
     }
@@ -45,11 +49,20 @@ $acent-color: rgb(86, 173, 255);
   }
 }
 
+.reg-id {
+  font-size: 22px;
+  padding: 5px;
+  color: $acent-color;
+}
+
 .data {
   margin-bottom: 20px;
   padding: 15px;
   border: 3px solid rgb(78, 163, 255);
   border-radius: 8px;
+  max-width: 700px;
+  //   width: fit-content;
+  margin: 20px auto;
 
   .data-head {
     // background-color: red;
@@ -58,6 +71,8 @@ $acent-color: rgb(86, 173, 255);
     background-color: $acent-color;
     margin-bottom: 10px;
     padding: 3px 5px;
+    border-radius: 4px;
+
     .cell {
       width: 80px;
       text-align: center;
@@ -72,8 +87,10 @@ $acent-color: rgb(86, 173, 255);
   .data-body {
     .row {
       display: flex;
+      align-items: center;
       margin-bottom: 2px;
-      padding: 2px 3px;
+      padding: 2px 3px 5px 3px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.493);
       //   background-color: grey;
       .cell {
         width: 80px;
@@ -84,6 +101,40 @@ $acent-color: rgb(86, 173, 255);
           text-align: left;
         }
       }
+      .failed {
+        color: rgb(255, 76, 76);
+        font-weight: 600;
+      }
+      .good-marks {
+        color: rgb(145, 255, 145);
+      }
+    }
+  }
+}
+
+nav {
+  height: 60px;
+  background-color: black;
+  border-bottom: 2px solid $acent-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 32px;
+    color: $acent-color;
+  }
+  input {
+    height: 30px;
+    width: 120px;
+    background-color: rgb(34, 34, 34);
+    padding-left: 15px;
+    color: $acent-color;
+    border: none;
+    &:focus {
+      outline: none;
     }
   }
 }

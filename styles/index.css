@@ -1,0 +1,125 @@
+body {
+  background-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+.register {
+  background-color: black;
+  padding: 12px;
+  max-width: 300px;
+  border: 2px solid rgb(86, 173, 255);
+  border-radius: 4px;
+}
+.register .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 12px;
+}
+.register select {
+  height: 30px;
+  background-color: black;
+  color: white;
+}
+.register input {
+  background-color: rgb(52, 52, 52);
+  border: none;
+  height: 30px;
+  padding: 2px 0 2px 5px;
+  border-radius: 6px;
+}
+.register input:focus {
+  outline: none;
+}
+.register button {
+  background-color: grey;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: none;
+}
+
+.reg-id {
+  font-size: 22px;
+  padding: 5px;
+  color: rgb(86, 173, 255);
+}
+
+.data {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 3px solid rgb(78, 163, 255);
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+.data .data-head {
+  display: flex;
+  gap: 10px;
+  background-color: rgb(86, 173, 255);
+  margin-bottom: 10px;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+.data .data-head .cell {
+  width: 80px;
+  text-align: center;
+  font-weight: 600;
+  color: black;
+}
+.data .data-head .cell:first-child {
+  flex-grow: 1;
+}
+.data .data-body .row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  padding: 2px 3px 5px 3px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.493);
+}
+.data .data-body .row .cell {
+  width: 80px;
+  text-align: center;
+}
+.data .data-body .row .cell:first-child {
+  flex-grow: 1;
+  text-align: left;
+}
+.data .data-body .row .failed {
+  color: rgb(255, 76, 76);
+  font-weight: 600;
+}
+.data .data-body .row .good-marks {
+  color: rgb(145, 255, 145);
+}
+
+nav {
+  height: 60px;
+  background-color: black;
+  border-bottom: 2px solid rgb(86, 173, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+nav h1 {
+  font-size: 32px;
+  color: rgb(86, 173, 255);
+}
+nav input {
+  height: 30px;
+  width: 120px;
+  background-color: rgb(34, 34, 34);
+  padding-left: 15px;
+  color: rgb(86, 173, 255);
+  border: none;
+}
+nav input:focus {
+  outline: none;
+}/*# sourceMappingURL=index.css.map */
