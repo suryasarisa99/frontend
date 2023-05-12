@@ -55,7 +55,63 @@ $acent-color: rgb(86, 173, 255);
   padding: 5px;
   color: $acent-color;
 }
+.update-btn {
+  color: red;
+  background-color: rgb(36, 36, 36);
+  padding: 3px 8px;
 
+  border: none;
+  outline: none;
+}
+#overlay {
+  background-color: rgba(0, 0, 0, 0.681);
+  // background-color: black;
+  // filter: blur(4px);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: none;
+}
+.update-box {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-top: 2px solid $acent-color;
+  border-radius: 30px;
+  // background-color: red;
+  // height: 400px;
+  z-index: 999;
+  padding: 45px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  input {
+    border: 0px;
+    outline: none;
+    padding: 10px 8px;
+    font-size: 22px;
+    background-color: rgb(32, 33, 33);
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    background-color: $acent-color;
+    font-size: 22px;
+    border: none;
+    padding: 10px 20px;
+    width: fit-content;
+    align-self: end;
+    color: black;
+    border-radius: 8px;
+  }
+}
 .data {
   margin-bottom: 20px;
   padding: 15px;

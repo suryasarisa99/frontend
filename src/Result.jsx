@@ -1,10 +1,10 @@
-export default function Result({ data, labs }) {
+export default function Result({ data, yr, labs }) {
   if (!data) return null;
   return (
     <div className="data-tables">
       <div className="subjects data">
         <div className="data-head">
-          <div className="cell">Subject</div>
+          <div className="cell">{yr} Subjects</div>
           <div className="cell">Grade</div>
           <div className="cell">Internals</div>
         </div>
@@ -33,7 +33,7 @@ export default function Result({ data, labs }) {
         <div className="data">
           <div>
             <div className="data-head">
-              <div className="cell">Labs</div>
+              <div className="cell">{yr} Labs</div>
               <div className="cell">Grade</div>
               <div className="cell">Internals</div>
             </div>

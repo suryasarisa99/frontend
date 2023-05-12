@@ -8,7 +8,9 @@ function RegisterProvider({ children }) {
   let [validRegId, setValidRegId] = useState(false);
   let [regTerm, setRegTerm] = useState("");
   let [data, setData] = useState({});
-  let [server, setServer] = useState("get-std-res.vercel.app");
+  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  // let [server, setServer] = useState("http://localhost:4000");
+  let [name, setName] = useState("");
 
   function submitHandle(e) {
     e.preventDefault();
@@ -19,7 +21,7 @@ function RegisterProvider({ children }) {
     } else {
       id = makeId(id);
       console.log(id);
-      axios.get(`https://${server}/${id}`).then((res) => {
+      axios.get(`${server}/${id}`).then((res) => {
         if (res.data.mssg === "InvalidRegId") {
           setInvalidRegId(true);
           setValidRegId(false);
@@ -28,6 +30,7 @@ function RegisterProvider({ children }) {
           setData(res.data);
           console.log(res.data);
           setValidRegId(true);
+          setName(res.data.name);
         }
       });
     }
@@ -39,6 +42,14 @@ function RegisterProvider({ children }) {
   }
   function makeId(id) {
     let regId = "21U41A0500";
+    if (id.includes("LE")) {
+      regId = "22U45A0500";
+      let leIndex = id.indexOf("LE");
+      if (id.startsWith("LE")) {
+        id = id.substring(2);
+      } else id = id.substring(0, leIndex) + id.substring(leIndex);
+      console.log("spliced: " + id);
+    }
     let branch = id.substring(6, 8);
     if (id.length === 3) id = "0" + id;
     return regId.substring(0, 10 - id.length) + id;
@@ -51,7 +62,16 @@ function RegisterProvider({ children }) {
 
   return (
     <RegisterContext.Provider
-      value={{ regTerm, submitHandle, onChange, validRegId, data, server }}
+      value={{
+        regTerm,
+        submitHandle,
+        onChange,
+        validRegId,
+        data,
+        server,
+        name,
+        setName,
+      }}
     >
       {children}
     </RegisterContext.Provider>
