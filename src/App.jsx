@@ -1,13 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Result from "./Result";
 import "../styles/index.scss";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
+import axios from "axios";
 
 export default function App() {
   let [labs, setLabs] = useState(true);
-  let { validRegId, data } = useContext(RegisterContext);
+  let { validRegId, data, server } = useContext(RegisterContext);
 
+  useEffect(() => {
+    axios.get(`https://${server}/start`).then((res) => console.log(res.data));
+  }, []);
   return (
     <>
       <Navbar />

@@ -54,7 +54,7 @@ function RegisterProvider({ children }) {
 
   return (
     <RegisterContext.Provider
-      value={{ regTerm, submitHandle, onChange, validRegId, data }}
+      value={{ regTerm, submitHandle, onChange, validRegId, data, server }}
     >
       {children}
     </RegisterContext.Provider>
