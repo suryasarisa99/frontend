@@ -20,10 +20,7 @@ function RegisterProvider({ children }) {
       id = makeId(id);
       console.log(id);
       axios.get(`https://${server}/${id}`).then((res) => {
-        if (
-          res.data["2-1"].mssg === "InvalidRegId" ||
-          res.data["1-2"].mssg === "InvalidRegId"
-        ) {
+        if (res.data.mssg === "InvalidRegId") {
           setInvalidRegId(true);
           setValidRegId(false);
           // setData({});

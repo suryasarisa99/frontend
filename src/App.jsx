@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import Result from "./Result";
-import "../styles/index.scss";
+import "../styles/index.css";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 import axios from "axios";
@@ -10,7 +10,9 @@ export default function App() {
   let { validRegId, data, server } = useContext(RegisterContext);
 
   useEffect(() => {
-    axios.get(`https://${server}/start`).then((res) => console.log(res.data));
+    axios
+      .get(`https://${server}/start`)
+      .then((res) => console.log("hi" + res.data));
   }, []);
   return (
     <>
