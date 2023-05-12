@@ -1,4 +1,5 @@
 export default function Result({ data, labs }) {
+  if (!data) return null;
   return (
     <div className="data-tables">
       <div className="subjects data">
@@ -8,7 +9,7 @@ export default function Result({ data, labs }) {
           <div className="cell">Internals</div>
         </div>
         <div className="data-body">
-          {Object.entries(data.subjects).map(([subject, result]) => (
+          {Object?.entries(data.subjects).map(([subject, result]) => (
             <div className="row" key={subject}>
               <div className="cell">{subject}</div>
               <div
