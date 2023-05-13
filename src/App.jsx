@@ -1,6 +1,4 @@
 import { useContext, useState, useEffect } from "react";
-import { useNavigation } from "react-router-dom";
-
 import Result from "./Result";
 import "../styles/index.css";
 import Navbar from "./Navbar";
@@ -9,7 +7,6 @@ import axios from "axios";
 import UpdateBox from "./UpdateBox";
 
 export default function App() {
-  // let navigation = useNavigation();
   let [labs, setLabs] = useState(true);
   let [updateBox, setUpdateBox] = useState(false);
   let { validRegId, data, server, name, setName } = useContext(RegisterContext);
