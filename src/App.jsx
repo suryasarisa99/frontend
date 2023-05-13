@@ -1,17 +1,29 @@
 import { useContext, useState, useEffect } from "react";
+import { useNavigation } from "react-router-dom";
+
 import Result from "./Result";
 import "../styles/index.css";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 import axios from "axios";
-import UpdateBox from "../UpdateBox";
+import UpdateBox from "./UpdateBox";
+
 export default function App() {
+  // let navigation = useNavigation();
   let [labs, setLabs] = useState(true);
   let [updateBox, setUpdateBox] = useState(false);
   let { validRegId, data, server, name, setName } = useContext(RegisterContext);
   useEffect(() => {
-    axios.get(`${server}/start`).then((res) => console.log("hi" + res.data));
+    axios.get(`${server}/start`).then((res) => console.log(res.data));
   }, []);
+  useEffect(() => {
+    window.addEventListener("focus", handleOnFocus);
+    return window.removeEventListener("focus", handleOnFocus);
+  }, [navigation]);
+
+  let handleOnFocus = () => {
+    axios.get(`${server}/start`).then((res) => console.log("Focused"));
+  };
 
   function onUpdateHandle() {
     setUpdateBox(true);
@@ -35,6 +47,7 @@ export default function App() {
       e.target.lname.value;
 
     setName(n);
+    setUpdateBox(false);
     axios
       .post(`${server}/update/${data._id}`, { name: n })
       .then((res) => console.log(res));
@@ -52,7 +65,10 @@ export default function App() {
           </div>
         )}
       </div>
-      <UpdateBox updateName={updateName} />
+
+      {updateBox && (
+        <UpdateBox updateName={updateName} setUpdateBox={setUpdateBox} />
+      )}
     </>
   );
 }

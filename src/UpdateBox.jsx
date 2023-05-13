@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useEffect } from "react";
 
-export default function UpdateBox({ updateName }) {
+export default function UpdateBox({ updateName, setUpdateBox }) {
   useEffect(() => {
     window.addEventListener("scroll", onScrollHandle);
     // window.addEventListener("click", onScrollHandle);
@@ -14,6 +14,7 @@ export default function UpdateBox({ updateName }) {
   let onScrollHandle = () => {
     console.log("scrolled");
     document.getElementById("overlay").style.display = "none";
+    setUpdateBox(false);
   };
   return ReactDOM.createPortal(
     <>
