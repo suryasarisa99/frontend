@@ -18,7 +18,6 @@ export default function App() {
   }, []);
   useEffect(() => {
     window.addEventListener("focus", handleOnFocus);
-    return window.removeEventListener("focus", handleOnFocus);
   }, [navigation]);
 
   let handleOnFocus = () => {
