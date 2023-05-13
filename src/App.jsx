@@ -12,10 +12,9 @@ export default function App() {
   let { validRegId, data, server, name, setName } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res.data));
-  }, []);
-  useEffect(() => {
     window.addEventListener("focus", handleOnFocus);
-  }, [navigation]);
+  }, []);
+  // useEffect(() => {}, []);
 
   let handleOnFocus = () => {
     axios.get(`${server}/start`).then((res) => console.log("Focused"));
