@@ -79,18 +79,21 @@ $acent-color: rgb(86, 173, 255);
 .update-box {
   background-color: rgb(0, 0, 0);
   position: absolute;
-  bottom: 0px;
+  // bottom: 0px;
   width: 100%;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 30px;
+  box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid $acent-color;
   border-radius: 30px;
-  // background-color: red;
-  // height: 400px;
   z-index: 999;
   padding: 45px 30px 45px 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-
+  max-width: 600px;
   input {
     border: 0px;
     outline: none;
@@ -215,5 +218,12 @@ nav {
         }
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .update-box {
+    bottom: 0px;
+    transform: translateX(-50%);
   }
 }
