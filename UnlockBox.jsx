@@ -29,9 +29,7 @@ export default function unLockBox() {
             className={wrongPass ? "wrong-pass" : ""}
             autoFocus
           >
-            {wrongPass
-              ? "Entered Wrong Password"
-              : "Enter the passsword To Show Results"}
+            {wrongPass ? "Entered Wrong Password" : "Enter the passsword: "}
           </label>
           <GiCrossedSwords
             fill="red"

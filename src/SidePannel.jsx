@@ -39,10 +39,10 @@ export default function SidePannel({}) {
     <>
       <div className="side-pannel">
         <button onClick={(e) => closeSidePannel(e, onUpdateHandle)}>
-          Updte Name
+          {data.name ? "Update Name" : "Add Name"}
         </button>
         <button onClick={(e) => closeSidePannel(e, openLockBox)}>
-          Testing
+          Add Password
         </button>
       </div>
     </>,
