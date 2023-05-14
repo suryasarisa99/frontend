@@ -54,9 +54,12 @@ body {
 
 .update-btn {
   color: red;
-  background-color: rgb(36, 36, 36);
-  padding: 3px 8px;
+  background-color: rgb(49, 1, 1);
+  padding: 5px 12px;
   border: none;
+  font-size: 18px;
+  border: 1px solid rgb(225, 13, 13);
+  border-radius: 5px;
   outline: none;
 }
 
@@ -191,7 +194,13 @@ nav {
   padding: 10px 20px;
   margin-bottom: 40px;
 }
-nav h1 {
+nav .left-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgb(86, 173, 255);
+}
+nav .left-bar h1 {
   font-size: 32px;
   color: rgb(86, 173, 255);
 }
