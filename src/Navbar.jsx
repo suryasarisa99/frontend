@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
 import RegisterContext from "../context/registerId";
-export default function Navbar() {
+import { FaBars } from "react-icons/fa";
+export default function Navbar({ toggleSidePanel }) {
   let { regTerm, onChange, submitHandle, invalidRegId } =
     useContext(RegisterContext);
 
   return (
     <nav>
+      <FaBars onClick={toggleSidePanel} />
       <h1>Surya</h1>
       <form action="" onSubmit={submitHandle}>
         {invalidRegId && <span className="invalid-sym">!</span>}

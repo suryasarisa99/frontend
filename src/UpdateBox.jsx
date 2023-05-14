@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
-export default function UpdateBox({ updateName, setUpdateBox }) {
+import RegisterContext from "../context/registerId";
+export default function UpdateBox({}) {
+  let { updateName, setUpdateBox } = useContext(RegisterContext);
   useEffect(() => {
     window.addEventListener("scroll", onScrollHandle);
     // window.addEventListener("click", onScrollHandle);
