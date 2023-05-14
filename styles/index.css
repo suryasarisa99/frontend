@@ -75,15 +75,14 @@ body {
   background-color: rgb(0, 0, 0);
   position: absolute;
   width: 100%;
-  bottom: 40%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  bottom: 30px;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid rgb(86, 173, 255);
   border-radius: 30px;
   z-index: 999;
-  padding: 45px 30px 45px 30px;
+  padding: 50px 30px 20px 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -109,6 +108,16 @@ body {
   align-self: end;
   color: black;
   border-radius: 8px;
+}
+.update-box .icon-box {
+  color: grey;
+  left: 30px;
+  bottom: 25px;
+  position: absolute;
+}
+.update-box .icon-box .close-btn {
+  color: rgb(69, 69, 69);
+  font-size: 20px;
 }
 
 .data {
@@ -216,8 +225,12 @@ nav .invalid-reg-id {
 }
 @media (max-width: 600px) {
   .update-box {
-    bottom: 0px;
+    top: 0px;
     transform: translateX(-50%);
+    border-top: 0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 1px solid rgb(86, 173, 255);
   }
 }
 div .info-head,
