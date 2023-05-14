@@ -13,8 +13,8 @@ function RegisterProvider({ children }) {
   let [lockBox, setLockBox] = useState(false);
   let [isLocked, setIsLocked] = useState(false);
   let [tempId, setTempId] = useState("");
-  // let [server, setServer] = useState("https://get-std-res.vercel.app");
-  let [server, setServer] = useState("http://localhost:4000");
+  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  // let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
 
   function submitHandle(e) {
