@@ -11,7 +11,7 @@ export default function Navbar({ toggleSidePanel }) {
         <FaBars onClick={toggleSidePanel} />
         <h1>Surya</h1>
       </div>
-      <form action="" onSubmit={submitHandle}>
+      <form onSubmit={submitHandle}>
         {invalidRegId && <span className="invalid-sym">!</span>}
         <input
           className={invalidRegId ? "invalid-reg-id" : ""}

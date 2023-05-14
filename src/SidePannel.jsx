@@ -10,6 +10,7 @@ export default function SidePannel({}) {
     lockBox,
     openLockBox,
     onOverlayClick,
+    data,
   } = useContext(RegisterContext);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import Result from "./Result";
-import "../styles/index.css";
+import "../styles/index.scss";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 import axios from "axios";
@@ -47,7 +47,7 @@ export default function App() {
   return (
     <>
       <Navbar toggleSidePanel={toggleSidePanel} />
-      {sidePannel && <SidePannel onUpdateHandle={onUpdateHandle} />}
+      {sidePannel && <SidePannel />}
       {lockBox && <LockBox />}
       {isLocked && <UnlockBox />}
 
