@@ -1,25 +1,52 @@
 import { useEffect, useContext } from "react";
 import RegisterContext from "./context/registerId";
+import ReactDOM from "react-dom";
+import { GiCrossedSwords } from "react-icons/gi";
 
 export default function unLockBox() {
-  let { onOverlayClick, closeUnlockBox, submitUnlockBox } =
-    useContext(RegisterContext);
+  let {
+    onOverlayClick,
+    closeUnlockBox,
+    submitUnlockBox,
+    wrongPass,
+    passTerm,
+    setPassTerm,
+    onPasswordInput,
+  } = useContext(RegisterContext);
   useEffect(() => {
-    let overlay = document.getElementById("overlay");
-    overlay.addEventListener("click", closeUnlockBox);
-
-    return () => {
-      overlay.removeEventListener("click", closeUnlockBox);
-    };
+    // let overlay = document.getElementById("overlay");
+    // overlay.addEventListener("click", closeUnlockBox);
+    // return () => {
+    //   overlay.removeEventListener("click", closeUnlockBox);
+    // };
   });
-  return (
+  return ReactDOM.createPortal(
     <>
-      <form className="lock-box" onSubmit={submitUnlockBox}>
-        <label htmlFor="Password For Protection" autoFocus>
-          Enter the passsword To Show Results
-        </label>
-        <input type="password" name="password" />
+      <form className="unlock-box" onSubmit={submitUnlockBox}>
+        <div className="row">
+          <label
+            htmlFor="Password For Protection"
+            className={wrongPass ? "wrong-pass" : ""}
+            autoFocus
+          >
+            {wrongPass
+              ? "Entered Wrong Password"
+              : "Enter the passsword To Show Results"}
+          </label>
+          <GiCrossedSwords
+            fill="red"
+            className="close-btn"
+            onClick={closeUnlockBox}
+          />
+        </div>
+        <input
+          type="password"
+          name="password"
+          value={passTerm}
+          onChange={onPasswordInput}
+        />
       </form>
-    </>
+    </>,
+    document.getElementById("overlay")
   );
 }

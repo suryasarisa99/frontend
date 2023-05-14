@@ -14,6 +14,8 @@ function RegisterProvider({ children }) {
   let [isLocked, setIsLocked] = useState(false);
   let [tempId, setTempId] = useState("");
   let [server, setServer] = useState("https://get-std-res.vercel.app");
+  let [passTerm, setPassTerm] = useState("");
+  let [wrongPass, setWrongPass] = useState(false);
   // let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
 
@@ -35,7 +37,8 @@ function RegisterProvider({ children }) {
           setValidRegId(false);
           // setData({});
         } else if (res.data.mssg === "isLocked") {
-          setIsLocked(true);
+          // setIsLocked(true);
+          openUnlockBox();
         } else {
           setData(res.data);
           console.log(res.data);
@@ -74,9 +77,10 @@ function RegisterProvider({ children }) {
     document.getElementById("overlay").style.display = "block";
     // e.stopPropagation();
   }
-  // UNLOck Box ===================================
+  // Lock Box ===================================
 
   function submitLockBox(e) {
+    e.preventDefault();
     console.log(e.target.password.value);
     axios
       .post(`${server}/lock/${data._id}`, {
@@ -93,7 +97,7 @@ function RegisterProvider({ children }) {
   }
   function openLockBox(e) {
     setLockBox(true);
-    e.stopPropagation();
+    // e.stopPropagation();
 
     console.log("open-lock-box");
     document.querySelector("#overlay").style.display = "block";
@@ -113,25 +117,31 @@ function RegisterProvider({ children }) {
         console.log(res.data);
         if (res.data?.mssg === "passwordNotMatch") {
           console.log("password Wrong");
+          setWrongPass(true);
         } else {
           setIsLocked(false);
           setData(res.data);
           setValidRegId(true);
-          console.log("true");
+          closeUnlockBox();
+          setName(res.data.name);
+          setPassTerm("");  
         }
       });
-    // closeUnlockBox();
   }
   function closeUnlockBox() {
-    // isLocked(false);
-    // document.querySelector("#overlay").style.display = "none";
+    setIsLocked(false);
+    console.log("close-unLock-box");
+    document.getElementById("overlay").style.display = "none";
   }
   function openUnlockBox(e) {
-    // isLocked(true);
-    e.stopPropagation();
-
-    console.log("open-lock-box");
-    document.querySelector("#overlay").style.display = "block";
+    // e.stopPropagation();
+    setIsLocked(true);
+    console.log("open-unlock-box");
+    document.getElementById("overlay").style.display = "block";
+  }
+  function onPasswordInput(e) {
+    if (wrongPass) setWrongPass(false);
+    setPassTerm(e.target.value);
   }
 
   function updateName(e) {
@@ -182,6 +192,11 @@ function RegisterProvider({ children }) {
         submitUnlockBox,
         closeUnlockBox,
         openUnlockBox,
+        wrongPass,
+        setWrongPass,
+        setPassTerm,
+        passTerm,
+        onPasswordInput,
       }}
     >
       {children}
