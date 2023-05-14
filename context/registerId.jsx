@@ -124,7 +124,7 @@ function RegisterProvider({ children }) {
           setValidRegId(true);
           closeUnlockBox();
           setName(res.data.name);
-          setPassTerm("");  
+          setPassTerm("");
         }
       });
   }
@@ -163,6 +163,7 @@ function RegisterProvider({ children }) {
   }
   function onOverlayClick(e) {
     e.stopPropagation();
+    setSidePannel(false);
     document.getElementById("overlay").style.display = "none";
   }
   return (
