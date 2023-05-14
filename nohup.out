@@ -5,3 +5,194 @@ Port 3001 is in use, trying another one...
 
   ➜  Local:   http://localhost:3002/
   ➜  Network: use --host to expose
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+Port 3000 is in use, trying another one...
+Port 3001 is in use, trying another one...
+Port 3002 is in use, trying another one...
+
+  VITE v4.3.4  ready in 439 ms
+
+  ➜  Local:   http://localhost:3003/
+  ➜  Network: use --host to expose
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116107, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 116161, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[ERROR viaduct::backend::ffi] Missing HTTP status
+[ERROR viaduct::backend::ffi] Missing HTTP status
+3:40:15 PM [vite] page reload a.html
+3:40:15 PM [vite] page reload a.html
+3:40:28 PM [vite] page reload a.html
+3:40:28 PM [vite] page reload a.html
+3:41:45 PM [vite] page reload a.html
+3:41:45 PM [vite] page reload a.html
+3:42:49 PM [vite] page reload a.html
+3:42:49 PM [vite] page reload a.html
+3:43:26 PM [vite] page reload a.html
+3:43:26 PM [vite] page reload a.html
+3:43:39 PM [vite] page reload a.html
+3:43:39 PM [vite] page reload a.html
+3:45:04 PM [vite] page reload a.html
+3:45:04 PM [vite] page reload a.html
+3:45:11 PM [vite] page reload a.html
+3:45:11 PM [vite] page reload a.html
+3:45:19 PM [vite] page reload a.html
+3:45:19 PM [vite] page reload a.html
+3:45:24 PM [vite] page reload a.html
+3:45:24 PM [vite] page reload a.html
+3:45:45 PM [vite] page reload a.html
+3:45:45 PM [vite] page reload a.html
+3:45:59 PM [vite] page reload a.html
+3:45:59 PM [vite] page reload a.html
+3:48:05 PM [vite] page reload a.html
+3:48:05 PM [vite] page reload a.html
+3:50:12 PM [vite] page reload a.html
+3:50:12 PM [vite] page reload a.html
+3:50:29 PM [vite] page reload a.html
+3:50:29 PM [vite] page reload a.html
+3:50:36 PM [vite] page reload a.html
+3:50:36 PM [vite] page reload a.html
+3:50:55 PM [vite] page reload a.html
+3:50:55 PM [vite] page reload a.html
+3:53:04 PM [vite] page reload a.html
+3:53:04 PM [vite] page reload a.html
+3:56:33 PM [vite] page reload a.html
+3:56:33 PM [vite] page reload a.html
+3:58:13 PM [vite] page reload a.html
+3:58:13 PM [vite] page reload a.html
+3:58:40 PM [vite] page reload a.html
+3:58:40 PM [vite] page reload a.html
+3:58:50 PM [vite] page reload a.html
+3:58:50 PM [vite] page reload a.html
+3:59:07 PM [vite] page reload a.html
+3:59:07 PM [vite] page reload a.html
+3:59:25 PM [vite] page reload a.html
+3:59:25 PM [vite] page reload a.html
+3:59:30 PM [vite] page reload a.html
+3:59:30 PM [vite] page reload a.html
+4:00:12 PM [vite] page reload a.html
+4:00:12 PM [vite] page reload a.html
+4:00:22 PM [vite] page reload a.html
+4:00:22 PM [vite] page reload a.html
+4:00:38 PM [vite] page reload a.html
+4:00:38 PM [vite] page reload a.html
+4:00:44 PM [vite] page reload a.html
+4:00:44 PM [vite] page reload a.html
+4:00:48 PM [vite] page reload a.html
+4:00:48 PM [vite] page reload a.html
+4:01:38 PM [vite] page reload a.html
+4:01:38 PM [vite] page reload a.html
+4:02:10 PM [vite] page reload a.html
+4:02:10 PM [vite] page reload a.html
+4:02:28 PM [vite] page reload a.html
+4:02:28 PM [vite] page reload a.html
+4:02:49 PM [vite] page reload a.html
+4:02:49 PM [vite] page reload a.html
+4:04:25 PM [vite] page reload a.html
+4:04:25 PM [vite] page reload a.html
+4:04:56 PM [vite] page reload a.html
+4:04:56 PM [vite] page reload a.html
+4:05:07 PM [vite] page reload a.html
+4:05:07 PM [vite] page reload a.html
+4:05:11 PM [vite] page reload a.html
+4:05:11 PM [vite] page reload a.html
+4:05:41 PM [vite] page reload a.html
+4:05:41 PM [vite] page reload a.html
+4:05:59 PM [vite] page reload a.html
+4:05:59 PM [vite] page reload a.html
+4:06:36 PM [vite] page reload a.html
+4:06:36 PM [vite] page reload a.html
+4:08:53 PM [vite] page reload a.html
+4:08:53 PM [vite] page reload a.html
+4:11:08 PM [vite] page reload a.html
+4:11:08 PM [vite] page reload a.html
+4:11:19 PM [vite] page reload a.html
+4:11:19 PM [vite] page reload a.html
+4:17:21 PM [vite] page reload a.html
+4:17:21 PM [vite] page reload a.html
+4:17:29 PM [vite] page reload a.html
+4:17:29 PM [vite] page reload a.html
+4:17:34 PM [vite] page reload a.html
+4:17:34 PM [vite] page reload a.html
+4:17:41 PM [vite] page reload a.html
+4:17:41 PM [vite] page reload a.html
+4:17:49 PM [vite] page reload a.html
+4:17:49 PM [vite] page reload a.html
+4:17:52 PM [vite] page reload a.html
+4:17:52 PM [vite] page reload a.html
+4:18:16 PM [vite] page reload a.html
+4:18:16 PM [vite] page reload a.html
+4:18:35 PM [vite] page reload a.html
+4:18:35 PM [vite] page reload a.html
+4:18:36 PM [vite] page reload a.html
+4:18:36 PM [vite] page reload a.html
+4:18:55 PM [vite] page reload a.html
+4:18:55 PM [vite] page reload a.html
+4:35:05 PM [vite] page reload a.html
+4:35:05 PM [vite] page reload a.html
+4:35:10 PM [vite] page reload a.html
+4:35:10 PM [vite] page reload a.html
+4:38:37 PM [vite] page reload a.html
+4:38:37 PM [vite] page reload a.html
+4:40:35 PM [vite] page reload a.html
+4:40:35 PM [vite] page reload a.html
+4:40:41 PM [vite] page reload a.html
+4:40:41 PM [vite] page reload a.html
+4:41:18 PM [vite] page reload a.html
+4:41:18 PM [vite] page reload a.html
+4:41:27 PM [vite] page reload a.html
+4:41:27 PM [vite] page reload a.html
+4:41:40 PM [vite] page reload a.html
+4:41:40 PM [vite] page reload a.html
+Port 3000 is in use, trying another one...
+Port 3001 is in use, trying another one...
+Port 3002 is in use, trying another one...
+Port 3003 is in use, trying another one...
+Port 3004 is in use, trying another one...
+Port 3005 is in use, trying another one...
+
+  VITE v4.3.4  ready in 620 ms
+
+  ➜  Local:   http://localhost:3006/
+  ➜  Network: use --host to expose
+4:51:31 PM [vite] page reload a.html
+4:51:31 PM [vite] page reload a.html
+4:51:31 PM [vite] page reload a.html
+5:22:19 PM [vite] page reload a.html
+5:22:19 PM [vite] page reload a.html
+5:22:19 PM [vite] page reload a.html
+5:23:25 PM [vite] page reload a.html
+5:23:25 PM [vite] page reload a.html
+5:23:25 PM [vite] page reload a.html
+5:25:24 PM [vite] page reload a.html
+5:25:24 PM [vite] page reload a.html
+5:25:24 PM [vite] page reload a.html

@@ -1,5 +1,6 @@
 body {
   background-color: rgb(0, 0, 0);
+  height: 100%;
 }
 
 * {
@@ -186,14 +187,23 @@ nav {
   }
   input {
     height: 30px;
-    width: 120px;
+    width: 150px;
     background-color: rgb(34, 34, 34);
     padding-left: 15px;
     color: $acent-color;
+    border-radius: 5px;
     border: none;
     &:focus {
       outline: none;
     }
+  }
+  .invalid-sym {
+    color: red;
+    margin-right: 5px;
+  }
+  .invalid-reg-id {
+    border: 1px solid red;
+    color: red;
   }
 }
 
@@ -226,4 +236,95 @@ nav {
     bottom: 0px;
     transform: translateX(-50%);
   }
+}
+
+@mixin head-mssg {
+  color: inherit;
+  font-size: 20px;
+  padding: 6px;
+  border-bottom: 1px solid;
+  border-bottom-color: inherit;
+  margin-bottom: 10px;
+}
+@mixin mssg-box($bg, $fg) {
+  padding: 15px;
+  max-width: 600px;
+  // margin: 10 auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background-color: $bg;
+  color: $fg;
+  font-size: 15px;
+  border: 1px solid $fg;
+  margin: 0 25px 15px 25px;
+  a {
+    color: lighten($fg, 25%);
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+div .info-head,
+.error-head,
+.warn-head,
+.info-head {
+  @include head-mssg;
+}
+.warn-mssg {
+  @include mssg-box(#272117, orange);
+}
+.error-mssg {
+  @include mssg-box(#291a1a, red);
+}
+.info-mssg {
+  @include mssg-box(#262c32, $acent-color);
+}
+.correct-mssg {
+  @include mssg-box(#0b5604, #00ff00);
+}
+
+// .fancy {
+//   // padding: 30px;
+//   font-size: 60px;
+//   margin-bottom: 70px;
+//   // margin-top: 5px;
+//   color: $acent-color;
+//   font-weight: 900;
+//   text-align: center;
+//   text-shadow: 0 15px 15px rgba(9, 162, 250, 0.494),
+//     0 10px 12px rgba(59, 96, 124, 0.437);
+//   animation: 5s anm infinite;
+// }
+
+@keyframes anm {
+  0% {
+    scale: 1;
+    color: $acent-color;
+  }
+  25% {
+    scale: 1.1;
+    color: rgb(225, 0, 255);
+    // transform: translate3d(40px, 20px, 20px);
+    // transform: rotateY(120deg);
+  }
+  50% {
+    scale: 1.2;
+    color: red;
+  }
+  75% {
+    scale: 1.1;
+    color: yellow;
+  }
+  100% {
+    scale: 1;
+    color: green;
+    scale: 1;
+  }
+}
+
+.fancy-txt {
+  font-size: 100px;
+  color: $acent-color;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: 3s anm infinite;
 }

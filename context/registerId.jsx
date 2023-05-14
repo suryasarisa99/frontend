@@ -23,6 +23,7 @@ function RegisterProvider({ children }) {
       console.log(id);
       axios.get(`${server}/${id}`).then((res) => {
         if (res.data.mssg === "InvalidRegId") {
+          console.log(res.data.mssg);
           setInvalidRegId(true);
           setValidRegId(false);
           // setData({});
@@ -71,6 +72,7 @@ function RegisterProvider({ children }) {
         server,
         name,
         setName,
+        invalidRegId,
       }}
     >
       {children}

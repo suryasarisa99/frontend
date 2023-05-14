@@ -1,0 +1,102 @@
+body {
+  background-color: black;
+  padding: 40px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  font-size: 22px;
+}
+@mixin head-mssg {
+  color: inherit;
+  font-size: 28px;
+  padding: 10px;
+  border-bottom: 1px solid;
+  border-bottom-color: inherit;
+  margin-bottom: 10px;
+}
+@mixin mssg-box($bg, $fg) {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background-color: $bg;
+  color: $fg;
+  border: 1px solid $fg;
+  a {
+    color: lighten($fg, 25%);
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+div .info-head,
+.error-head,
+.warn-head,
+.info-head {
+  @include head-mssg;
+}
+.warn-mssg {
+  @include mssg-box(#795106, orange);
+}
+.error-mssg {
+  @include mssg-box(#590303, red);
+}
+.info-mssg {
+  @include mssg-box(#06246f, #2667ff);
+}
+.correct-mssg {
+  @include mssg-box(#0b5604, #00ff00);
+}
+// .fancy-text {
+//   font-weight: 800;
+//   background-color: rgb(32, 25, 25);
+//   svg {
+//     display: block;
+//     font: 10.5em "Montserrat";
+//     width: 960px;
+//     height: 300px;
+//     margin: 0 auto;
+
+//     .g-ants {
+//       .text-copy {
+//         fill: none;
+//         stroke: white;
+//         stroke-dasharray: 6% 29%;
+//         stroke-width: 5px;
+//         stroke-dashoffset: 0%;
+//         animation: stroke-offset 5.5s infinite linear;
+//       }
+
+//       .text-copy:nth-child(1) {
+//         stroke: #4d163d;
+//         animation-delay: -1;
+//       }
+
+//       .text-copy:nth-child(2) {
+//         stroke: #840037;
+//         animation-delay: -2s;
+//       }
+
+//       .text-copy:nth-child(3) {
+//         stroke: #bd0034;
+//         animation-delay: -3s;
+//       }
+
+//       .text-copy:nth-child(4) {
+//         stroke: #bd0034;
+//         animation-delay: -4s;
+//       }
+
+//       .text-copy:nth-child(5) {
+//         stroke: #fdb731;
+//         animation-delay: -5s;
+//       }
+//     }
+//   }
+// }
+// @keyframes stroke-offset {
+//   100% {
+//     stroke-dashoffset: -35%;
+//   }
+// }
