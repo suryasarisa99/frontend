@@ -43,6 +43,7 @@ export default function unLockBox() {
           value={passTerm}
           onChange={onPasswordInput}
         />
+        <button>Submit</button>
       </form>
     </>,
     document.getElementById("overlay")

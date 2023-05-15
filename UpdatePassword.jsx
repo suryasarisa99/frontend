@@ -30,8 +30,8 @@ export default function unLockBox() {
           className={wrongPass ? "wrong-pass" : ""}
           autoFocus
         >
-          {/* {wrongPass ? "Entered Wrong Password" : "Enter the passsword: "} */}
-          Change Password
+          {wrongPass ? "Entered Wrong Password" : "Change Password: "}
+          {/* Change Password */}
         </label>
         <GiCrossedSwords
           fill="red"
@@ -42,8 +42,8 @@ export default function unLockBox() {
           type="password"
           name="oldPass"
           placeholder="Old Password"
-          //   value={passTerm}
-          //   onChange={onPasswordInput}
+          value={passTerm}
+          onChange={onPasswordInput}
         />
         <input
           type="password"

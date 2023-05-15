@@ -102,6 +102,27 @@ input:focus {
   gap: 30px;
   max-width: 600px;
 }
+.update-box button {
+  background-color: rgb(86, 173, 255);
+  font-size: 22px;
+  border: none;
+  padding: 10px 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: end;
+  color: black;
+  border-radius: 8px;
+}
+.update-box .close-btn {
+  position: absolute;
+  right: 35px;
+}
+.update-box .wrong-pass {
+  color: red;
+}
+.update-box .close-btn {
+  top: 25px;
+}
 .update-box input {
   border: 0px;
   outline: none;
@@ -405,6 +426,9 @@ div .info-head,
   position: absolute;
   right: 35px;
 }
+.lock-box .wrong-pass {
+  color: red;
+}
 .lock-box label {
   color: white;
   font-size: 20px;
@@ -441,6 +465,9 @@ div .info-head,
 .update-password .close-btn {
   position: absolute;
   right: 35px;
+}
+.update-password .wrong-pass {
+  color: red;
 }
 .update-password label {
   color: white;

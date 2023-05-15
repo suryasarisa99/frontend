@@ -170,7 +170,7 @@ function RegisterProvider({ children }) {
       })
       .then((res) => {
         console.log(res.data);
-        if (res.data?.mssg === "passwordNotMatch") {
+        if (res.data?.mssg === "PasswordNotMatch") {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
