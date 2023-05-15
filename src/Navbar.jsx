@@ -2,13 +2,14 @@ import { useState, useContext } from "react";
 import RegisterContext from "../context/registerId";
 import { FaBars } from "react-icons/fa";
 export default function Navbar({ toggleSidePanel }) {
-  let { regTerm, onChange, submitHandle, invalidRegId } =
+  let { regTerm, onChange, submitHandle, invalidRegId, validRegId } =
     useContext(RegisterContext);
 
   return (
     <nav>
       <div className="left-bar">
-        <FaBars onClick={toggleSidePanel} />
+        {<FaBars onClick={toggleSidePanel} />}
+        {/* {validRegId && <FaBars onClick={toggleSidePanel} />} */}
         <h1>Surya</h1>
       </div>
       <form onSubmit={submitHandle}>

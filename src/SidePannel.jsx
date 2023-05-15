@@ -10,15 +10,22 @@ export default function SidePannel({}) {
     lockBox,
     openLockBox,
     onOverlayClick,
+    openUpdatePassword,
     data,
+    privateAccount,
   } = useContext(RegisterContext);
 
   useEffect(() => {
-    let overlay = document.getElementById("overlay");
+    // let overlay = document.getElementById("overlay");
     let sidepannel = document.querySelector(".side-pannel");
-    overlay.addEventListener("click", onOverlayClick);
-    sidepannel.addEventListener("click", onSidePannelClick);
-
+    // overlay.addEventListener("click", onOverlayClick);
+    // sidepannel.addEventListener("click", onSidePannelClick);
+    // window.addEventListener("scroll", () => {
+    //   if (window.scrollY > 60) {
+    //     // console.log("working--");
+    //     sidepannel.style.top = "0";
+    //   }
+    // });
     return () => {
       overlay.removeEventListener("click", onOverlayClick);
       sidepannel.removeEventListener("click", onSidePannelClick);
@@ -35,18 +42,24 @@ export default function SidePannel({}) {
       e.stopPropagation();
     }
   }
-
-  return ReactDOM.createPortal(
+  // ReactDOM.createPortal
+  return (
     <>
       <div className="side-pannel">
         <button onClick={(e) => closeSidePannel(e, onUpdateHandle)}>
           {data.name ? "Update Name" : "Add Name"}
         </button>
-        <button onClick={(e) => closeSidePannel(e, openLockBox)}>
-          Add Password
-        </button>
+        {privateAccount ? (
+          <button onClick={(e) => closeSidePannel(e, openUpdatePassword)}>
+            Update Password
+          </button>
+        ) : (
+          <button onClick={(e) => closeSidePannel(e, openLockBox)}>
+            Add Password
+          </button>
+        )}
       </div>
-    </>,
-    document.getElementById("overlay")
+    </>
+    // document.getElementById("overlay")
   );
 }

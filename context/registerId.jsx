@@ -13,10 +13,12 @@ function RegisterProvider({ children }) {
   let [lockBox, setLockBox] = useState(false);
   let [isLocked, setIsLocked] = useState(false);
   let [tempId, setTempId] = useState("");
-  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  let [updatePassword, setUpdatePassword] = useState(false);
+  let [privateAccount, setPrivateAccount] = useState(false);
+  // let [server, setServer] = useState("https://get-std-res.vercel.app");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
-  // let [server, setServer] = useState("http://localhost:4000");
+  let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
 
   function submitHandle(e) {
@@ -88,6 +90,7 @@ function RegisterProvider({ children }) {
       })
       .then((res) => {
         console.log(res.data);
+        setPrivateAccount(true);
       });
     closeLockBox();
   }
@@ -114,6 +117,7 @@ function RegisterProvider({ children }) {
         pass: e.target.password.value,
       })
       .then((res) => {
+        setPassTerm("");
         console.log(res.data);
         if (res.data?.mssg === "passwordNotMatch") {
           console.log("password Wrong");
@@ -124,7 +128,7 @@ function RegisterProvider({ children }) {
           setValidRegId(true);
           closeUnlockBox();
           setName(res.data.name);
-          setPassTerm("");
+          setPrivateAccount(true);
         }
       });
   }
@@ -143,7 +147,48 @@ function RegisterProvider({ children }) {
     if (wrongPass) setWrongPass(false);
     setPassTerm(e.target.value);
   }
+  // ====================================
 
+  function openUpdatePassword(e) {
+    // e.stopPropagation();
+    setUpdatePassword(true);
+    setPrivateAccount(true);
+    console.log("open-update-password");
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function submitUpdatePassword(e) {
+    e.preventDefault();
+    console.log("surya--submit");
+    let oldPass = e.target.oldPass.value;
+    let newPass = e.target.newPass.value;
+    console.log("post");
+    axios
+      .post(`${server}/update-lock/${data._id}`, {
+        oldPass,
+        newPass,
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data?.mssg === "passwordNotMatch") {
+          console.log("password Wrong");
+          setWrongPass(true);
+        } else {
+          // setValidRegId(true);
+          closeUpdatePassword();
+          if (res.data?.mssg == "removedPassword") {
+            setPrivateAccount(false);
+          }
+        }
+      });
+  }
+
+  function closeUpdatePassword() {
+    setUpdatePassword(false);
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  // =============================
   function updateName(e) {
     e.preventDefault();
     document.getElementById("overlay").style.display = "none";
@@ -198,6 +243,12 @@ function RegisterProvider({ children }) {
         setPassTerm,
         passTerm,
         onPasswordInput,
+        updatePassword,
+        setUpdatePassword,
+        openUpdatePassword,
+        submitUpdatePassword,
+        closeUpdatePassword,
+        privateAccount,
       }}
     >
       {children}

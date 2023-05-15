@@ -1,0 +1,61 @@
+import { useEffect, useContext } from "react";
+import RegisterContext from "./context/registerId";
+import ReactDOM from "react-dom";
+import { GiCrossedSwords } from "react-icons/gi";
+
+export default function unLockBox() {
+  let {
+    onOverlayClick,
+    // closeUpdatePassword,
+    submitUpdatePassword,
+    wrongPass,
+    passTerm,
+    setPassTerm,
+    onPasswordInput,
+    closeUpdatePassword,
+  } = useContext(RegisterContext);
+
+  useEffect(() => {
+    // let overlay = document.getElementById("overlay");
+    // overlay.addEventListener("click", closeUnlockBox);
+    // return () => {
+    //   overlay.removeEventListener("click", closeUnlockBox);
+    // };
+  });
+  return ReactDOM.createPortal(
+    <>
+      <form className="update-password" onSubmit={submitUpdatePassword}>
+        <label
+          htmlFor="Password For Protection"
+          className={wrongPass ? "wrong-pass" : ""}
+          autoFocus
+        >
+          {/* {wrongPass ? "Entered Wrong Password" : "Enter the passsword: "} */}
+          Change Password
+        </label>
+        <GiCrossedSwords
+          fill="red"
+          className="close-btn"
+          onClick={closeUpdatePassword}
+        />
+        <input
+          type="password"
+          name="oldPass"
+          placeholder="Old Password"
+          //   value={passTerm}
+          //   onChange={onPasswordInput}
+        />
+        <input
+          type="password"
+          name="newPass"
+          placeholder="New Password"
+
+          //   value={passTerm}
+          //   onChange={onPasswordInput}
+        />
+        <button>Submit</button>
+      </form>
+    </>,
+    document.getElementById("overlay")
+  );
+}

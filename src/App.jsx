@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import Result from "./Result";
-import "../styles/index.css";
+import "../styles/index.scss";
 import Navbar from "./Navbar";
 import RegisterContext from "../context/registerId";
 import axios from "axios";
@@ -9,6 +9,7 @@ import StartPage from "./StartPage";
 import SidePannel from "./SidePannel";
 import LockBox from "../LockBox";
 import UnlockBox from "../UnlockBox";
+import UpdatePassword from "../UpdatePassword";
 export default function App() {
   let [labs, setLabs] = useState(true);
   let {
@@ -24,6 +25,7 @@ export default function App() {
     updateBox,
     lockBox,
     isLocked,
+    updatePassword,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res.data));
@@ -40,9 +42,9 @@ export default function App() {
     </button>
   );
   function toggleSidePanel(e) {
-    setSidePannel(true);
+    setSidePannel((prevSidePannel) => !prevSidePannel);
     e.stopPropagation();
-    document.getElementById("overlay").style.display = "block";
+    // document.getElementById("overlay").style.display = "block";
   }
   return (
     <>
@@ -50,7 +52,7 @@ export default function App() {
       {sidePannel && <SidePannel />}
       {lockBox && <LockBox />}
       {isLocked && <UnlockBox />}
-
+      {updatePassword && <UpdatePassword />}
       {!isLocked && (
         <div className="page">
           {validRegId && !isLocked ? (
