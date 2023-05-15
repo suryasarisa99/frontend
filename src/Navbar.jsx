@@ -8,8 +8,8 @@ export default function Navbar({ toggleSidePanel }) {
   return (
     <nav>
       <div className="left-bar">
-        {<FaBars onClick={toggleSidePanel} />}
-        {/* {validRegId && <FaBars onClick={toggleSidePanel} />} */}
+        {/* {<FaBars onClick={toggleSidePanel} />} */}
+        {validRegId && <FaBars onClick={toggleSidePanel} />}
         <h1>Surya</h1>
       </div>
       <form onSubmit={submitHandle}>
