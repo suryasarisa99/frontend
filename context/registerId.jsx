@@ -46,6 +46,7 @@ function RegisterProvider({ children }) {
           console.log(res.data);
           setValidRegId(true);
           setName(res.data.name);
+          if (privateAccount) setPrivateAccount(false);
         }
       });
     }
