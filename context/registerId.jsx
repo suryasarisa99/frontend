@@ -246,16 +246,10 @@ function RegisterProvider({ children }) {
     const formData = new FormData();
     formData.append("photo", e.target.photo.files[0]);
 
-    if (res.data.photo) {
-      axios
-        .get(`${server}/photo/${res.data.photo}`, {
-          responseType: "blob",
-        })
-        .then((res) => {
-          console.log(res);
-          setImgUrl(URL.createObjectURL(res.data));
-        });
-    } else setImgUrl(false);
+    axios.post(`${server}/photo/${data._id}`, formData).then((res) => {
+      console.log(res);
+    });
+    closeUpdatePhoto();
   }
 
   return (
