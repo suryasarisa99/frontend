@@ -1,4 +1,4 @@
-import RegisterContext from "../context/registerId";
+import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 
 export default function StartPage({}) {

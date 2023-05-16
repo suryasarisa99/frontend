@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import RegisterContext from "./context/registerId";
+import RegisterContext from "../../context/registerId";
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
 
@@ -15,13 +15,6 @@ export default function unLockBox() {
     closeUpdatePassword,
   } = useContext(RegisterContext);
 
-  useEffect(() => {
-    // let overlay = document.getElementById("overlay");
-    // overlay.addEventListener("click", closeUnlockBox);
-    // return () => {
-    //   overlay.removeEventListener("click", closeUnlockBox);
-    // };
-  });
   return ReactDOM.createPortal(
     <>
       <form className="update-password" onSubmit={submitUpdatePassword}>

@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import RegisterContext from "./context/registerId";
+import RegisterContext from "../../context/registerId";
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
 

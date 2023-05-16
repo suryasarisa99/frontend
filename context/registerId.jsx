@@ -15,12 +15,13 @@ function RegisterProvider({ children }) {
   let [tempId, setTempId] = useState("");
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
-  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  // let [server, setServer] = useState("https://get-std-res.vercel.app");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
-  // let [server, setServer] = useState("http://localhost:4000");
+  let [updatePhoto, setUpdatePhoto] = useState(false);
+  let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
-
+  let [imgUrl, setImgUrl] = useState("");
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -42,6 +43,14 @@ function RegisterProvider({ children }) {
           // setIsLocked(true);
           openUnlockBox();
         } else {
+          axios
+            .get(`${server}/photo/${res.data.photo}`, {
+              responseType: "blob",
+            })
+            .then((res) => {
+              console.log(res);
+              setImgUrl(URL.createObjectURL(res.data));
+            });
           setData(res.data);
           console.log(res.data);
           setValidRegId(true);
@@ -97,14 +106,14 @@ function RegisterProvider({ children }) {
   }
   function closeLockBox() {
     setLockBox(false);
-    document.querySelector("#overlay").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
   }
   function openLockBox(e) {
     setLockBox(true);
     // e.stopPropagation();
 
     console.log("open-lock-box");
-    document.querySelector("#overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
   }
   // UNLOck Box ===================================
 
@@ -124,6 +133,14 @@ function RegisterProvider({ children }) {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
+          axios
+            .get(`${server}/photo/${res.data.photo}`, {
+              responseType: "blob",
+            })
+            .then((res) => {
+              console.log(res);
+              setImgUrl(URL.createObjectURL(res.data));
+            });
           setIsLocked(false);
           setData(res.data);
           setValidRegId(true);
@@ -212,6 +229,32 @@ function RegisterProvider({ children }) {
     setSidePannel(false);
     document.getElementById("overlay").style.display = "none";
   }
+
+  // =============== Update Photo ===================
+  function openUpdatePhoto() {
+    setUpdatePhoto(true);
+    document.getElementById("overlay").style.display = "block";
+  }
+  function closeUpdatePhoto() {
+    setUpdatePhoto(false);
+    document.getElementById("overlay").style.display = "none";
+  }
+  function submitUpdatePhoto(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("photo", e.target.photo.files[0]);
+
+    axios
+      .post(`${server}/photo/${data._id}`, formData)
+      .then((response) => {
+        console.log(response.data);
+        closeUpdatePhoto();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   return (
     <RegisterContext.Provider
       value={{
@@ -250,6 +293,13 @@ function RegisterProvider({ children }) {
         submitUpdatePassword,
         closeUpdatePassword,
         privateAccount,
+        updatePhoto,
+        setUpdatePhoto,
+        submitUpdatePhoto,
+        openUpdatePhoto,
+        closeUpdatePhoto,
+        imgUrl,
+        setImgUrl,
       }}
     >
       {children}

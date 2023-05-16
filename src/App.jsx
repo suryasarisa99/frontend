@@ -1,15 +1,16 @@
-import { useContext, useState, useEffect } from "react";
-import Result from "./Result";
-import "../styles/index.css";
-import Navbar from "./Navbar";
-import RegisterContext from "../context/registerId";
 import axios from "axios";
-import UpdateBox from "./UpdateBox";
-import StartPage from "./StartPage";
-import SidePannel from "./SidePannel";
-import LockBox from "../LockBox";
-import UnlockBox from "../UnlockBox";
-import UpdatePassword from "../UpdatePassword";
+import "../styles/index.scss";
+import { useContext, useState, useEffect } from "react";
+import RegisterContext from "../context/registerId";
+import Result from "./components/Result";
+import Navbar from "./components/Navbar";
+import StartPage from "./components/StartPage";
+import SidePannel from "./components/SidePannel";
+import UpdateBox from "./boxes/UpdateBox";
+import LockBox from "./boxes/LockBox";
+import UnlockBox from "./boxes/UnlockBox";
+import UpdatePassword from "./boxes/UpdatePassword";
+import UpdatePhoto from "./boxes/UpdatePhoto";
 export default function App() {
   let [labs, setLabs] = useState(true);
   let {
@@ -26,6 +27,8 @@ export default function App() {
     lockBox,
     isLocked,
     updatePassword,
+    updatePhoto,
+    imgUrl,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res.data));
@@ -53,12 +56,18 @@ export default function App() {
       {lockBox && <LockBox />}
       {isLocked && <UnlockBox />}
       {updatePassword && <UpdatePassword />}
+      {updatePhoto && <UpdatePhoto></UpdatePhoto>}
       {!isLocked && (
         <div className="page">
           {validRegId && !isLocked ? (
             <div className="data2">
-              <h1 className="reg-id">Name: {name || updateBtn}</h1>
-              <h1 className="reg-id">Register No: {data._id}</h1>
+              <div className="info">
+                <div className="text-info">
+                  <h1 className="reg-id">Name: {name || updateBtn}</h1>
+                  <h1 className="reg-id">Register No: {data._id}</h1>
+                </div>
+                <img src={imgUrl} alt="hi" />
+              </div>
               <Result data={data["2-1"]} yr={"2-1"} labs={labs} />
               <Result data={data["1-2"]} yr="1-2" labs={labs} />
             </div>

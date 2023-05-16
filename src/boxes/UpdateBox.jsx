@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useEffect, useContext } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
-import RegisterContext from "../context/registerId";
+import RegisterContext from "../../context/registerId";
 export default function UpdateBox({}) {
   let { updateName, setUpdateBox } = useContext(RegisterContext);
   useEffect(() => {

@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { useEffect, useContext } from "react";
-import RegisterContext from "../context/registerId";
+import RegisterContext from "../../context/registerId";
 
 export default function SidePannel({}) {
   let {
@@ -13,6 +13,8 @@ export default function SidePannel({}) {
     openUpdatePassword,
     data,
     privateAccount,
+    openUpdatePhoto,
+    imgUrl,
   } = useContext(RegisterContext);
 
   useEffect(() => {
@@ -58,6 +60,9 @@ export default function SidePannel({}) {
             Add Password
           </button>
         )}
+        <button onClick={(e) => closeSidePannel(e, openUpdatePhoto)}>
+          {imgUrl ? "Update Photo" : "Add Photo"}
+        </button>
       </div>
     </>
     // document.getElementById("overlay")

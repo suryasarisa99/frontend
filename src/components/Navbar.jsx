@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import RegisterContext from "../context/registerId";
+import RegisterContext from "../../context/registerId";
 import { FaBars } from "react-icons/fa";
 export default function Navbar({ toggleSidePanel }) {
   let { regTerm, onChange, submitHandle, invalidRegId, validRegId } =
