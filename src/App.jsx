@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.scss";
+import "../styles/index.css";
 import { useContext, useState, useEffect } from "react";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
