@@ -569,14 +569,20 @@ div .info-head,
     width: 45px;
   }
 }
+.img-box {
+  display: flex;
+  justify-content: center;
+}
+.img-box img {
+  width: 280px;
+  height: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0px auto;
+}
+
 .info {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-}
-.info img {
-  width: 250px;
-  height: 320px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }/*# sourceMappingURL=index.css.map */

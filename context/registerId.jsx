@@ -43,14 +43,16 @@ function RegisterProvider({ children }) {
           // setIsLocked(true);
           openUnlockBox();
         } else {
-          axios
-            .get(`${server}/photo/${res.data.photo}`, {
-              responseType: "blob",
-            })
-            .then((res) => {
-              console.log(res);
-              setImgUrl(URL.createObjectURL(res.data));
-            });
+          if (res.data.photo) {
+            axios
+              .get(`${server}/photo/${res.data.photo}`, {
+                responseType: "blob",
+              })
+              .then((res) => {
+                console.log(res);
+                setImgUrl(URL.createObjectURL(res.data));
+              });
+          } else setImgUrl(false);
           setData(res.data);
           console.log(res.data);
           setValidRegId(true);
@@ -244,15 +246,16 @@ function RegisterProvider({ children }) {
     const formData = new FormData();
     formData.append("photo", e.target.photo.files[0]);
 
-    axios
-      .post(`${server}/photo/${data._id}`, formData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    closeUpdatePhoto();
+    if (res.data.photo) {
+      axios
+        .get(`${server}/photo/${res.data.photo}`, {
+          responseType: "blob",
+        })
+        .then((res) => {
+          console.log(res);
+          setImgUrl(URL.createObjectURL(res.data));
+        });
+    } else setImgUrl(false);
   }
 
   return (

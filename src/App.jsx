@@ -11,7 +11,7 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-import profileTemplate from "./asserts/profile-template.jpg";
+import profileTemplate from "./asserts/temp.png";
 export default function App() {
   let [labs, setLabs] = useState(true);
   let {
@@ -62,13 +62,14 @@ export default function App() {
         <div className="page">
           {validRegId && !isLocked ? (
             <div className="data2">
-              <div className="info">
-                <div className="text-info">
-                  <h1 className="reg-id">Name: {name || updateBtn}</h1>
-                  <h1 className="reg-id">Register No: {data._id}</h1>
-                </div>
-                <img src={imgUrl || profileTemplate} alt="hi" />
+              <div className="img-box">
+                <img src={imgUrl || profileTemplate} alt="" />
               </div>
+              <div className="info">
+                <h1 className="reg-id">Name: {name || updateBtn}</h1>
+                <h1 className="reg-id">Register No: {data._id}</h1>
+              </div>
+              <div className="info"></div>
               <Result data={data["2-1"]} yr={"2-1"} labs={labs} />
               <Result data={data["1-2"]} yr="1-2" labs={labs} />
             </div>
