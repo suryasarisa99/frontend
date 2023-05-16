@@ -248,11 +248,11 @@ function RegisterProvider({ children }) {
       .post(`${server}/photo/${data._id}`, formData)
       .then((response) => {
         console.log(response.data);
-        closeUpdatePhoto();
       })
       .catch((error) => {
         console.error(error);
       });
+    closeUpdatePhoto();
   }
 
   return (
