@@ -12,6 +12,7 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import profileTemplate from "./asserts/temp.png";
+// import profileTemplate from "./asserts/profile-template.jpg";
 export default function App() {
   let [labs, setLabs] = useState(true);
   let {

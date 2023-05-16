@@ -135,14 +135,16 @@ function RegisterProvider({ children }) {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
-          axios
-            .get(`${server}/photo/${res.data.photo}`, {
-              responseType: "blob",
-            })
-            .then((res) => {
-              console.log(res);
-              setImgUrl(URL.createObjectURL(res.data));
-            });
+          if (res.data.photo) {
+            axios
+              .get(`${server}/photo/${res.data.photo}`, {
+                responseType: "blob",
+              })
+              .then((res) => {
+                console.log(res);
+                setImgUrl(URL.createObjectURL(res.data));
+              });
+          } else setImgUrl(false);
           setIsLocked(false);
           setData(res.data);
           setValidRegId(true);
