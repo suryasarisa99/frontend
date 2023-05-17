@@ -25,6 +25,7 @@ function RegisterProvider({ children }) {
   let [name, setName] = useState("");
   let [imgUrl, setImgUrl] = useState("");
   let [imgUpload, setImgUpload] = useState(null);
+  let [themePage, setThemePage] = useState(false);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -256,6 +257,14 @@ function RegisterProvider({ children }) {
       console.log(url);
     });
   }
+
+  // =====================================
+  function openThemePage() {
+    setThemePage(true);
+  }
+  function closeThemePage() {
+    setThemePage(false);
+  }
   return (
     <RegisterContext.Provider
       value={{
@@ -301,6 +310,10 @@ function RegisterProvider({ children }) {
         closeUpdatePhoto,
         imgUrl,
         setImgUrl,
+        themePage,
+        setThemePage,
+        openThemePage,
+        closeThemePage,
       }}
     >
       {children}

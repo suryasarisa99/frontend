@@ -12,6 +12,8 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import profileTemplate from "./asserts/temp.png";
+import circleTemp from "./asserts/circle.png";
+import Theme from "./pages/Theme";
 // import profileTemplate from "./asserts/profile-template.jpg";
 export default function App() {
   let [labs, setLabs] = useState(true);
@@ -31,10 +33,13 @@ export default function App() {
     updatePassword,
     updatePhoto,
     imgUrl,
+    themePage,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res.data));
     window.addEventListener("focus", handleOnFocus);
+    let color = localStorage.getItem("theme");
+    if (color) document.documentElement.classList.add(`${color}-theme`);
   }, []);
 
   let handleOnFocus = () => {
@@ -59,12 +64,20 @@ export default function App() {
       {isLocked && <UnlockBox />}
       {updatePassword && <UpdatePassword />}
       {updatePhoto && <UpdatePhoto></UpdatePhoto>}
-      {!isLocked && (
+      {themePage && <Theme />}
+
+      {!themePage && !isLocked && (
         <div className="page">
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                <img src={imgUrl || profileTemplate} alt="" />
+                {imgUrl ? (
+                  <img src={imgUrl} alt="" />
+                ) : (
+                  <div className="img-border">
+                    <img src={imgUrl || circleTemp} alt="" />
+                  </div>
+                )}
               </div>
               <div className="info">
                 <h1 className="reg-id">

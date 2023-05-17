@@ -16,6 +16,7 @@ export default function SidePannel({}) {
     openUpdatePhoto,
     imgUrl,
     name,
+    openThemePage,
   } = useContext(RegisterContext);
 
   useEffect(() => {
@@ -63,6 +64,9 @@ export default function SidePannel({}) {
         )}
         <button onClick={(e) => closeSidePannel(e, openUpdatePhoto)}>
           {imgUrl ? "Update Photo" : "Add Photo"}
+        </button>
+        <button onClick={(e) => closeSidePannel(e, openThemePage)}>
+          Themes
         </button>
       </div>
     </>
