@@ -4,9 +4,9 @@ import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 export default function UpdateBox({}) {
   let { updateName, setUpdateBox, name } = useContext(RegisterContext);
-  let [fname, setFname] = useState(name.fname);
-  let [sname, setSname] = useState(name.sname);
-  let [lname, setLname] = useState(name.lname);
+  let [fname, setFname] = useState(name?.fname || "");
+  let [sname, setSname] = useState(name?.sname || "");
+  let [lname, setLname] = useState(name?.lname || "");
 
   let onScrollHandle = () => {
     document.getElementById("overlay").style.display = "none";

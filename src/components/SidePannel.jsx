@@ -50,7 +50,7 @@ export default function SidePannel({}) {
     <>
       <div className="side-pannel">
         <button onClick={(e) => closeSidePannel(e, onUpdateHandle)}>
-          {name.fname ? "Update Name" : "Add Name"}
+          {name?.fname ? "Update Name" : "Add Name"}
         </button>
         {privateAccount ? (
           <button onClick={(e) => closeSidePannel(e, openUpdatePassword)}>
