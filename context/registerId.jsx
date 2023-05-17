@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import storage from "../firebaseConfig";
 let RegisterContext = createContext();
 
 function RegisterProvider({ children }) {
@@ -22,6 +24,7 @@ function RegisterProvider({ children }) {
   // let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
   let [imgUrl, setImgUrl] = useState("");
+  let [imgUpload, setImgUpload] = useState(null);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -43,16 +46,8 @@ function RegisterProvider({ children }) {
           // setIsLocked(true);
           openUnlockBox();
         } else {
-          if (res.data.photo) {
-            axios
-              .get(`${server}/photo/${res.data.photo}`, {
-                responseType: "blob",
-              })
-              .then((res) => {
-                console.log(res);
-                setImgUrl(URL.createObjectURL(res.data));
-              });
-          } else setImgUrl(false);
+          if (res.data.photo) getImg(res.data.photo);
+          else setImgUrl(false);
           setData(res.data);
           console.log(res.data);
           setValidRegId(true);
@@ -135,16 +130,9 @@ function RegisterProvider({ children }) {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
-          if (res.data.photo) {
-            axios
-              .get(`${server}/photo/${res.data.photo}`, {
-                responseType: "blob",
-              })
-              .then((res) => {
-                console.log(res);
-                setImgUrl(URL.createObjectURL(res.data));
-              });
-          } else setImgUrl(false);
+          if (res.data.photo) getImg(res.data.photo);
+          else setImgUrl(false);
+          setData(res.data);
           setIsLocked(false);
           setData(res.data);
           setValidRegId(true);
@@ -243,17 +231,42 @@ function RegisterProvider({ children }) {
     setUpdatePhoto(false);
     document.getElementById("overlay").style.display = "none";
   }
+  // function submitUpdatePhoto(e) {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("photo", e.target.photo.files[0]);
+
+  //   axios.post(`${server}/photo/${data._id}`, formData).then((res) => {
+  //     console.log(res);
+  //   });
+  //   closeUpdatePhoto();
+  // }
   function submitUpdatePhoto(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("photo", e.target.photo.files[0]);
-
-    axios.post(`${server}/photo/${data._id}`, formData).then((res) => {
+    let file = e.target.photo.files[0];
+    let fileName = Date.now() + "-" + file.name;
+    let ImgRef = ref(storage, `profile-pics/${fileName}`);
+    uploadBytes(ImgRef, file).then((res) => {
       console.log(res);
     });
+
+    axios
+      .post(`${server}/photo/${data._id}`, {
+        photo: fileName,
+      })
+      .then((res) => {
+        console.log(res);
+      });
     closeUpdatePhoto();
   }
 
+  function getImg(imgName) {
+    let ImgRef = ref(storage, `profile-pics/${imgName}`);
+    getDownloadURL(ImgRef).then((url) => {
+      setImgUrl(url);
+      console.log(url);
+    });
+  }
   return (
     <RegisterContext.Provider
       value={{
