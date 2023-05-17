@@ -1,18 +1,13 @@
 import ReactDOM from "react-dom";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 export default function UpdateBox({}) {
-  let { updateName, setUpdateBox } = useContext(RegisterContext);
-  useEffect(() => {
-    window.addEventListener("scroll", onScrollHandle);
-    // window.addEventListener("click", onScrollHandle);
+  let { updateName, setUpdateBox, name } = useContext(RegisterContext);
+  let [fname, setFname] = useState(name.fname);
+  let [sname, setSname] = useState(name.sname);
+  let [lname, setLname] = useState(name.lname);
 
-    return () => {
-      window.removeEventListener("scroll", onScrollHandle);
-      //   window.removeEventListener("click", onScrollHandle);
-    };
-  }, []);
   let onScrollHandle = () => {
     document.getElementById("overlay").style.display = "none";
     setUpdateBox(false);
@@ -25,9 +20,28 @@ export default function UpdateBox({}) {
           fill="red"
           onClick={onScrollHandle}
         />
-        <input type="text" placeholder="First Name" name="fname" />
-        <input type="text" placeholder="Second Name" name="sname" />
-        <input type="text" placeholder="Last Name" name="lname" />
+        <input
+          type="text"
+          placeholder="First Name"
+          name="fname"
+          // value={name.fname}
+          value={fname}
+          onChange={(e) => setFname(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Second Name"
+          name="sname"
+          value={sname}
+          onChange={(e) => setSname(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lname"
+          value={lname}
+          onChange={(e) => setLname(e.target.value)}
+        />
         <button>Update</button>
       </form>
     </>,

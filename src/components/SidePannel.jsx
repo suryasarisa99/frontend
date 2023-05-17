@@ -15,6 +15,7 @@ export default function SidePannel({}) {
     privateAccount,
     openUpdatePhoto,
     imgUrl,
+    name,
   } = useContext(RegisterContext);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function SidePannel({}) {
     <>
       <div className="side-pannel">
         <button onClick={(e) => closeSidePannel(e, onUpdateHandle)}>
-          {data.name ? "Update Name" : "Add Name"}
+          {name.fname ? "Update Name" : "Add Name"}
         </button>
         {privateAccount ? (
           <button onClick={(e) => closeSidePannel(e, openUpdatePassword)}>

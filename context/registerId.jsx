@@ -17,11 +17,11 @@ function RegisterProvider({ children }) {
   let [tempId, setTempId] = useState("");
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
-  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  // let [server, setServer] = useState("https://get-std-res.vercel.app");
+  let [server, setServer] = useState("http://localhost:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
-  // let [server, setServer] = useState("http://localhost:4000");
   let [name, setName] = useState("");
   let [imgUrl, setImgUrl] = useState("");
   let [imgUpload, setImgUpload] = useState(null);
@@ -41,11 +41,11 @@ function RegisterProvider({ children }) {
           console.log(res.data.mssg);
           setInvalidRegId(true);
           setValidRegId(false);
-          // setData({});
         } else if (res.data.mssg === "isLocked") {
           // setIsLocked(true);
           openUnlockBox();
         } else {
+          setImgUrl(false);
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
@@ -86,7 +86,7 @@ function RegisterProvider({ children }) {
     document.getElementById("overlay").style.display = "block";
     // e.stopPropagation();
   }
-  // Lock Box ===================================
+  // =================   Lock Box ======================
 
   function submitLockBox(e) {
     e.preventDefault();
@@ -107,12 +107,10 @@ function RegisterProvider({ children }) {
   }
   function openLockBox(e) {
     setLockBox(true);
-    // e.stopPropagation();
-
     console.log("open-lock-box");
     document.getElementById("overlay").style.display = "block";
   }
-  // UNLOck Box ===================================
+  //================= UNLOck Box ==========================
 
   function submitUnlockBox(e) {
     e.preventDefault();
@@ -130,6 +128,8 @@ function RegisterProvider({ children }) {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
+          setImgUrl(false);
+
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
@@ -144,11 +144,11 @@ function RegisterProvider({ children }) {
   }
   function closeUnlockBox() {
     setIsLocked(false);
+    setWrongPass(false);
     console.log("close-unLock-box");
     document.getElementById("overlay").style.display = "none";
   }
   function openUnlockBox(e) {
-    // e.stopPropagation();
     setIsLocked(true);
     console.log("open-unlock-box");
     document.getElementById("overlay").style.display = "block";
@@ -157,10 +157,9 @@ function RegisterProvider({ children }) {
     if (wrongPass) setWrongPass(false);
     setPassTerm(e.target.value);
   }
-  // ====================================
+  // ============ UPDATE PASSWORD ========================
 
   function openUpdatePassword(e) {
-    // e.stopPropagation();
     setUpdatePassword(true);
     setPrivateAccount(true);
     console.log("open-update-password");
@@ -184,7 +183,6 @@ function RegisterProvider({ children }) {
           console.log("password Wrong");
           setWrongPass(true);
         } else {
-          // setValidRegId(true);
           closeUpdatePassword();
           if (res.data?.mssg == "removedPassword") {
             setPrivateAccount(false);
@@ -195,25 +193,25 @@ function RegisterProvider({ children }) {
 
   function closeUpdatePassword() {
     setUpdatePassword(false);
+    setWrongPass(false);
     document.getElementById("overlay").style.display = "none";
   }
 
-  // =============================
+  // ============== UPDATE NAME  ==============
+
   function updateName(e) {
     e.preventDefault();
     document.getElementById("overlay").style.display = "none";
 
-    let n =
-      e.target.fname.value +
-      " " +
-      e.target.sname.value +
-      " " +
-      e.target.lname.value;
-
-    setName(n);
+    let fullName = {
+      fname: e.target.fname.value,
+      sname: e.target.sname.value,
+      lname: e.target.lname.value,
+    };
+    setName(fullName);
     setUpdateBox(false);
     axios
-      .post(`${server}/update/${data._id}`, { name: n })
+      .post(`${server}/update/${data._id}`, fullName)
       .then((res) => console.log(res));
   }
   function onOverlayClick(e) {
@@ -222,7 +220,8 @@ function RegisterProvider({ children }) {
     document.getElementById("overlay").style.display = "none";
   }
 
-  // =============== Update Photo ===================
+  // =============== Update Photo =================================
+
   function openUpdatePhoto() {
     setUpdatePhoto(true);
     document.getElementById("overlay").style.display = "block";
@@ -231,16 +230,6 @@ function RegisterProvider({ children }) {
     setUpdatePhoto(false);
     document.getElementById("overlay").style.display = "none";
   }
-  // function submitUpdatePhoto(e) {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("photo", e.target.photo.files[0]);
-
-  //   axios.post(`${server}/photo/${data._id}`, formData).then((res) => {
-  //     console.log(res);
-  //   });
-  //   closeUpdatePhoto();
-  // }
   function submitUpdatePhoto(e) {
     e.preventDefault();
     let file = e.target.photo.files[0];

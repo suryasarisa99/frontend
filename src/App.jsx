@@ -67,7 +67,12 @@ export default function App() {
                 <img src={imgUrl || profileTemplate} alt="" />
               </div>
               <div className="info">
-                <h1 className="reg-id">Name: {name || updateBtn}</h1>
+                <h1 className="reg-id">
+                  Name:{" "}
+                  {name?.fname
+                    ? `${name?.fname} ${name?.sname} ${name?.lname}`
+                    : updateBtn}
+                </h1>
                 <h1 className="reg-id">Register No: {data._id}</h1>
               </div>
               <div className="info"></div>
