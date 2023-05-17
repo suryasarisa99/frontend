@@ -1,5 +1,53 @@
+:root {
+  --acent-color: red;
+  --main-color: rgb(23, 0, 0);
+  --secondary-color: rgb(0, 0, 0);
+  --text-color: white;
+  --brand-color: var(--acent-color);
+}
+
+.pink-theme {
+  --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(29, 8, 26);
+}
+
+.green-theme {
+  --acent-color: rgb(89, 255, 64);
+  --main-color: rgb(6, 27, 12);
+}
+
+.blue-theme {
+  --acent-color: rgb(64, 115, 255);
+  --main-color: rgb(7, 18, 33);
+}
+
+.red-theme {
+  --acent-color: red;
+  --main-color: rgb(23, 0, 0);
+}
+
+.amoled-pink-theme {
+  --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(0, 0, 0);
+}
+
+.amoled-green-theme {
+  --acent-color: rgb(89, 255, 64);
+  --main-color: rgb(0, 0, 0);
+}
+
+.amoled-blue-theme {
+  --acent-color: rgb(64, 115, 255);
+  --main-color: rgb(0, 0, 0);
+}
+
+.amoled-red-theme {
+  --acent-color: red;
+  --main-color: rgb(0, 0, 0);
+}
+
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--main-color);
   height: 100%;
 }
 
@@ -7,7 +55,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: white;
+  color: var(--text-color);
   font-family: sans-serif;
 }
 
@@ -15,7 +63,7 @@ body {
   background-color: black;
   padding: 12px;
   max-width: 300px;
-  border: 2px solid rgb(86, 173, 255);
+  border: 2px solid var(--acent-color);
   border-radius: 4px;
 }
 .register .row {
@@ -49,7 +97,7 @@ body {
 .reg-id {
   font-size: 22px;
   padding: 5px;
-  color: rgb(86, 173, 255);
+  color: var(--acent-color);
 }
 
 .update-btn {
@@ -86,14 +134,14 @@ input:focus {
 }
 
 .update-box {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
   position: absolute;
   width: 100%;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
-  border-top: 2px solid rgb(86, 173, 255);
+  border-top: 2px solid var(--acent-color);
   border-radius: 30px;
   z-index: 999;
   padding: 50px 30px 20px 30px;
@@ -103,7 +151,7 @@ input:focus {
   max-width: 600px;
 }
 .update-box button {
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   font-size: 22px;
   border: none;
   padding: 10px 20px;
@@ -147,7 +195,7 @@ input:focus {
 .data {
   margin-bottom: 20px;
   padding: 15px;
-  border: 2px solid rgb(78, 163, 255);
+  border: 2px solid var(--acent-color);
   border-radius: 8px;
   max-width: 700px;
   margin: 20px auto;
@@ -156,7 +204,7 @@ input:focus {
   display: flex;
   gap: 10px;
   align-items: center;
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   margin-bottom: 10px;
   padding: 3px 5px;
   border-radius: 4px;
@@ -195,8 +243,8 @@ input:focus {
 
 nav {
   height: 60px;
-  background-color: black;
-  border-bottom: 2px solid rgb(86, 173, 255);
+  background-color: var(--secondary-color);
+  border-bottom: 2px solid var(--acent-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -209,11 +257,11 @@ nav .left-bar {
   display: flex;
   align-items: center;
   gap: 15px;
-  color: rgb(86, 173, 255);
+  color: var(--menu-color);
 }
 nav .left-bar h1 {
   font-size: 32px;
-  color: rgb(86, 173, 255);
+  color: var(--brand-color);
 }
 nav input {
   height: 30px;
@@ -221,7 +269,7 @@ nav input {
   font-size: 18px;
   background-color: rgb(34, 34, 34);
   padding-left: 15px;
-  color: rgb(86, 173, 255);
+  color: var(--acent-color);
   border-radius: 5px;
   border: none;
 }
@@ -260,11 +308,6 @@ div .info-head,
   border: 1px solid orange;
   margin: 0 25px 15px 25px;
 }
-.warn-mssg a {
-  color: #ffd280;
-  font-weight: 500;
-  text-decoration: none;
-}
 
 .error-mssg {
   padding: 15px;
@@ -277,11 +320,6 @@ div .info-head,
   border: 1px solid red;
   margin: 0 25px 15px 25px;
 }
-.error-mssg a {
-  color: #ff8080;
-  font-weight: 500;
-  text-decoration: none;
-}
 
 .info-mssg {
   padding: 15px;
@@ -289,15 +327,10 @@ div .info-head,
   border-radius: 12px;
   margin-bottom: 15px;
   background-color: #262c32;
-  color: rgb(86, 173, 255);
+  color: var(--acent-color);
   font-size: 15px;
-  border: 1px solid rgb(86, 173, 255);
+  border: 1px solid var(--acent-color);
   margin: 0 25px 15px 25px;
-}
-.info-mssg a {
-  color: #d6ebff;
-  font-weight: 500;
-  text-decoration: none;
 }
 
 .correct-mssg {
@@ -311,11 +344,6 @@ div .info-head,
   border: 1px solid #00ff00;
   margin: 0 25px 15px 25px;
 }
-.correct-mssg a {
-  color: #80ff80;
-  font-weight: 500;
-  text-decoration: none;
-}
 
 .start-page {
   display: flex;
@@ -324,7 +352,7 @@ div .info-head,
 }
 
 .side-pannel {
-  background-color: #000000;
+  background-color: var(--secondary-color);
   position: fixed;
   top: 60px;
   height: 100vh;
@@ -332,7 +360,7 @@ div .info-head,
   padding: 20px 20px 20px 30px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgb(86, 173, 255);
+  border-right: 1px solid var(--acent-color);
   z-index: 10;
 }
 .side-pannel button {
@@ -345,14 +373,14 @@ div .info-head,
 }
 
 .lock-box {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
   position: absolute;
   width: 100%;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
-  border-top: 2px solid rgb(86, 173, 255);
+  border-top: 2px solid var(--acent-color);
   border-radius: 30px;
   z-index: 999;
   padding: 50px 30px 20px 30px;
@@ -362,7 +390,7 @@ div .info-head,
   max-width: 600px;
 }
 .lock-box button {
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   font-size: 22px;
   border: none;
   padding: 10px 20px;
@@ -385,14 +413,14 @@ div .info-head,
 }
 
 .update-password {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
   position: absolute;
   width: 100%;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
-  border-top: 2px solid rgb(86, 173, 255);
+  border-top: 2px solid var(--acent-color);
   border-radius: 30px;
   z-index: 999;
   padding: 50px 30px 20px 30px;
@@ -402,7 +430,7 @@ div .info-head,
   max-width: 600px;
 }
 .update-password button {
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   font-size: 22px;
   border: none;
   padding: 10px 20px;
@@ -425,14 +453,14 @@ div .info-head,
 }
 
 .unlock-box {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
   position: absolute;
   width: 100%;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
-  border-top: 2px solid rgb(86, 173, 255);
+  border-top: 2px solid var(--acent-color);
   border-radius: 30px;
   z-index: 999;
   padding: 50px 30px 20px 30px;
@@ -442,7 +470,7 @@ div .info-head,
   max-width: 600px;
 }
 .unlock-box button {
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   font-size: 22px;
   border: none;
   padding: 10px 20px;
@@ -469,14 +497,14 @@ div .info-head,
 }
 
 .update-photo {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--secondary-color);
   position: absolute;
   width: 100%;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
-  border-top: 2px solid rgb(86, 173, 255);
+  border-top: 2px solid var(--acent-color);
   border-radius: 30px;
   z-index: 999;
   padding: 50px 30px 20px 30px;
@@ -486,7 +514,7 @@ div .info-head,
   max-width: 600px;
 }
 .update-photo button {
-  background-color: rgb(86, 173, 255);
+  background-color: var(--acent-color);
   font-size: 22px;
   border: none;
   padding: 10px 20px;
@@ -513,7 +541,7 @@ div .info-head,
     border-top: 0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    border-bottom: 1px solid rgb(86, 173, 255);
+    border-bottom: 1px solid var(--acent-color);
     width: 100%;
   }
   .lock-box {
@@ -524,7 +552,7 @@ div .info-head,
     border-top: 0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    border-bottom: 1px solid rgb(86, 173, 255);
+    border-bottom: 1px solid var(--acent-color);
     width: 100%;
   }
   .unlock-box {
@@ -535,7 +563,7 @@ div .info-head,
     border-top: 0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    border-bottom: 1px solid rgb(86, 173, 255);
+    border-bottom: 1px solid var(--acent-color);
     width: 100%;
   }
   .update-password {
@@ -546,7 +574,7 @@ div .info-head,
     border-top: 0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    border-bottom: 1px solid rgb(86, 173, 255);
+    border-bottom: 1px solid var(--acent-color);
     width: 100%;
   }
   .update-photo {
@@ -557,7 +585,7 @@ div .info-head,
     border-top: 0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    border-bottom: 1px solid rgb(86, 173, 255);
+    border-bottom: 1px solid var(--acent-color);
     width: 100%;
   }
 }
@@ -584,9 +612,19 @@ div .info-head,
   display: flex;
   justify-content: center;
 }
+.img-box .img-border {
+  border: 10px solid var(--acent-color);
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.img-box .img-border img {
+  width: 220px;
+  height: 220px;
+}
 .img-box img {
   width: 280px;
   height: 300px;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px auto;
@@ -596,4 +634,49 @@ div .info-head,
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.color-box {
+  width: 50px;
+  height: 50px;
+}
+
+.color-themes {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 250px;
+  margin: 30px auto;
+}
+.color-themes .green-color {
+  background-color: green;
+}
+.color-themes .red-color {
+  background-color: red;
+}
+.color-themes .blue-color {
+  background-color: blue;
+}
+.color-themes .pink-color {
+  background-color: pink;
+}
+
+.theme-page button {
+  background-color: grey;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: none;
+}
+
+.dark-themes .green-color {
+  background-color: rgb(4, 51, 4);
+}
+.dark-themes .red-color {
+  background-color: rgb(69, 8, 8);
+}
+.dark-themes .blue-color {
+  background-color: rgb(10, 55, 87);
+}
+.dark-themes .pink-color {
+  background-color: rgb(81, 9, 52);
 }/*# sourceMappingURL=index.css.map */
