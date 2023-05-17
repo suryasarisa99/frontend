@@ -112,7 +112,7 @@ body {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.895);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -663,7 +663,10 @@ div .info-head,
 
 .theme-page button {
   background-color: grey;
-  padding: 4px 8px;
+  padding: 8px 18px;
+  font-size: 20px;
+  margin-left: 40px;
+  background-color: var(--acent-color);
   border-radius: 3px;
   border: none;
 }

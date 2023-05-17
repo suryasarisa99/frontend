@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.scss";
+import "../styles/index.css";
 import { useContext, useState, useEffect } from "react";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
@@ -12,10 +12,7 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import profileTemplate from "./asserts/temp.png";
-import red from "./asserts/logos/red.png";
-import pink from "./asserts/logos/pink.png";
-import green from "./asserts/logos/green.png";
-import blue from "./asserts/logos/blue.png";
+
 import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 // import profileTemplate from "./asserts/profile-template.jpg";
