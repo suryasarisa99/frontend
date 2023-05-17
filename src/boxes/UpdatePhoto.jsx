@@ -32,7 +32,7 @@ export default function UpdatePhoto() {
           className="close-btn"
           onClick={closeUpdatePhoto}
         />
-        <input type="file" name="photo" onChange={imageLoad} />
+        <input type="file" name="photo" accept="image/*" onChange={imageLoad} />
         <button>Submit</button>
       </form>
     </>,
