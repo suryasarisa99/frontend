@@ -1,10 +1,10 @@
 import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 export default function Theme({}) {
-  let { closeThemePage, setLogoColor } = useContext(RegisterContext);
+  let { closeThemePage, setLogoColor, startPage } = useContext(RegisterContext);
   function setTheme(e) {
     let color = e.currentTarget.getAttribute("value");
-    setLogoColor(color);
+    if (startPage) setLogoColor(color);
     const classesToRemove = Array.from(document.documentElement.classList);
     classesToRemove.forEach((className) => {
       document.documentElement.classList.remove(className);

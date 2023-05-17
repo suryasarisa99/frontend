@@ -622,7 +622,8 @@ div .info-head,
   height: 220px;
 }
 .img-box img {
-  width: 300px;
+  width: 280px;
+  height: 320px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
