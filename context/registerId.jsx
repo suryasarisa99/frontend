@@ -26,6 +26,7 @@ function RegisterProvider({ children }) {
   let [imgUrl, setImgUrl] = useState("");
   let [imgUpload, setImgUpload] = useState(null);
   let [themePage, setThemePage] = useState(false);
+  let [imgLoaded, setImgLoaded] = useState(false);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -47,6 +48,7 @@ function RegisterProvider({ children }) {
           openUnlockBox();
         } else {
           setImgUrl(false);
+          setImgLoaded(false);
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
@@ -130,7 +132,7 @@ function RegisterProvider({ children }) {
           setWrongPass(true);
         } else {
           setImgUrl(false);
-
+          // setImgLoaded(false);
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
@@ -314,6 +316,8 @@ function RegisterProvider({ children }) {
         setThemePage,
         openThemePage,
         closeThemePage,
+        imgLoaded,
+        setImgLoaded,
       }}
     >
       {children}

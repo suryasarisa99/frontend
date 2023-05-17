@@ -622,12 +622,12 @@ div .info-head,
   height: 220px;
 }
 .img-box img {
-  width: 280px;
-  height: 300px;
+  width: 300px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px auto;
+  margin-bottom: 20px;
 }
 
 .info {

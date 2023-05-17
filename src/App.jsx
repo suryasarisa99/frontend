@@ -34,6 +34,8 @@ export default function App() {
     updatePhoto,
     imgUrl,
     themePage,
+    setImgLoaded,
+    imgLoaded,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res.data));
@@ -56,6 +58,10 @@ export default function App() {
     e.stopPropagation();
     // document.getElementById("overlay").style.display = "block";
   }
+  function handleImgLoad() {
+    console.log("image loaded");
+    setImgLoaded(true);
+  }
   return (
     <>
       <Navbar toggleSidePanel={toggleSidePanel} />
@@ -71,13 +77,15 @@ export default function App() {
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                {imgUrl ? (
-                  <img src={imgUrl} alt="" />
+                {/* {imgUrl ? (
+                  <img src={imgUrl} alt="" onLoad={handleImgLoad} />
                 ) : (
                   <div className="img-border">
-                    <img src={imgUrl || circleTemp} alt="" />
+                    <img src={circleTemp} alt="" />
                   </div>
-                )}
+                )} */}
+
+                <img src={imgUrl || circleTemp} alt="" />
               </div>
               <div className="info">
                 <h1 className="reg-id">
