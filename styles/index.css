@@ -2,7 +2,7 @@
   --acent-color: red;
   --main-color: rgb(23, 0, 0);
   --secondary-color: rgb(0, 0, 0);
-  --text-color: white;
+  --text-color: rgb(255, 255, 255);
   --brand-color: var(--acent-color);
 }
 
@@ -665,8 +665,9 @@ div .info-head,
   background-color: grey;
   padding: 8px 18px;
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 20px;
   background-color: var(--acent-color);
+  color: black;
   border-radius: 3px;
   border: none;
 }
@@ -682,4 +683,20 @@ div .info-head,
 }
 .dark-themes .pink-color {
   background-color: rgb(81, 9, 52);
+}
+
+.download-box {
+  display: flex;
+  justify-content: end;
+}
+.download-box #download {
+  background-color: grey;
+  padding: 8px 18px;
+  font-size: 20px;
+  margin-right: 50px;
+  background-color: var(--acent-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  border: none;
+  color: black;
 }/*# sourceMappingURL=index.css.map */

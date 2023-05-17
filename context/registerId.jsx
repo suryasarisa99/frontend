@@ -6,6 +6,7 @@ import red from "../src/asserts/logos/red.png";
 import pink from "../src/asserts/logos/pink.png";
 import green from "../src/asserts/logos/green.png";
 import blue from "../src/asserts/logos/blue.png";
+import { saveAs } from "file-saver";
 let RegisterContext = createContext();
 
 function RegisterProvider({ children }) {
@@ -50,12 +51,13 @@ function RegisterProvider({ children }) {
           setValidRegId(false);
         } else if (res.data.mssg === "isLocked") {
           // setIsLocked(true);
-          openUnlockBox();
+          openUnlockBox(res.data);
         } else {
           setImgUrl(false);
           setStartPage(false);
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
+          // handleDownload(res.data);
           setData(res.data);
           console.log(res.data);
           setValidRegId(true);
@@ -292,6 +294,19 @@ function RegisterProvider({ children }) {
         break;
     }
   }
+  async function handleDownload(obj) {
+    // const response = await fetch(`${server}/download/${id}`);
+    // const blob = await response.blob();
+    // const url = window.URL.createObjectURL(new Blob([blob]));
+    // const link = document.getElementById("download");
+    // link.href = url;
+    // link.setAttribute("download", "results.txt");
+    // console.log(link);
+
+    const jsonStr = JSON.stringify(obj, null, 2);
+    const file = new Blob([jsonStr], { type: "application/json" });
+    saveAs(file, obj._id + ".txt");
+  }
   return (
     <RegisterContext.Provider
       value={{
@@ -348,6 +363,7 @@ function RegisterProvider({ children }) {
         setValidRegId,
         setLogoColor,
         startPage,
+        handleDownload,
       }}
     >
       {children}

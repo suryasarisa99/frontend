@@ -44,6 +44,7 @@ export default function App() {
     getImg,
     setData,
     setLogoColor,
+    handleDownload,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
@@ -67,6 +68,7 @@ export default function App() {
       update
     </button>
   );
+
   function toggleSidePanel(e) {
     setSidePannel((prevSidePannel) => !prevSidePannel);
     e.stopPropagation();
@@ -113,6 +115,16 @@ export default function App() {
               <div className="info"></div>
               <Result data={data["2-1"]} yr={"2-1"} labs={labs} />
               <Result data={data["1-2"]} yr="1-2" labs={labs} />
+              <div className="download-box">
+                <button
+                  id="download"
+                  onClick={() => {
+                    handleDownload(data);
+                  }}
+                >
+                  Download
+                </button>
+              </div>
             </div>
           ) : (
             <StartPage />

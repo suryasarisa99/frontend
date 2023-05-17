@@ -1,5 +1,10 @@
+import RegisterContext from "../../context/registerId";
+import { useContext } from "react";
+
 export default function Result({ data, yr, labs }) {
+  let { server } = useContext(RegisterContext);
   if (!data) return null;
+
   return (
     <div className="data-tables">
       <div className="subjects data">
