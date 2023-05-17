@@ -624,7 +624,6 @@ div .info-head,
 .img-box img {
   width: 280px;
   height: 320px;
-  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px auto;
