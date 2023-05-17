@@ -2,6 +2,10 @@ import { createContext, useState } from "react";
 import axios from "axios";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import storage from "../firebaseConfig";
+import red from "../src/asserts/logos/red.png";
+import pink from "../src/asserts/logos/pink.png";
+import green from "../src/asserts/logos/green.png";
+import blue from "../src/asserts/logos/blue.png";
 let RegisterContext = createContext();
 
 function RegisterProvider({ children }) {
@@ -267,6 +271,26 @@ function RegisterProvider({ children }) {
   function closeThemePage() {
     setThemePage(false);
   }
+  function setLogoColor(color) {
+    switch (color) {
+      case "red":
+      case "amoled-red":
+        setImgUrl(red);
+        break;
+      case "pink":
+      case "amoled-pink":
+        setImgUrl(pink);
+        break;
+      case "green":
+      case "amoled-green":
+        setImgUrl(green);
+        break;
+      case "blue":
+      case "amoled-blue":
+        setImgUrl(blue);
+        break;
+    }
+  }
   return (
     <RegisterContext.Provider
       value={{
@@ -318,6 +342,10 @@ function RegisterProvider({ children }) {
         closeThemePage,
         imgLoaded,
         setImgLoaded,
+        getImg,
+        setData,
+        setValidRegId,
+        setLogoColor,
       }}
     >
       {children}

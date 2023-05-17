@@ -1,9 +1,10 @@
 import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 export default function Theme({}) {
-  let { closeThemePage } = useContext(RegisterContext);
+  let { closeThemePage, setLogoColor } = useContext(RegisterContext);
   function setTheme(e) {
     let color = e.currentTarget.getAttribute("value");
+    setLogoColor(color);
     const classesToRemove = Array.from(document.documentElement.classList);
     classesToRemove.forEach((className) => {
       document.documentElement.classList.remove(className);
@@ -14,6 +15,8 @@ export default function Theme({}) {
   return (
     <>
       <div className="theme-page">
+        <button onClick={closeThemePage}>Back</button>
+
         <div className="color-themes">
           <div
             className="color-box green-color"
@@ -58,7 +61,6 @@ export default function Theme({}) {
             onClick={setTheme}
           ></div>
         </div>
-        <button onClick={closeThemePage}>Back</button>
       </div>
     </>
   );

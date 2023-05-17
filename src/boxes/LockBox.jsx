@@ -5,14 +5,14 @@ import { GiCrossedSwords } from "react-icons/gi";
 export default function LockBox() {
   let { onOverlayClick, closeLockBox, submitLockBox } =
     useContext(RegisterContext);
-  useEffect(() => {
-    let overlay = document.getElementById("overlay");
-    overlay.addEventListener("click", closeLockBox);
+  // useEffect(() => {
+  //   let overlay = document.getElementById("overlay");
+  //   overlay.addEventListener("click", closeLockBox);
 
-    return () => {
-      overlay.removeEventListener("click", closeLockBox);
-    };
-  });
+  //   return () => {
+  //     overlay.removeEventListener("click", closeLockBox);
+  //   };
+  // });
   return (
     <>
       <form className="lock-box" onSubmit={submitLockBox}>

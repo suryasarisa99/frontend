@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.css";
+import "../styles/index.scss";
 import { useContext, useState, useEffect } from "react";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
@@ -12,6 +12,10 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import profileTemplate from "./asserts/temp.png";
+import red from "./asserts/logos/red.png";
+import pink from "./asserts/logos/pink.png";
+import green from "./asserts/logos/green.png";
+import blue from "./asserts/logos/blue.png";
 import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 // import profileTemplate from "./asserts/profile-template.jpg";
@@ -36,12 +40,25 @@ export default function App() {
     themePage,
     setImgLoaded,
     imgLoaded,
+    setInvalidRegId,
+    setValidRegId,
+    openUnlockBox,
+    setImgUrl,
+    getImg,
+    setData,
+    setLogoColor,
   } = useContext(RegisterContext);
   useEffect(() => {
-    axios.get(`${server}/start`).then((res) => console.log(res.data));
+    axios.get(`${server}/start`).then((res) => console.log(res));
+
     window.addEventListener("focus", handleOnFocus);
     let color = localStorage.getItem("theme");
     if (color) document.documentElement.classList.add(`${color}-theme`);
+    setLogoColor(color);
+    // setImgUrl(logo);
+    setData(mydata);
+    setValidRegId(true);
+    setName(mydata.name);
   }, []);
 
   let handleOnFocus = () => {
@@ -111,3 +128,96 @@ export default function App() {
     </>
   );
 }
+
+let mydata = {
+  name: {
+    fname: "Jaya",
+    sname: "Surya",
+    lname: "Sarisa",
+  },
+  "1-2": {
+    subjects: {
+      "MATHEMATICS-II": {
+        grade: "A+",
+        internals: "26",
+      },
+      "APPLIED CHEMISTRY": {
+        grade: "F",
+        internals: "24",
+      },
+      "COMPUTER ORGANIZATION": {
+        grade: "D",
+        internals: "26",
+      },
+      "DATA STRUCTURES": {
+        grade: "A",
+        internals: "24",
+      },
+      "PYTHON PROGRAMMING": {
+        grade: "A",
+        internals: "27",
+      },
+    },
+    labs: {
+      "APPLIED CHEMISTRY LABORATORY": {
+        grade: "A",
+        internals: "12",
+      },
+      "DATA STRUCTURES LABORATORY": {
+        grade: "A+",
+        internals: "15",
+      },
+      "PYTHON PROGRAMMING LABORATORY": {
+        grade: "A+",
+        internals: "15",
+      },
+    },
+  },
+  "2-1": {
+    subjects: {
+      "MATHEMATICS-III": {
+        grade: "D",
+        internals: "27",
+      },
+      "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
+        grade: "A",
+        internals: "29",
+      },
+      "OPERATING SYSTEMS": {
+        grade: "C",
+        internals: "26",
+      },
+      "SOFTWARE ENGINEERING": {
+        grade: "F",
+        internals: "29",
+      },
+      "MATHEMATICAL FOUNDATIONS OF COMPUTER SCI": {
+        grade: "D",
+        internals: "29",
+      },
+    },
+    labs: {
+      "COMMUNITY SERVICES PROJECT": {
+        grade: "A+",
+        internals: "0",
+      },
+      "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
+        grade: "A+",
+        internals: "15",
+      },
+      "OPERATING SYSTEMS LAB": {
+        grade: "A+",
+        internals: "15",
+      },
+      "SOFTWARE ENGINEERING LAB": {
+        grade: "A+",
+        internals: "15",
+      },
+      "APPLICATIONS OF PYTHON-NUMPY(SKILL ORIEN": {
+        grade: "A+",
+        internals: "0",
+      },
+    },
+  },
+  _id: "21U41A0546",
+};
