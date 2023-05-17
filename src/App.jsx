@@ -84,8 +84,8 @@ export default function App() {
                     <img src={circleTemp} alt="" />
                   </div>
                 )} */}
-
-                <img src={imgUrl || circleTemp} alt="" />
+                {imgUrl && <img src={imgUrl} alt="" onLoad={handleImgLoad} />}
+                {/* <img src={imgUrl || circleTemp} alt="" /> */}
               </div>
               <div className="info">
                 <h1 className="reg-id">
