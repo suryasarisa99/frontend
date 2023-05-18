@@ -164,6 +164,7 @@ input:focus {
 .update-box .close-btn {
   position: absolute;
   right: 35px;
+  color: black;
 }
 .update-box .wrong-pass {
   color: red;
@@ -403,6 +404,7 @@ div .info-head,
 .lock-box .close-btn {
   position: absolute;
   right: 35px;
+  color: black;
 }
 .lock-box .wrong-pass {
   color: red;
@@ -443,6 +445,7 @@ div .info-head,
 .update-password .close-btn {
   position: absolute;
   right: 35px;
+  color: black;
 }
 .update-password .wrong-pass {
   color: red;
@@ -483,6 +486,7 @@ div .info-head,
 .unlock-box .close-btn {
   position: absolute;
   right: 35px;
+  color: black;
 }
 .unlock-box .wrong-pass {
   color: red;
@@ -527,6 +531,7 @@ div .info-head,
 .update-photo .close-btn {
   position: absolute;
   right: 35px;
+  color: black;
 }
 .update-photo .wrong-pass {
   color: red;
@@ -689,15 +694,14 @@ div .info-head,
   display: flex;
   justify-content: end;
 }
-.download-box #download {
-  background-color: grey;
-  padding: 8px 18px;
-  font-size: 20px;
-  margin-right: 5px;
-  margin-bottom: 60px;
-  background-color: var(--acent-color);
-  color: var(--text-color);
-  border-radius: 3px;
-  border: none;
-  color: black;
+
+#download {
+  font-size: 25px;
+  color: green;
+  position: fixed;
+  top: 100px;
+  left: 40px;
+}
+#download .icon {
+  color: red;
 }/*# sourceMappingURL=index.css.map */
