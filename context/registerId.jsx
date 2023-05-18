@@ -22,8 +22,8 @@ function RegisterProvider({ children }) {
   let [tempId, setTempId] = useState("");
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
-  // let [server, setServer] = useState("https://get-std-res.vercel.app");
-  let [server, setServer] = useState("http://localhost:4000");
+  let [server, setServer] = useState("https://get-std-res.vercel.app");
+  // let [server, setServer] = useState("http://localhost:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
