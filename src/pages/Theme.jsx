@@ -1,7 +1,8 @@
 import RegisterContext from "../../context/registerId";
 import { useContext, useEffect } from "react";
 export default function Theme({}) {
-  let { closeThemePage, setLogoColor, startPage } = useContext(RegisterContext);
+  let { closeThemePage, setLogoColor, startPage, data, setColorTheme } =
+    useContext(RegisterContext);
   useEffect(() => {
     window.addEventListener("popstate", closeThemePage);
     return () => {
@@ -10,7 +11,8 @@ export default function Theme({}) {
   }, []);
   function setTheme(e) {
     let color = e.currentTarget.getAttribute("value");
-    if (startPage) setLogoColor(color);
+    setColorTheme(color);
+    if (data._id == "21U41A0546") setLogoColor(color);
     const classesToRemove = Array.from(document.documentElement.classList);
     classesToRemove.forEach((className) => {
       document.documentElement.classList.remove(className);
@@ -18,7 +20,6 @@ export default function Theme({}) {
     document.documentElement.classList.add(`${color}-theme`);
     localStorage.setItem("theme", color);
   }
-  // window.history.pushState(null,"",window.location.pathname.split("/").slice(0,-1).join("/") || "/")
   return (
     <>
       <div className="theme-page">

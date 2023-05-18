@@ -1,6 +1,6 @@
 import axios from "axios";
-import "../styles/index.css";
 import { useContext, useState, useEffect } from "react";
+import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
 import Navbar from "./components/Navbar";
@@ -12,7 +12,6 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import profileTemplate from "./asserts/temp.png";
-
 import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 // import profileTemplate from "./asserts/profile-template.jpg";
@@ -45,12 +44,14 @@ export default function App() {
     setData,
     setLogoColor,
     handleDownload,
+    setColorTheme,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
 
     window.addEventListener("focus", handleOnFocus);
     let color = localStorage.getItem("theme");
+    setColorTheme(color);
     if (color) document.documentElement.classList.add(`${color}-theme`);
     setLogoColor(color);
     // setImgUrl(logo);
@@ -116,16 +117,17 @@ export default function App() {
               <div className="info"></div>
               <Result data={data["2-1"]} yr={"2-1"} labs={labs} />
               <Result data={data["1-2"]} yr="1-2" labs={labs} />
-              <div className="download-box">
-                <button
-                  id="download"
-                  onClick={() => {
-                    handleDownload(data);
-                  }}
-                >
-                  Download
-                </button>
-              </div>
+              {/* <div className="download-box"> */}
+              <GoCloudDownload
+                fill="green"
+                id="download"
+                // fill="red"
+                style={{ color: "red" }}
+                onClick={() => {
+                  handleDownload(data);
+                }}
+              />
+              {/* </div> */}
             </div>
           ) : (
             <StartPage />

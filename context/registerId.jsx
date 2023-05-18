@@ -33,6 +33,7 @@ function RegisterProvider({ children }) {
   let [themePage, setThemePage] = useState(false);
   let [imgLoaded, setImgLoaded] = useState(false);
   let [startPage, setStartPage] = useState(true);
+  let [colorTheme, setColorTheme] = useState(false);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -147,7 +148,8 @@ function RegisterProvider({ children }) {
         } else {
           setImgUrl(false);
           setStartPage(false);
-          if (res.data.photo) getImg(res.data.photo);
+          if (res.data._id === "21U41A0546") setLogoColor(colorTheme);
+          else if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
           setIsLocked(false);
@@ -395,6 +397,7 @@ function RegisterProvider({ children }) {
         setLogoColor,
         startPage,
         handleDownload,
+        setColorTheme,
       }}
     >
       {children}
