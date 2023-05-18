@@ -93,6 +93,7 @@ function RegisterProvider({ children }) {
   }
   function onUpdateHandle(e) {
     setUpdateBox(true);
+    window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
     // e.stopPropagation();
   }
@@ -113,11 +114,17 @@ function RegisterProvider({ children }) {
   }
   function closeLockBox() {
     setLockBox(false);
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
+    );
     document.getElementById("overlay").style.display = "none";
   }
   function openLockBox(e) {
     setLockBox(true);
     console.log("open-lock-box");
+    window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
   }
   //================= UNLOck Box ==========================
@@ -156,11 +163,17 @@ function RegisterProvider({ children }) {
     setIsLocked(false);
     setWrongPass(false);
     console.log("close-unLock-box");
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
+    );
     document.getElementById("overlay").style.display = "none";
   }
   function openUnlockBox(e) {
     setIsLocked(true);
     console.log("open-unlock-box");
+    window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
   }
   function onPasswordInput(e) {
@@ -173,6 +186,7 @@ function RegisterProvider({ children }) {
     setUpdatePassword(true);
     setPrivateAccount(true);
     console.log("open-update-password");
+    window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
   }
 
@@ -204,6 +218,11 @@ function RegisterProvider({ children }) {
   function closeUpdatePassword() {
     setUpdatePassword(false);
     setWrongPass(false);
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
+    );
     document.getElementById("overlay").style.display = "none";
   }
 
@@ -234,10 +253,16 @@ function RegisterProvider({ children }) {
 
   function openUpdatePhoto() {
     setUpdatePhoto(true);
+    window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
   }
   function closeUpdatePhoto() {
     setUpdatePhoto(false);
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
+    );
     document.getElementById("overlay").style.display = "none";
   }
   function submitUpdatePhoto(e) {
@@ -269,10 +294,16 @@ function RegisterProvider({ children }) {
 
   // =====================================
   function openThemePage() {
+    window.history.pushState(null, "", "popup");
     setThemePage(true);
   }
   function closeThemePage() {
     setThemePage(false);
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
+    );
   }
   function setLogoColor(color) {
     switch (color) {

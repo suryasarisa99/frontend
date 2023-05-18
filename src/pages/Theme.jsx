@@ -1,7 +1,13 @@
 import RegisterContext from "../../context/registerId";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 export default function Theme({}) {
   let { closeThemePage, setLogoColor, startPage } = useContext(RegisterContext);
+  useEffect(() => {
+    window.addEventListener("popstate", closeThemePage);
+    return () => {
+      window.removeEventListener("popstate", closeThemePage);
+    };
+  }, []);
   function setTheme(e) {
     let color = e.currentTarget.getAttribute("value");
     if (startPage) setLogoColor(color);
@@ -12,6 +18,7 @@ export default function Theme({}) {
     document.documentElement.classList.add(`${color}-theme`);
     localStorage.setItem("theme", color);
   }
+  // window.history.pushState(null,"",window.location.pathname.split("/").slice(0,-1).join("/") || "/")
   return (
     <>
       <div className="theme-page">

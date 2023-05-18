@@ -14,7 +14,12 @@ export default function unLockBox() {
     onPasswordInput,
     closeUpdatePassword,
   } = useContext(RegisterContext);
-
+  useEffect(() => {
+    window.addEventListener("popstate", closeUpdatePassword);
+    return () => {
+      window.removeEventListener("popstate", closeUpdatePassword);
+    };
+  }, []);
   return ReactDOM.createPortal(
     <>
       <form className="update-password" onSubmit={submitUpdatePassword}>

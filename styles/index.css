@@ -135,7 +135,7 @@ input:focus {
 
 .update-box {
   background-color: var(--secondary-color);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 40%;
   left: 50%;
@@ -374,7 +374,7 @@ div .info-head,
 
 .lock-box {
   background-color: var(--secondary-color);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 40%;
   left: 50%;
@@ -414,7 +414,7 @@ div .info-head,
 
 .update-password {
   background-color: var(--secondary-color);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 40%;
   left: 50%;
@@ -454,7 +454,7 @@ div .info-head,
 
 .unlock-box {
   background-color: var(--secondary-color);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 40%;
   left: 50%;
@@ -498,7 +498,7 @@ div .info-head,
 
 .update-photo {
   background-color: var(--secondary-color);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 40%;
   left: 50%;

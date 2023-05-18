@@ -72,6 +72,7 @@ export default function App() {
   function toggleSidePanel(e) {
     setSidePannel((prevSidePannel) => !prevSidePannel);
     e.stopPropagation();
+
     // document.getElementById("overlay").style.display = "block";
   }
   function handleImgLoad() {

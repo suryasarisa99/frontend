@@ -14,12 +14,11 @@ export default function unLockBox() {
     onPasswordInput,
   } = useContext(RegisterContext);
   useEffect(() => {
-    // let overlay = document.getElementById("overlay");
-    // overlay.addEventListener("click", closeUnlockBox);
-    // return () => {
-    //   overlay.removeEventListener("click", closeUnlockBox);
-    // };
-  });
+    window.addEventListener("popstate", closeUnlockBox);
+    return () => {
+      window.removeEventListener("popstate", closeUnlockBox);
+    };
+  }, []);
   return ReactDOM.createPortal(
     <>
       <form className="unlock-box" onSubmit={submitUnlockBox}>

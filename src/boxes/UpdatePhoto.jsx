@@ -1,12 +1,17 @@
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import RegisterContext from "../../context/registerId";
 
 export default function UpdatePhoto() {
   let { closeUpdatePhoto, submitUpdatePhoto, setImgUrl, imgUrl } =
     useContext(RegisterContext);
-
+  useEffect(() => {
+    window.addEventListener("popstate", closeUpdatePhoto);
+    return () => {
+      window.removeEventListener("popstate", closeUpdatePhoto);
+    };
+  }, []);
   function imageLoad(e) {
     let file = e.target.files[0];
     if (file) {
