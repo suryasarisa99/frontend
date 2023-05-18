@@ -1,8 +1,15 @@
 import RegisterContext from "../../context/registerId";
 import { useContext, useEffect } from "react";
 export default function Theme({}) {
-  let { closeThemePage, setLogoColor, startPage, data, setColorTheme } =
-    useContext(RegisterContext);
+  let {
+    closeThemePage,
+    setLogoColor,
+    loadedThemes,
+    setLoadedThemes,
+    startPage,
+    data,
+    setColorTheme,
+  } = useContext(RegisterContext);
   useEffect(() => {
     window.addEventListener("popstate", closeThemePage);
     return () => {
@@ -10,7 +17,8 @@ export default function Theme({}) {
     };
   }, []);
   function setTheme(e) {
-    let color = e.currentTarget.getAttribute("value");
+    let color = e.target.getAttribute("value");
+    document.documentElement.style = "";
     setColorTheme(color);
     if (data._id == "21U41A0546") setLogoColor(color);
     const classesToRemove = Array.from(document.documentElement.classList);
@@ -19,6 +27,47 @@ export default function Theme({}) {
     });
     document.documentElement.classList.add(`${color}-theme`);
     localStorage.setItem("theme", color);
+  }
+
+  // =============
+
+  function handleAcentColor(e) {
+    const root = document.documentElement;
+    root.style.setProperty("--acent-color", e.target.value);
+  }
+  function handleMainColor(e) {
+    const root = document.documentElement;
+    root.style.setProperty("--main-color", e.target.value);
+  }
+  function handleSecondaryColor(e) {
+    const root = document.documentElement;
+    root.style.setProperty("--secondary-color", e.target.value);
+  }
+  function handleBrandColor(e) {
+    const root = document.documentElement;
+    root.style.setProperty("--brand-color", e.target.value);
+  }
+  function handleTextColor(e) {
+    const root = document.documentElement;
+    root.style.setProperty("--text-color", e.target.value);
+  }
+  function saveCustomTheme(e) {
+    e.preventDefault();
+    let obj = {
+      "--main-color": getComputedStyle(root).getPropertyValue("--main-color"),
+      "--acent-color": getComputedStyle(root).getPropertyValue("--acent-color"),
+      "--secondary-color":
+        getComputedStyle(root).getPropertyValue("--secondary-color"),
+      "--text-color": getComputedStyle(root).getPropertyValue("--text-color"),
+      "--brand-color": getComputedStyle(root).getPropertyValue("--brand-color"),
+      name: e.target["theme-name"].value,
+    };
+    console.log(obj);
+    console.log(loadedThemes);
+    let cpyLoadedThemes = [...loadedThemes];
+    cpyLoadedThemes.push(obj);
+    setLoadedThemes(cpyLoadedThemes);
+    localStorage.setItem("custom-themes", JSON.stringify(cpyLoadedThemes));
   }
   return (
     <>
@@ -69,7 +118,51 @@ export default function Theme({}) {
             onClick={setTheme}
           ></div>
         </div>
+
+        <div className="custom-themes">
+          {loadedThemes?.map((theme, index) => {
+            return (
+              <button
+                key={index}
+                value={index}
+                onClick={(e) => {
+                  Object.entries(loadedThemes[e.target.value]).map(
+                    ([key, value]) => {
+                      let root = document.documentElement;
+                      root.style.setProperty(key, value);
+                    }
+                  );
+                  localStorage.setItem(
+                    "theme",
+                    loadedThemes[e.target.value].name
+                  );
+                }}
+              >
+                {theme.name}
+              </button>
+            );
+          })}
+        </div>
       </div>
+      <form action="" onSubmit={saveCustomTheme}>
+        Acent Color <input type="color" onChange={handleAcentColor} />
+        <br />
+        Main Color <input type="color" onChange={handleMainColor} />
+        <br />
+        Secondar Color
+        <input type="color" onChange={handleSecondaryColor} />
+        <br />
+        Title Color
+        <input type="color" onChange={handleBrandColor} />
+        <br />
+        Text Color
+        <input type="color" onChange={handleTextColor} />
+        <br />
+        theme Name
+        <input type="text" name="theme-name" />
+        <button>Save Custom Theme</button>
+      </form>
+      {/* <input type="color" ref={inputRef} onChange={handleColor} /> */}
     </>
   );
 }

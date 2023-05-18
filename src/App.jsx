@@ -7,7 +7,7 @@ import Result from "./components/Result";
 import Navbar from "./components/Navbar";
 import StartPage from "./components/StartPage";
 import SidePannel from "./components/SidePannel";
-import UpdateBox from "./boxes/UpdateBox";
+import UpdateName from "./boxes/UpdateName";
 import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
@@ -28,7 +28,7 @@ export default function App() {
     updateName,
     sidePannel,
     setSidePannel,
-    updateBox,
+    UpdateName,
     lockBox,
     isLocked,
     updatePassword,
@@ -46,14 +46,18 @@ export default function App() {
     setLogoColor,
     handleDownload,
     setColorTheme,
+    loadedThemes,
+    setLoadedThemes,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
 
     window.addEventListener("focus", handleOnFocus);
     let color = localStorage.getItem("theme");
+    handleLoadThemes();
     setColorTheme(color);
     if (color) document.documentElement.classList.add(`${color}-theme`);
+    else setColorTheme("red");
     setLogoColor(color);
     // setImgUrl(logo);
     setData(mydata);
@@ -71,6 +75,11 @@ export default function App() {
     </button>
   );
 
+  function handleLoadThemes() {
+    let customThemes = JSON.parse(localStorage.getItem("custom-themes"));
+    if (customThemes) setLoadedThemes(customThemes);
+  }
+
   function toggleSidePanel(e) {
     setSidePannel((prevSidePannel) => !prevSidePannel);
     e.stopPropagation();
@@ -81,6 +90,7 @@ export default function App() {
     console.log("image loaded");
     setImgLoaded(true);
   }
+
   return (
     <>
       <Navbar toggleSidePanel={toggleSidePanel} />
@@ -96,14 +106,20 @@ export default function App() {
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                {/* {imgUrl ? (
-                  <img src={imgUrl} alt="" onLoad={handleImgLoad} />
-                ) : (
-                  <div className="img-border">
-                    <img src={circleTemp} alt="" />
-                  </div>
-                )} */}
-                {imgUrl && <img src={imgUrl} alt="" onLoad={handleImgLoad} />}
+                {data.photo &&
+                  (imgUrl ? (
+                    <img
+                      src={imgUrl}
+                      alt=""
+                      className="profile-photo"
+                      onLoad={handleImgLoad}
+                    />
+                  ) : (
+                    <div className="img-border">
+                      <img src={circleTemp} alt="" />
+                    </div>
+                  ))}
+                {/* {imgUrl && <img src={imgUrl} alt="" onLoad={handleImgLoad} />} */}
                 {/* <img src={imgUrl || circleTemp} alt="" /> */}
               </div>
               <div className="info">
@@ -120,10 +136,8 @@ export default function App() {
               <Result data={data["1-2"]} yr="1-2" labs={labs} />
               {/* <div className="download-box"> */}
               <GoCloudDownload
-                fill="green"
-                id="download"
                 // fill="red"
-                style={{ color: "red" }}
+                id="download"
                 onClick={() => {
                   handleDownload(data);
                 }}
@@ -136,7 +150,7 @@ export default function App() {
         </div>
       )}
 
-      {updateBox && <UpdateBox />}
+      {UpdateName && <UpdateName />}
       {/* <LockBox /> */}
     </>
   );
@@ -232,5 +246,6 @@ let mydata = {
       },
     },
   },
+  photo: "dummyText",
   _id: "21U41A0546",
 };

@@ -9,7 +9,9 @@ export default function Navbar({ toggleSidePanel }) {
     <nav>
       <div className="left-bar">
         {/* {<FaBars onClick={toggleSidePanel} />} */}
-        {validRegId && <FaBars onClick={toggleSidePanel} />}
+        {validRegId && (
+          <FaBars className="menu-icon" onClick={toggleSidePanel} />
+        )}
         <h1>Surya</h1>
       </div>
       <form onSubmit={submitHandle}>

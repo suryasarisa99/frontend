@@ -16,14 +16,14 @@ function RegisterProvider({ children }) {
   let [regTerm, setRegTerm] = useState("");
   let [data, setData] = useState({});
   let [sidePannel, setSidePannel] = useState(false);
-  let [updateBox, setUpdateBox] = useState(false);
+  let [UpdateName, setUpdateBox] = useState(false);
   let [lockBox, setLockBox] = useState(false);
   let [isLocked, setIsLocked] = useState(false);
   let [tempId, setTempId] = useState("");
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
-  let [server, setServer] = useState("https://get-std-res.vercel.app");
-  // let [server, setServer] = useState("http://localhost:4000");
+  // let [server, setServer] = useState("https://get-std-res.vercel.app");
+  let [server, setServer] = useState("http://localhost:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
@@ -34,6 +34,7 @@ function RegisterProvider({ children }) {
   let [imgLoaded, setImgLoaded] = useState(false);
   let [startPage, setStartPage] = useState(true);
   let [colorTheme, setColorTheme] = useState(false);
+  let [loadedThemes, setLoadedThemes] = useState([]);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -86,11 +87,6 @@ function RegisterProvider({ children }) {
     let branch = id.substring(6, 8);
     if (id.length === 3) id = "0" + id;
     return regId.substring(0, 10 - id.length) + id;
-  }
-  function toogleServer() {
-    if (server === "backend-39in.vercel.app")
-      setServer("get-std-res.vercel.app");
-    else setServer("backend-39in.vercel.app");
   }
   function onUpdateHandle(e) {
     setUpdateBox(true);
@@ -148,8 +144,10 @@ function RegisterProvider({ children }) {
         } else {
           setImgUrl(false);
           setStartPage(false);
-          if (res.data._id === "21U41A0546") setLogoColor(colorTheme);
-          else if (res.data.photo) getImg(res.data.photo);
+          if (res.data._id === "21U41A0546") {
+            setLogoColor(colorTheme);
+            res.data.photo = "dummyText";
+          } else if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           setData(res.data);
           setIsLocked(false);
@@ -325,6 +323,8 @@ function RegisterProvider({ children }) {
       case "amoled-blue":
         setImgUrl(blue);
         break;
+      default:
+        setImgUrl(red);
     }
   }
   async function handleDownload(obj) {
@@ -356,7 +356,7 @@ function RegisterProvider({ children }) {
         updateName,
         sidePannel,
         setSidePannel,
-        updateBox,
+        UpdateName,
         setUpdateBox,
         lockBox,
         openLockBox,
@@ -398,6 +398,8 @@ function RegisterProvider({ children }) {
         startPage,
         handleDownload,
         setColorTheme,
+        setLoadedThemes,
+        loadedThemes,
       }}
     >
       {children}

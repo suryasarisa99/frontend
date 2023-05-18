@@ -55,8 +55,11 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: var(--text-color);
   font-family: sans-serif;
+}
+
+body {
+  color: var(--text-color);
 }
 
 .register {
@@ -168,6 +171,14 @@ input:focus {
 }
 .update-box .wrong-pass {
   color: red;
+}
+.update-box .secondary {
+  align-self: start;
+  background-color: grey;
+}
+.update-box .buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .update-box .close-btn {
   top: 25px;
@@ -285,6 +296,9 @@ nav .invalid-reg-id {
   border: 1px solid red;
   color: red;
 }
+nav .menu-icon {
+  color: var(--acent-color);
+}
 
 div .info-head,
 .error-head,
@@ -368,6 +382,7 @@ div .info-head,
   border: none;
   font-size: 20px;
   background-color: inherit;
+  color: var(--text-color);
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid grey;
@@ -408,6 +423,14 @@ div .info-head,
 }
 .lock-box .wrong-pass {
   color: red;
+}
+.lock-box .secondary {
+  align-self: start;
+  background-color: grey;
+}
+.lock-box .buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .lock-box label {
   color: white;
@@ -450,6 +473,14 @@ div .info-head,
 .update-password .wrong-pass {
   color: red;
 }
+.update-password .secondary {
+  align-self: start;
+  background-color: grey;
+}
+.update-password .buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .update-password label {
   color: white;
   font-size: 20px;
@@ -490,6 +521,14 @@ div .info-head,
 }
 .unlock-box .wrong-pass {
   color: red;
+}
+.unlock-box .secondary {
+  align-self: start;
+  background-color: grey;
+}
+.unlock-box .buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .unlock-box label {
   color: white;
@@ -535,6 +574,14 @@ div .info-head,
 }
 .update-photo .wrong-pass {
   color: red;
+}
+.update-photo .secondary {
+  align-self: start;
+  background-color: grey;
+}
+.update-photo .buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 600px) {
@@ -624,9 +671,8 @@ div .info-head,
 }
 .img-box .img-border img {
   width: 220px;
-  height: 220px;
 }
-.img-box img {
+.img-box .profile-photo {
   width: 280px;
   height: 320px;
   -o-object-fit: cover;
@@ -697,7 +743,7 @@ div .info-head,
 
 #download {
   font-size: 25px;
-  color: green;
+  color: var(--acent-color);
   position: fixed;
   top: 100px;
   left: 40px;
