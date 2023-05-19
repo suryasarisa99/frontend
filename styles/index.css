@@ -787,8 +787,10 @@ div .info-head,
 
 .custom-theme-wrapper .custom-themes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 65px);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, 60px);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 8px;
   justify-content: center;
 }
 .custom-theme-wrapper .custom-themes .theme-layout {
