@@ -144,22 +144,30 @@ export default function Theme({}) {
           })}
         </div>
       </div>
-      <form action="" onSubmit={saveCustomTheme}>
-        Acent Color <input type="color" onChange={handleAcentColor} />
-        <br />
-        Main Color <input type="color" onChange={handleMainColor} />
-        <br />
-        Secondar Color
-        <input type="color" onChange={handleSecondaryColor} />
-        <br />
-        Title Color
-        <input type="color" onChange={handleBrandColor} />
-        <br />
-        Text Color
-        <input type="color" onChange={handleTextColor} />
-        <br />
-        theme Name
-        <input type="text" name="theme-name" />
+      <form action="" onSubmit={saveCustomTheme} className="custom-theme-maker">
+        <div className="field">
+          <p>Acent Color</p> <input type="color" onChange={handleAcentColor} />
+        </div>
+        <div className="field">
+          <p>Main Color </p>
+          <input type="color" onChange={handleMainColor} />
+        </div>
+        <div className="field">
+          <p>Secondar Color</p>
+          <input type="color" onChange={handleSecondaryColor} />
+        </div>
+        <div className="field">
+          <p> Title Color</p>
+          <input type="color" onChange={handleBrandColor} />
+        </div>
+        <div className="field">
+          <p>Text Color</p>
+          <input type="color" onChange={handleTextColor} />
+        </div>
+        <div className="field">
+          <p>theme Name</p>
+          <input type="text" name="theme-name" />
+        </div>
         <button>Save Custom Theme</button>
       </form>
       {/* <input type="color" ref={inputRef} onChange={handleColor} /> */}

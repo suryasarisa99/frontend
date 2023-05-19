@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.css";
+import "../styles/index.scss";
 import { useContext, useState, useEffect } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
