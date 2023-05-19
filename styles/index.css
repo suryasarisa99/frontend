@@ -379,6 +379,7 @@ div .info-head,
   border-right: 1px solid var(--acent-color);
   z-index: 10;
 }
+.side-pannel a,
 .side-pannel button {
   border: none;
   font-size: 20px;
@@ -387,6 +388,7 @@ div .info-head,
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid grey;
+  text-decoration: none;
 }
 
 .lock-box {

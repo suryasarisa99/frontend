@@ -72,6 +72,9 @@ export default function SidePannel({}) {
         <button onClick={(e) => closeSidePannel(e, openThemePage)}>
           Themes
         </button>
+        <a href="https://student546.vercel.app" target="_blank">
+          other site
+        </a>
       </div>
     </>
     // document.getElementById("overlay")
