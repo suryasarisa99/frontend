@@ -40,6 +40,7 @@ export default function App() {
     setInvalidRegId,
     setValidRegId,
     openUnlockBox,
+    openUpdateName,
     setImgUrl,
     getImg,
     setData,
@@ -70,7 +71,7 @@ export default function App() {
   };
 
   let updateBtn = (
-    <button className="update-btn" onClick={onUpdateHandle}>
+    <button className="update-btn" onClick={openUpdateName}>
       update
     </button>
   );

@@ -4,7 +4,8 @@ import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 
 export default function UpdateName() {
-  let { updateName, setUpdateName, name } = useContext(RegisterContext);
+  let { updateName, setUpdateName, handleUpdateName, name } =
+    useContext(RegisterContext);
   let [fname, setFname] = useState(name?.fname || "");
   let [sname, setSname] = useState(name?.sname || "");
   let [lname, setLname] = useState(name?.lname || "");
@@ -28,7 +29,7 @@ export default function UpdateName() {
 
   return ReactDOM.createPortal(
     <>
-      <form action="" className="update-box" onSubmit={updateName}>
+      <form action="" className="update-box" onSubmit={handleUpdateName}>
         <GiCrossedSwords className="close-btn" onClick={onClose} />
         <input
           type="text"
