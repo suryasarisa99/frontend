@@ -4,7 +4,8 @@ import RegisterContext from "../../context/registerId";
 
 export default function SidePannel({}) {
   let {
-    onUpdateHandle,
+    // onUpdateHandle,
+    openUpdateName,
     updateName,
     setSidePannel,
     lockBox,
@@ -31,14 +32,17 @@ export default function SidePannel({}) {
     //   }
     // });
     return () => {
-      overlay.removeEventListener("click", onOverlayClick);
-      sidepannel.removeEventListener("click", onSidePannelClick);
+      // overlay.removeEventListener("click", onOverlayClick);
+      // sidepannel.removeEventListener("click", onSidePannelClick);
     };
   }, []);
 
   function closeSidePannel(e, cb) {
     setSidePannel(false);
     cb(cb(e));
+  }
+  function sample() {
+    console.log("test  -1");
   }
 
   function onSidePannelClick(e) {
@@ -50,7 +54,7 @@ export default function SidePannel({}) {
   return (
     <>
       <div className="side-pannel">
-        <button onClick={(e) => closeSidePannel(e, onUpdateHandle)}>
+        <button onClick={(e) => closeSidePannel(e, openUpdateName)}>
           {name?.fname ? "Update Name" : "Add Name"}
         </button>
         {privateAccount ? (

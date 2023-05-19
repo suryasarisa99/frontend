@@ -4,7 +4,7 @@ import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 
 export default function UpdateName() {
-  let { updateName, setUpdateBox, name } = useContext(RegisterContext);
+  let { updateName, setUpdateName, name } = useContext(RegisterContext);
   let [fname, setFname] = useState(name?.fname || "");
   let [sname, setSname] = useState(name?.sname || "");
   let [lname, setLname] = useState(name?.lname || "");
@@ -17,7 +17,7 @@ export default function UpdateName() {
   }, []);
 
   let onClose = () => {
-    setUpdateBox(false);
+    setUpdateName(false);
     window.history.pushState(
       null,
       "",

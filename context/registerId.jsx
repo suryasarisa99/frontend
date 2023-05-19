@@ -16,7 +16,7 @@ function RegisterProvider({ children }) {
   let [regTerm, setRegTerm] = useState("");
   let [data, setData] = useState({});
   let [sidePannel, setSidePannel] = useState(false);
-  let [UpdateName, setUpdateBox] = useState(false);
+  let [updateName, setUpdateName] = useState(false);
   let [lockBox, setLockBox] = useState(false);
   let [isLocked, setIsLocked] = useState(false);
   let [tempId, setTempId] = useState("");
@@ -42,6 +42,7 @@ function RegisterProvider({ children }) {
       setEmptyRegId(true);
       setValidRegId(false);
     } else {
+      console.log("=================");
       id = makeId(id);
       setTempId(id);
 
@@ -88,8 +89,8 @@ function RegisterProvider({ children }) {
     if (id.length === 3) id = "0" + id;
     return regId.substring(0, 10 - id.length) + id;
   }
-  function onUpdateHandle(e) {
-    setUpdateBox(true);
+  function openUpdateName(e) {
+    setUpdateName(true);
     window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
     // e.stopPropagation();
@@ -228,22 +229,22 @@ function RegisterProvider({ children }) {
 
   // ============== UPDATE NAME  ==============
 
-  function updateName(e) {
+  function handleUpdateName(e) {
     e.preventDefault();
     document.getElementById("overlay").style.display = "none";
-
+    console.log("--checking");
     let fullName = {
       fname: e.target.fname.value,
       sname: e.target.sname.value,
       lname: e.target.lname.value,
     };
     setName(fullName);
-    setUpdateBox(false);
+    setUpdateName(false);
     axios
       .post(`${server}/update/${data._id}`, fullName)
       .then((res) => console.log(res));
   }
-  function onOverlayClick(e) {
+  function closeUpdateName(e) {
     e.stopPropagation();
     setSidePannel(false);
     document.getElementById("overlay").style.display = "none";
@@ -352,17 +353,19 @@ function RegisterProvider({ children }) {
         name,
         setName,
         invalidRegId,
-        onUpdateHandle,
+        // onUpdateHandle,
         updateName,
+        setUpdateName,
+        openUpdateName,
+        handleUpdateName,
+        closeUpdateName,
         sidePannel,
         setSidePannel,
-        UpdateName,
-        setUpdateBox,
         lockBox,
         openLockBox,
         submitLockBox,
         closeLockBox,
-        onOverlayClick,
+        // onOverlayClick,
         isLocked,
         submitUnlockBox,
         closeUnlockBox,
