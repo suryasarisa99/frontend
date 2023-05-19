@@ -673,7 +673,10 @@ div .info-head,
   border: 0;
   outline: none;
   margin-top: 0px;
-  background-color: var(--acent-color);
+  background-color: var(--main-color);
+}
+.img-box .profile-photo {
+  background-color: var(--main-color);
 }
 .img-box .img-border {
   border: 10px solid var(--acent-color);

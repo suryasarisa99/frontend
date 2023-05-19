@@ -109,20 +109,15 @@ export default function App() {
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                {data.photo &&
-                  (imgUrl ? (
-                    <img
-                      src={imgUrl}
-                      alt=""
-                      className="profile-photo"
-                      onLoad={handleImgLoad}
-                      style={{ backgroundColor: "black" }}
-                    />
-                  ) : (
-                    <img className="profile-photo" src={userProffile} />
-                  ))}
-                {/* {imgUrl && <img src={imgUrl} alt="" onLoad={handleImgLoad} />} */}
-                {/* <img src={imgUrl || circleTemp} alt="" /> */}
+                {data.photo && (
+                  <img
+                    src={imgUrl || userProffile}
+                    alt=""
+                    className="profile-photo"
+                    // onLoad={handleImgLoad || userProffile}
+                    // style={{ backgroundColor: "black" }}
+                  />
+                )}
               </div>
               <div className="info">
                 <h1 className="reg-id">

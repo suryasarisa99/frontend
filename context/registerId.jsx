@@ -337,6 +337,7 @@ function RegisterProvider({ children }) {
       Object.entries(obj).map(([key, value]) => {
         document.documentElement.style.setProperty(key, value);
       });
+      setImgUrl(red);
       if (!dontSave) {
         localStorage.setItem("theme", colorIndex);
       }
@@ -353,7 +354,7 @@ function RegisterProvider({ children }) {
 
     const jsonStr = JSON.stringify(obj, null, 2);
     const file = new Blob([jsonStr], { type: "application/json" });
-    saveAs(file, obj._id + ".txt");
+    saveAs(file, obj._id);
   }
   return (
     <RegisterContext.Provider
