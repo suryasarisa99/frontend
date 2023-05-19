@@ -129,6 +129,7 @@ input {
   outline: none;
   padding: 10px 8px;
   font-size: 22px;
+  color: white;
   background-color: rgb(32, 33, 33);
   border-radius: 8px;
 }
