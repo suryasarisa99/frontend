@@ -664,11 +664,18 @@ div .info-head,
 .img-box {
   display: flex;
   justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  margin-top: 0px;
+  background-color: var(--acent-color);
 }
 .img-box .img-border {
   border: 10px solid var(--acent-color);
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 .img-box .img-border img {
   width: 220px;
@@ -679,7 +686,6 @@ div .info-head,
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px auto;
-  margin-bottom: 20px;
 }
 
 .info {
