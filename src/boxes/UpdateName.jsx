@@ -29,7 +29,7 @@ export default function UpdateName() {
   return ReactDOM.createPortal(
     <>
       <form action="" className="update-box" onSubmit={updateName}>
-        <GiCrossedSwords className="close-btn" fill="red" onClick={onClose} />
+        <GiCrossedSwords className="close-btn" onClick={onClose} />
         <input
           type="text"
           placeholder="First Name"

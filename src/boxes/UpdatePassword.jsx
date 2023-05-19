@@ -31,11 +31,7 @@ export default function unLockBox() {
           {wrongPass ? "Entered Wrong Password" : "Change Password: "}
           {/* Change Password */}
         </label>
-        <GiCrossedSwords
-          fill="red"
-          className="close-btn"
-          onClick={closeUpdatePassword}
-        />
+        <GiCrossedSwords className="close-btn" onClick={closeUpdatePassword} />
         <input
           type="password"
           name="oldPass"

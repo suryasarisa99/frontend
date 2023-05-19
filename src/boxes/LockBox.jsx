@@ -18,7 +18,7 @@ export default function LockBox() {
           Set Password
         </label>
         <GiCrossedSwords
-          fill="red"
+          // fill="red"
           className="close-btn"
           onClick={closeLockBox}
         />

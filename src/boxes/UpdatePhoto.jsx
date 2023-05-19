@@ -48,11 +48,7 @@ export default function UpdatePhoto() {
         method="POST"
       >
         <label htmlFor="">Add Photo</label>
-        <GiCrossedSwords
-          fill="red"
-          className="close-btn"
-          onClick={closeUpdatePhoto}
-        />
+        <GiCrossedSwords className="close-btn" onClick={closeUpdatePhoto} />
         <input type="file" name="photo" accept="image/*" onChange={imageLoad} />
         <div className="buttons">
           <button className="secondary" type="button" onClick={removePhoto}>
