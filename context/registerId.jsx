@@ -328,6 +328,20 @@ function RegisterProvider({ children }) {
         setImgUrl(red);
     }
   }
+  function applyCustomThemes(colorIndex, dontSave) {
+    let obj;
+    if (typeof colorIndex === "number") obj = loadedThemes[colorIndex];
+    else obj = colorIndex;
+    console.log(obj);
+    if (obj) {
+      Object.entries(obj).map(([key, value]) => {
+        document.documentElement.style.setProperty(key, value);
+      });
+      if (!dontSave) {
+        localStorage.setItem("theme", colorIndex);
+      }
+    }
+  }
   async function handleDownload(obj) {
     // const response = await fetch(`${server}/download/${id}`);
     // const blob = await response.blob();
@@ -403,6 +417,7 @@ function RegisterProvider({ children }) {
         setColorTheme,
         setLoadedThemes,
         loadedThemes,
+        applyCustomThemes,
       }}
     >
       {children}

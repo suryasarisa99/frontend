@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.css";
+import "../styles/index.scss";
 import { useContext, useState, useEffect } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
@@ -12,7 +12,6 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-import profileTemplate from "./asserts/temp.png";
 import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 // import profileTemplate from "./asserts/profile-template.jpg";
@@ -24,11 +23,9 @@ export default function App() {
     server,
     name,
     setName,
-    onUpdateHandle,
     updateName,
     sidePannel,
     setSidePannel,
-    // UpdateName,
     lockBox,
     isLocked,
     updatePassword,
@@ -36,30 +33,21 @@ export default function App() {
     imgUrl,
     themePage,
     setImgLoaded,
-    imgLoaded,
-    setInvalidRegId,
     setValidRegId,
-    openUnlockBox,
     openUpdateName,
-    setImgUrl,
-    getImg,
     setData,
     setLogoColor,
     handleDownload,
     setColorTheme,
     loadedThemes,
     setLoadedThemes,
+    applyCustomThemes,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
 
     window.addEventListener("focus", handleOnFocus);
-    let color = localStorage.getItem("theme");
     handleLoadThemes();
-    setColorTheme(color);
-    if (color) document.documentElement.classList.add(`${color}-theme`);
-    else setColorTheme("red");
-    setLogoColor(color);
     // setImgUrl(logo);
     setData(mydata);
     setValidRegId(true);
@@ -77,8 +65,20 @@ export default function App() {
   );
 
   function handleLoadThemes() {
+    let color = localStorage.getItem("theme");
     let customThemes = JSON.parse(localStorage.getItem("custom-themes"));
     if (customThemes) setLoadedThemes(customThemes);
+
+    console.log("color-theme: ", color);
+    if (color.length === 1) {
+      applyCustomThemes(customThemes[+color], true);
+      setColorTheme(+color);
+    } else {
+      setColorTheme(color);
+      if (color) document.documentElement.classList.add(`${color}-theme`);
+      else setColorTheme("red");
+      setLogoColor(color);
+    }
   }
 
   function toggleSidePanel(e) {
@@ -101,6 +101,7 @@ export default function App() {
       {updatePassword && <UpdatePassword />}
       {updatePhoto && <UpdatePhoto></UpdatePhoto>}
       {themePage && <Theme />}
+      {updateName && <UpdateName />}
 
       {!themePage && !isLocked && (
         <div className="page">
@@ -151,7 +152,6 @@ export default function App() {
         </div>
       )}
 
-      {updateName && <UpdateName />}
       {/* <LockBox /> */}
     </>
   );

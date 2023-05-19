@@ -9,6 +9,7 @@ export default function Theme({}) {
     startPage,
     data,
     setColorTheme,
+    applyCustomThemes,
   } = useContext(RegisterContext);
   useEffect(() => {
     window.addEventListener("popstate", closeThemePage);
@@ -69,6 +70,7 @@ export default function Theme({}) {
     setLoadedThemes(cpyLoadedThemes);
     localStorage.setItem("custom-themes", JSON.stringify(cpyLoadedThemes));
   }
+
   return (
     <>
       <div className="theme-page">
@@ -122,24 +124,38 @@ export default function Theme({}) {
         <div className="custom-themes">
           {loadedThemes?.map((theme, index) => {
             return (
-              <button
+              <div
+                className="theme-layout"
                 key={index}
                 value={index}
-                onClick={(e) => {
-                  Object.entries(loadedThemes[e.target.value]).map(
-                    ([key, value]) => {
-                      let root = document.documentElement;
-                      root.style.setProperty(key, value);
-                    }
-                  );
-                  localStorage.setItem(
-                    "theme",
-                    loadedThemes[e.target.value].name
-                  );
-                }}
+                // style={{ backgroundColor: loadedThemes[index]["--main-color"] }}
+                onClick={() => applyCustomThemes(index)}
               >
-                {theme.name}
-              </button>
+                <div
+                  className="theme-layout-head"
+                  style={{
+                    backgroundColor: loadedThemes[index]["--secondary-color"],
+                    borderBottom: `1px solid ${loadedThemes[index]["--acent-color"]}`,
+                  }}
+                >
+                  <span
+                    className="title"
+                    style={{
+                      color: loadedThemes[index]["--acent-color"],
+                    }}
+                  >
+                    surya
+                  </span>
+                </div>
+                <div
+                  className="theme-layout-body"
+                  style={{
+                    backgroundColor: loadedThemes[index]["--main-color"],
+                  }}
+                ></div>
+
+                {/* {theme.name || index} */}
+              </div>
             );
           })}
         </div>
