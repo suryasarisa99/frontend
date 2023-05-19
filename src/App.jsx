@@ -70,7 +70,7 @@ export default function App() {
     if (customThemes) setLoadedThemes(customThemes);
 
     console.log("color-theme: ", color);
-    if (color.length === 1) {
+    if (color?.length === 1) {
       applyCustomThemes(customThemes[+color], true);
       setColorTheme(+color);
     } else {

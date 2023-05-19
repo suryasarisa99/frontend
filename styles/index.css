@@ -739,7 +739,10 @@ div .info-head,
 
 .custom-theme-maker {
   margin-top: 40px;
-  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .custom-theme-maker .field {
   display: flex;
@@ -762,6 +765,8 @@ div .info-head,
   outline: none;
   border-radius: 8px;
   border: none;
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .download-box {
@@ -780,25 +785,26 @@ div .info-head,
   color: red;
 }
 
-.custom-themes {
-  display: flex;
-  flex-wrap: wrap;
+.custom-theme-wrapper .custom-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 65px);
   gap: 10px;
+  justify-content: center;
 }
-.custom-themes .theme-layout {
+.custom-theme-wrapper .custom-themes .theme-layout {
   border: 1px solid rgb(39, 39, 39);
 }
-.custom-themes .theme-layout .theme-layout-head {
+.custom-theme-wrapper .custom-themes .theme-layout .theme-layout-head {
   height: 25px;
   width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.custom-themes .theme-layout .theme-layout-head .title {
+.custom-theme-wrapper .custom-themes .theme-layout .theme-layout-head .title {
   font-size: 10px;
 }
-.custom-themes .theme-layout .theme-layout-body {
+.custom-theme-wrapper .custom-themes .theme-layout .theme-layout-body {
   width: 60px;
   height: 40px;
 }/*# sourceMappingURL=index.css.map */

@@ -53,7 +53,6 @@ export default function Theme({}) {
     root.style.setProperty("--text-color", e.target.value);
   }
   function saveCustomTheme(e) {
-    e.preventDefault();
     let obj = {
       "--main-color": getComputedStyle(root).getPropertyValue("--main-color"),
       "--acent-color": getComputedStyle(root).getPropertyValue("--acent-color"),
@@ -61,7 +60,7 @@ export default function Theme({}) {
         getComputedStyle(root).getPropertyValue("--secondary-color"),
       "--text-color": getComputedStyle(root).getPropertyValue("--text-color"),
       "--brand-color": getComputedStyle(root).getPropertyValue("--brand-color"),
-      name: e.target["theme-name"].value,
+      // name: e.target["theme-name"].value,
     };
     console.log(obj);
     console.log(loadedThemes);
@@ -121,46 +120,48 @@ export default function Theme({}) {
           ></div>
         </div>
 
-        <div className="custom-themes">
-          {loadedThemes?.map((theme, index) => {
-            return (
-              <div
-                className="theme-layout"
-                key={index}
-                value={index}
-                // style={{ backgroundColor: loadedThemes[index]["--main-color"] }}
-                onClick={() => applyCustomThemes(index)}
-              >
+        <div className="custom-theme-wrapper">
+          <div className="custom-themes">
+            {loadedThemes?.map((theme, index) => {
+              return (
                 <div
-                  className="theme-layout-head"
-                  style={{
-                    backgroundColor: loadedThemes[index]["--secondary-color"],
-                    borderBottom: `1px solid ${loadedThemes[index]["--acent-color"]}`,
-                  }}
+                  className="theme-layout"
+                  key={index}
+                  value={index}
+                  // style={{ backgroundColor: loadedThemes[index]["--main-color"] }}
+                  onClick={() => applyCustomThemes(index)}
                 >
-                  <span
-                    className="title"
+                  <div
+                    className="theme-layout-head"
                     style={{
-                      color: loadedThemes[index]["--acent-color"],
+                      backgroundColor: loadedThemes[index]["--secondary-color"],
+                      borderBottom: `1px solid ${loadedThemes[index]["--acent-color"]}`,
                     }}
                   >
-                    surya
-                  </span>
-                </div>
-                <div
-                  className="theme-layout-body"
-                  style={{
-                    backgroundColor: loadedThemes[index]["--main-color"],
-                  }}
-                ></div>
+                    <span
+                      className="title"
+                      style={{
+                        color: loadedThemes[index]["--acent-color"],
+                      }}
+                    >
+                      surya
+                    </span>
+                  </div>
+                  <div
+                    className="theme-layout-body"
+                    style={{
+                      backgroundColor: loadedThemes[index]["--main-color"],
+                    }}
+                  ></div>
 
-                {/* {theme.name || index} */}
-              </div>
-            );
-          })}
+                  {/* {theme.name || index} */}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-      <form action="" onSubmit={saveCustomTheme} className="custom-theme-maker">
+      <div action="" className="custom-theme-maker">
         <div className="field">
           <p>Acent Color</p> <input type="color" onChange={handleAcentColor} />
         </div>
@@ -180,12 +181,12 @@ export default function Theme({}) {
           <p>Text Color</p>
           <input type="color" onChange={handleTextColor} />
         </div>
-        <div className="field">
+        {/* <div className="field">
           <p>theme Name</p>
           <input type="text" name="theme-name" />
-        </div>
-        <button>Save Custom Theme</button>
-      </form>
+        </div> */}
+        <button onClick={saveCustomTheme}>Save Custom Theme</button>
+      </div>
       {/* <input type="color" ref={inputRef} onChange={handleColor} /> */}
     </>
   );
