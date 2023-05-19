@@ -737,6 +737,30 @@ div .info-head,
   background-color: rgb(81, 9, 52);
 }
 
+.custom-theme-maker {
+  margin-top: 40px;
+}
+.custom-theme-maker .field {
+  display: flex;
+  margin-bottom: 5px;
+}
+.custom-theme-maker .field p {
+  width: 300px;
+}
+.custom-theme-maker .field input[type=text] {
+  width: 200px;
+}
+.custom-theme-maker .field input[type=color] {
+  width: 150px;
+}
+.custom-theme-maker button {
+  padding: 8px 15px;
+  background-color: var(--acent-color);
+  outline: none;
+  border-radius: 8px;
+  border: none;
+}
+
 .download-box {
   display: flex;
   justify-content: end;
