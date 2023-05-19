@@ -1,6 +1,6 @@
 :root {
   --acent-color: red;
-  --main-color: rgb(23, 0, 0);
+  --main-color: rgb(0, 0, 0);
   --secondary-color: rgb(0, 0, 0);
   --text-color: rgb(255, 255, 255);
   --brand-color: var(--acent-color);
@@ -778,4 +778,27 @@ div .info-head,
 }
 #download .icon {
   color: red;
+}
+
+.custom-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.custom-themes .theme-layout {
+  border: 1px solid rgb(39, 39, 39);
+}
+.custom-themes .theme-layout .theme-layout-head {
+  height: 25px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-themes .theme-layout .theme-layout-head .title {
+  font-size: 10px;
+}
+.custom-themes .theme-layout .theme-layout-body {
+  width: 60px;
+  height: 40px;
 }/*# sourceMappingURL=index.css.map */
