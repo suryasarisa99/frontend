@@ -211,7 +211,7 @@ let mydata = {
         internals: "26",
       },
       "SOFTWARE ENGINEERING": {
-        grade: "F",
+        grade: "C",
         internals: "29",
       },
       "MATHEMATICAL FOUNDATIONS OF COMPUTER SCI": {
