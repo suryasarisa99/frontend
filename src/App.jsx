@@ -109,7 +109,6 @@ export default function App() {
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                <h1>Testing</h1>
                 {data.photo && (
                   <img
                     src={imgUrl || userProffile}
