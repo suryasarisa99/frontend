@@ -165,19 +165,19 @@ let mydata = {
         internals: "26",
       },
       "APPLIED CHEMISTRY": {
-        grade: "F",
+        grade: "A+",
         internals: "24",
       },
       "COMPUTER ORGANIZATION": {
-        grade: "D",
+        grade: "A+",
         internals: "26",
       },
       "DATA STRUCTURES": {
-        grade: "A",
+        grade: "A+",
         internals: "24",
       },
       "PYTHON PROGRAMMING": {
-        grade: "A",
+        grade: "A+",
         internals: "27",
       },
     },
