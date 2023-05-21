@@ -149,7 +149,7 @@ export default function App() {
 
 let mydata = {
   name: {
-    fname: "Jaya Suryaa",
+    fname: "Jaya",
     sname: "Surya",
     lname: "Sarisa",
   },
