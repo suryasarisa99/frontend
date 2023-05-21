@@ -194,23 +194,23 @@ let mydata = {
   "2-1": {
     subjects: {
       "MATHEMATICS-III": {
-        grade: "D",
+        grade: "AA+",
         internals: "27",
       },
       "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
-        grade: "A",
+        grade: "A+",
         internals: "29",
       },
       "OPERATING SYSTEMS": {
-        grade: "C",
+        grade: "A+",
         internals: "26",
       },
       "SOFTWARE ENGINEERING": {
-        grade: "C",
+        grade: "A+",
         internals: "29",
       },
       "MATHEMATICAL FOUNDATIONS OF COMPUTER SCI": {
-        grade: "D",
+        grade: "A+",
         internals: "29",
       },
     },
