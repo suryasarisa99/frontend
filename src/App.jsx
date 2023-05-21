@@ -17,7 +17,7 @@ import Theme from "./pages/Theme";
 import userProffile from "./asserts/user_profile.png";
 // import profileTemplate from "./asserts/profile-template.jpg";
 export default function App() {
-  //let [labs, setLabs] = useState(true);
+  let [labs, setLabs] = useState(true);
   let {
     validRegId,
     data,
