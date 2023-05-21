@@ -12,7 +12,7 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-import circleTemp from "./asserts/circle.png";
+//import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 import userProffile from "./asserts/user_profile.png";
 // import profileTemplate from "./asserts/profile-template.jpg";
@@ -165,11 +165,11 @@ let mydata = {
         internals: "26",
       },
       "APPLIED CHEMISTRY": {
-        grade: "F",
+        grade: "A+",
         internals: "24",
       },
       "COMPUTER ORGANIZATION": {
-        grade: "D",
+        grade: "A+",
         internals: "26",
       },
       "DATA STRUCTURES": {
