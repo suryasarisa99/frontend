@@ -172,7 +172,7 @@ let mydata = {
         internals: "24",
       },
       "PYTHON PROGRAMMING": {
-        grade: "A",
+        grade: "A+",
         internals: "27",
       },
     },
