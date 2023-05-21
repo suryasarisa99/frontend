@@ -11,6 +11,12 @@ export default function UpdateName() {
   let [lname, setLname] = useState(name?.lname || "");
 
   useEffect(() => {
+    document.querySelector(".update-box input").focus();
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        onClose();
+      }
+    });
     window.addEventListener("popstate", onClose);
     return () => {
       window.removeEventListener("popstate", onClose);

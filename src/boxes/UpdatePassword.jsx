@@ -15,6 +15,7 @@ export default function unLockBox() {
     closeUpdatePassword,
   } = useContext(RegisterContext);
   useEffect(() => {
+    document.querySelector(".update-password input").focus();
     window.addEventListener("popstate", closeUpdatePassword);
     return () => {
       window.removeEventListener("popstate", closeUpdatePassword);

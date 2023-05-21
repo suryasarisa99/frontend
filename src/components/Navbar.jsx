@@ -19,6 +19,7 @@ export default function Navbar({ toggleSidePanel }) {
         <input
           className={invalidRegId ? "invalid-reg-id" : ""}
           onChange={onChange}
+          autoComplete="username"
           value={regTerm}
           placeholder="Register Id"
           autoFocus

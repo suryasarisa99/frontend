@@ -41,15 +41,26 @@ export default function App() {
     handleDownload,
     setColorTheme,
     loadedThemes,
+    openLockBox,
+    closeLockBox,
+    openUpdatePhoto,
+    closeUpdatePhoto,
+    closeUpdateName,
+    openThemePage,
+    closeThemePage,
     setLoadedThemes,
     applyCustomThemes,
   } = useContext(RegisterContext);
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
-
+    window.addEventListener("keydown", (e) => {
+      if (e.altKey && e.key === "n") openUpdateName();
+      if (e.altKey && e.key === "l") openLockBox();
+      if (e.altKey && e.key === "p") openUpdatePhoto();
+      if (e.altKey && e.key === "x") openThemePage();
+    });
     window.addEventListener("focus", handleOnFocus);
     handleLoadThemes();
-    // setImgUrl(logo);
     setData(mydata);
     setValidRegId(true);
     setName(mydata.name);
@@ -109,7 +120,6 @@ export default function App() {
           {validRegId && !isLocked ? (
             <div className="data2">
               <div className="img-box">
-                <h1>Testing</h1>
                 {data.photo && (
                   <img
                     src={imgUrl || userProffile}

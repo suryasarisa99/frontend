@@ -6,6 +6,12 @@ export default function LockBox() {
   let { onOverlayClick, closeLockBox, submitLockBox } =
     useContext(RegisterContext);
   useEffect(() => {
+    document.querySelector(".lock-box input").focus();
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        closeLockBox();
+      }
+    });
     window.addEventListener("popstate", closeLockBox);
     return () => {
       window.removeEventListener("popstate", closeLockBox);

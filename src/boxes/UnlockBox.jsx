@@ -14,6 +14,12 @@ export default function unLockBox() {
     onPasswordInput,
   } = useContext(RegisterContext);
   useEffect(() => {
+    document.querySelector(".unlock-box input").focus();
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        closeUnlockBox();
+      }
+    });
     window.addEventListener("popstate", closeUnlockBox);
     return () => {
       window.removeEventListener("popstate", closeUnlockBox);

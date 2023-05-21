@@ -13,6 +13,11 @@ export default function Theme({}) {
   } = useContext(RegisterContext);
   useEffect(() => {
     window.addEventListener("popstate", closeThemePage);
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        closeThemePage();
+      }
+    });
     return () => {
       window.removeEventListener("popstate", closeThemePage);
     };

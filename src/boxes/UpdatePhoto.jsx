@@ -14,7 +14,13 @@ export default function UpdatePhoto() {
     data,
   } = useContext(RegisterContext);
   useEffect(() => {
+    document.querySelector(".update-photo input").focus();
     window.addEventListener("popstate", closeUpdatePhoto);
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape") {
+        closeUpdatePhoto();
+      }
+    });
     return () => {
       window.removeEventListener("popstate", closeUpdatePhoto);
     };
