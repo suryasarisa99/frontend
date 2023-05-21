@@ -164,11 +164,11 @@ let mydata = {
         internals: "24",
       },
       "COMPUTER ORGANIZATION": {
-        grade: "D",
+        grade: "A+",
         internals: "26",
       },
       "DATA STRUCTURES": {
-        grade: "A",
+        grade: "A+",
         internals: "24",
       },
       "PYTHON PROGRAMMING": {
