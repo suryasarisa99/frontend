@@ -12,12 +12,11 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 import userProffile from "./asserts/user_profile.png";
 // import profileTemplate from "./asserts/profile-template.jpg";
 export default function App() {
-  let [labs, setLabs] = useState(true);
+  //let [labs, setLabs] = useState(true);
   let {
     validRegId,
     data,
@@ -40,7 +39,6 @@ export default function App() {
     setLogoColor,
     handleDownload,
     setColorTheme,
-    loadedThemes,
     setLoadedThemes,
     applyCustomThemes,
   } = useContext(RegisterContext);
