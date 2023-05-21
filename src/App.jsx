@@ -194,7 +194,7 @@ let mydata = {
   "2-1": {
     subjects: {
       "MATHEMATICS-III": {
-        grade: "AA+",
+        grade: "A+",
         internals: "27",
       },
       "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
