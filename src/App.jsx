@@ -40,7 +40,6 @@ export default function App() {
     setLogoColor,
     handleDownload,
     setColorTheme,
-    loadedThemes,
     setLoadedThemes,
     applyCustomThemes,
   } = useContext(RegisterContext);
@@ -56,7 +55,7 @@ export default function App() {
   }, []);
 
   let handleOnFocus = () => {
-    axios.get(`${server}/start`).then((res) => console.log("Focused"));
+    axios.get(`${server}/start`).then((_) => console.log("Focused"));
   };
 
   let updateBtn = (
@@ -87,10 +86,6 @@ export default function App() {
     e.stopPropagation();
 
     // document.getElementById("overlay").style.display = "block";
-  }
-  function handleImgLoad() {
-    console.log("image loaded");
-    setImgLoaded(true);
   }
 
   return (
@@ -165,7 +160,7 @@ let mydata = {
         internals: "26",
       },
       "APPLIED CHEMISTRY": {
-        grade: "F",
+        grade: "A+",
         internals: "24",
       },
       "COMPUTER ORGANIZATION": {
