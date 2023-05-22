@@ -658,7 +658,7 @@ div .info-head,
   width: 280px;
   height: 320px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   margin: 0px auto;
 }
 
@@ -731,11 +731,11 @@ div .info-head,
 .custom-theme-maker .field p {
   width: 200px;
 }
-.custom-theme-maker .field input[type="text"] {
+.custom-theme-maker .field input[type=text] {
   width: 200px;
   height: 30px;
 }
-.custom-theme-maker .field input[type="color"] {
+.custom-theme-maker .field input[type=color] {
   width: 150px;
   height: 30px;
 }
@@ -769,7 +769,7 @@ div .info-head,
   display: grid;
   grid-template-columns: repeat(auto-fill, 62px);
   -moz-column-gap: 15px;
-  column-gap: 15px;
+       column-gap: 15px;
   row-gap: 8px;
   justify-content: center;
 }
@@ -789,4 +789,4 @@ div .info-head,
 .custom-theme-wrapper .custom-themes .theme-layout .theme-layout-body {
   width: 60px;
   height: 40px;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
