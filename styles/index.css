@@ -59,7 +59,6 @@ body {
   height: 100%;
 }
 
-a,
 button,
 li {
   background-color: var(--acent-color);
@@ -614,21 +613,21 @@ div .info-head,
   }
 }
 @media (max-width: 430px) {
-  .data .data-head {
+  .data-has-internals .data-head {
     gap: 0;
   }
-  .data .data-head .cell {
+  .data-has-internals .data-head .cell {
     width: 48px;
     font-size: 12px;
     overflow-x: hidden;
   }
-  .data .data-head .cell:first-child {
+  .data-has-internals .data-head .cell:first-child {
     font-size: 16px;
   }
-  .data .data-body .row {
+  .data-has-internals .data-body .row {
     gap: 0;
   }
-  .data .data-body .row .cell {
+  .data-has-internals .data-body .row .cell {
     width: 45px;
   }
 }
