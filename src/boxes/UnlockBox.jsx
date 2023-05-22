@@ -2,17 +2,25 @@ import { useEffect, useContext } from "react";
 import RegisterContext from "../../context/registerId";
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
-
+import axios from "axios";
 export default function unLockBox() {
   let {
     onOverlayClick,
-    closeUnlockBox,
-    submitUnlockBox,
     wrongPass,
     passTerm,
     setPassTerm,
     onPasswordInput,
+    submitUnlockBox,
+    closeUnlockBox,
+    tempId,
+    server,
+    setImgUrl,
+    setWrongPass,
+    setName,
+    setValidRegId,
+    setPrivateAccount,
   } = useContext(RegisterContext);
+
   useEffect(() => {
     document.querySelector(".unlock-box input").focus();
     window.addEventListener("keydown", (e) => {
@@ -25,6 +33,7 @@ export default function unLockBox() {
       window.removeEventListener("popstate", closeUnlockBox);
     };
   }, []);
+
   return ReactDOM.createPortal(
     <>
       <form className="unlock-box" onSubmit={submitUnlockBox}>

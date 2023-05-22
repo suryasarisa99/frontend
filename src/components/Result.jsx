@@ -1,8 +1,7 @@
 import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 
-export default function Result({ data, yr, labs }) {
-  let { server } = useContext(RegisterContext);
+export default function Result({ data, yr }) {
   if (!data) return null;
 
   return (
@@ -34,7 +33,7 @@ export default function Result({ data, yr, labs }) {
           ))}
         </div>
       </div>
-      {labs && (
+      {
         <div className="data">
           <div>
             <div className="data-head">
@@ -53,7 +52,7 @@ export default function Result({ data, yr, labs }) {
             ))}
           </div>
         </div>
-      )}
+      }
     </div>
   );
 }

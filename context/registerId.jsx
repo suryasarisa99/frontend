@@ -126,7 +126,6 @@ function RegisterProvider({ children }) {
     document.getElementById("overlay").style.display = "block";
   }
   //================= UNLOck Box ==========================
-
   function submitUnlockBox(e) {
     e.preventDefault();
     console.log(tempId);
@@ -229,21 +228,6 @@ function RegisterProvider({ children }) {
 
   // ============== UPDATE NAME  ==============
 
-  function handleUpdateName(e) {
-    e.preventDefault();
-    document.getElementById("overlay").style.display = "none";
-    console.log("--checking");
-    let fullName = {
-      fname: e.target.fname.value,
-      sname: e.target.sname.value,
-      lname: e.target.lname.value,
-    };
-    setName(fullName);
-    setUpdateName(false);
-    axios
-      .post(`${server}/update/${data._id}`, fullName)
-      .then((res) => console.log(res));
-  }
   function closeUpdateName(e) {
     e.stopPropagation();
     setSidePannel(false);
@@ -368,11 +352,11 @@ function RegisterProvider({ children }) {
         name,
         setName,
         invalidRegId,
-        // onUpdateHandle,
+
         updateName,
         setUpdateName,
         openUpdateName,
-        handleUpdateName,
+        // handleUpdateName,
         closeUpdateName,
         sidePannel,
         setSidePannel,

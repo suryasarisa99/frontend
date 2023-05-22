@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.css";
+import "../styles/index.scss";
 import { useContext, useState, useEffect } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
@@ -12,12 +12,9 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-import circleTemp from "./asserts/circle.png";
 import Theme from "./pages/Theme";
 import userProffile from "./asserts/user_profile.png";
-// import profileTemplate from "./asserts/profile-template.jpg";
 export default function App() {
-  let [labs, setLabs] = useState(true);
   let {
     validRegId,
     data,
@@ -40,14 +37,9 @@ export default function App() {
     setLogoColor,
     handleDownload,
     setColorTheme,
-    loadedThemes,
     openLockBox,
-    closeLockBox,
     openUpdatePhoto,
-    closeUpdatePhoto,
-    closeUpdateName,
     openThemePage,
-    closeThemePage,
     setLoadedThemes,
     applyCustomThemes,
   } = useContext(RegisterContext);
@@ -125,8 +117,6 @@ export default function App() {
                     src={imgUrl || userProffile}
                     alt=""
                     className="profile-photo"
-                    // onLoad={handleImgLoad || userProffile}
-                    // style={{ backgroundColor: "black" }}
                   />
                 )}
               </div>
@@ -140,25 +130,20 @@ export default function App() {
                 <h1 className="reg-id">Register No: {data._id}</h1>
               </div>
               <div className="info"></div>
-              <Result data={data["2-1"]} yr={"2-1"} labs={labs} />
-              <Result data={data["1-2"]} yr="1-2" labs={labs} />
-              {/* <div className="download-box"> */}
+              <Result data={data["2-1"]} yr={"2-1"} />
+              <Result data={data["1-2"]} yr="1-2" />
               <GoCloudDownload
-                // fill="red"
                 id="download"
                 onClick={() => {
                   handleDownload(data);
                 }}
               />
-              {/* </div> */}
             </div>
           ) : (
             <StartPage />
           )}
         </div>
       )}
-
-      {/* <LockBox /> */}
     </>
   );
 }

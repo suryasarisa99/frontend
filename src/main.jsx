@@ -4,7 +4,7 @@ import App from "./App";
 import { RegisterProvider } from "../context/registerId";
 import { registerSW } from "virtual:pwa-register";
 
-// registerSW();
+registerSW();
 ReactDOM.createRoot(document.querySelector("#root")).render(
   <>
     <RegisterProvider>

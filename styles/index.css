@@ -46,11 +46,6 @@
   --main-color: rgb(0, 0, 0);
 }
 
-body {
-  background-color: var(--main-color);
-  height: 100%;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -60,41 +55,23 @@ body {
 
 body {
   color: var(--text-color);
+  background-color: var(--main-color);
+  height: 100%;
 }
 
-.register {
-  background-color: black;
-  padding: 12px;
-  max-width: 300px;
-  border: 2px solid var(--acent-color);
-  border-radius: 4px;
-}
-.register .row {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 12px;
-}
-.register select {
-  height: 30px;
-  background-color: black;
-  color: white;
-}
-.register input {
-  background-color: rgb(52, 52, 52);
-  border: none;
-  height: 30px;
-  padding: 2px 0 2px 5px;
-  border-radius: 6px;
-}
-.register input:focus {
+a,
+button,
+li {
+  background-color: var(--acent-color);
   outline: none;
-}
-.register button {
-  background-color: grey;
-  padding: 4px 8px;
-  border-radius: 3px;
   border: none;
+  padding: 10px 15px;
+  list-style: none;
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 .reg-id {
@@ -107,10 +84,8 @@ body {
   color: red;
   background-color: rgb(49, 1, 1);
   padding: 5px 12px;
-  border: none;
   border: 1px solid rgb(225, 13, 13);
   border-radius: 5px;
-  outline: none;
 }
 
 #overlay {
@@ -157,7 +132,6 @@ input:focus {
 .update-box button {
   background-color: var(--acent-color);
   font-size: 22px;
-  border: none;
   padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
@@ -410,7 +384,6 @@ div .info-head,
 .lock-box button {
   background-color: var(--acent-color);
   font-size: 22px;
-  border: none;
   padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
@@ -459,7 +432,6 @@ div .info-head,
 .update-password button {
   background-color: var(--acent-color);
   font-size: 22px;
-  border: none;
   padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
@@ -508,7 +480,6 @@ div .info-head,
 .unlock-box button {
   background-color: var(--acent-color);
   font-size: 22px;
-  border: none;
   padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
@@ -561,7 +532,6 @@ div .info-head,
 .update-photo button {
   background-color: var(--acent-color);
   font-size: 22px;
-  border: none;
   padding: 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
@@ -688,7 +658,7 @@ div .info-head,
   width: 280px;
   height: 320px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 0px auto;
 }
 
@@ -761,11 +731,11 @@ div .info-head,
 .custom-theme-maker .field p {
   width: 200px;
 }
-.custom-theme-maker .field input[type=text] {
+.custom-theme-maker .field input[type="text"] {
   width: 200px;
   height: 30px;
 }
-.custom-theme-maker .field input[type=color] {
+.custom-theme-maker .field input[type="color"] {
   width: 150px;
   height: 30px;
 }
@@ -799,7 +769,7 @@ div .info-head,
   display: grid;
   grid-template-columns: repeat(auto-fill, 62px);
   -moz-column-gap: 15px;
-       column-gap: 15px;
+  column-gap: 15px;
   row-gap: 8px;
   justify-content: center;
 }
@@ -819,4 +789,4 @@ div .info-head,
 .custom-theme-wrapper .custom-themes .theme-layout .theme-layout-body {
   width: 60px;
   height: 40px;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

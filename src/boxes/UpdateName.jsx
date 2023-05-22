@@ -4,8 +4,7 @@ import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 
 export default function UpdateName() {
-  let { updateName, setUpdateName, handleUpdateName, name } =
-    useContext(RegisterContext);
+  let { updateName, setUpdateName, name } = useContext(RegisterContext);
   let [fname, setFname] = useState(name?.fname || "");
   let [sname, setSname] = useState(name?.sname || "");
   let [lname, setLname] = useState(name?.lname || "");
@@ -32,6 +31,22 @@ export default function UpdateName() {
     );
     document.getElementById("overlay").style.display = "none";
   };
+
+  function handleUpdateName(e) {
+    e.preventDefault();
+    document.getElementById("overlay").style.display = "none";
+    console.log("--checking");
+    let fullName = {
+      fname: e.target.fname.value,
+      sname: e.target.sname.value,
+      lname: e.target.lname.value,
+    };
+    setName(fullName);
+    setUpdateName(false);
+    axios
+      .post(`${server}/update/${data._id}`, fullName)
+      .then((res) => console.log(res));
+  }
 
   return ReactDOM.createPortal(
     <>
