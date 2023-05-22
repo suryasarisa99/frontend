@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../styles/index.css";
+import "../styles/index.scss";
 import { useContext, useState, useEffect } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
@@ -130,8 +130,9 @@ export default function App() {
                 <h1 className="reg-id">Register No: {data._id}</h1>
               </div>
               <div className="info"></div>
-              <Result data={data["2-1"]} yr={"2-1"} />
-              <Result data={data["1-2"]} yr="1-2" />
+              <Result data={data["2-1"]} yr={"2-1"} id={data._id} />
+              <Result data={data["1-2"]} yr="1-2" id={data._id} />
+              <Result data={data["1-1"]} yr="1-1" id={data._id} />
               <GoCloudDownload
                 id="download"
                 onClick={() => {

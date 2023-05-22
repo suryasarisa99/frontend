@@ -1,16 +1,20 @@
 import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 
-export default function Result({ data, yr }) {
+export default function Result({ data, yr, id }) {
   if (!data) return null;
 
   return (
     <div className="data-tables">
-      <div className="subjects data">
+      <div
+        className={
+          "subjects data " + (id.startsWith("21") ? "data-has-internals" : "")
+        }
+      >
         <div className="data-head">
           <div className="cell">{yr} Subjects</div>
           <div className="cell">Grade</div>
-          <div className="cell">Internals</div>
+          {id.startsWith("21") && <div className="cell">Internals</div>}
         </div>
         <div className="data-body">
           {Object?.entries(data.subjects).map(([subject, result]) => (
@@ -28,18 +32,25 @@ export default function Result({ data, yr }) {
               >
                 {result.grade}
               </div>
-              <div className="cell">{result.internals}</div>
+
+              {id.startsWith("21") && (
+                <div className="cell">{result.internals}</div>
+              )}
             </div>
           ))}
         </div>
       </div>
       {
-        <div className="data">
+        <div
+          className={
+            "labs data " + (id.startsWith("21") ? "data-has-internals" : "")
+          }
+        >
           <div>
             <div className="data-head">
               <div className="cell">{yr} Labs</div>
               <div className="cell">Grade</div>
-              <div className="cell">Internals</div>
+              {id.startsWith("21") && <div className="cell">Internals</div>}
             </div>
           </div>
           <div className="data-body">
@@ -47,7 +58,9 @@ export default function Result({ data, yr }) {
               <div className="row" key={subject}>
                 <div className="cell">{subject}</div>
                 <div className="cell">{result.grade}</div>
-                <div className="cell">{result.internals}</div>
+                {id.startsWith("21") && (
+                  <div className="cell">{result.internals}</div>
+                )}
               </div>
             ))}
           </div>
