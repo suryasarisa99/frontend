@@ -2,9 +2,10 @@ import ReactDOM from "react-dom";
 import { useEffect, useContext, useState } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
-
+import axios from "axios";
 export default function UpdateName() {
-  let { updateName, setUpdateName, name } = useContext(RegisterContext);
+  let { updateName, setUpdateName, name, setName, server, data } =
+    useContext(RegisterContext);
   let [fname, setFname] = useState(name?.fname || "");
   let [sname, setSname] = useState(name?.sname || "");
   let [lname, setLname] = useState(name?.lname || "");
