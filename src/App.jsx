@@ -40,6 +40,7 @@ export default function App() {
     openLockBox,
     openUpdatePhoto,
     openThemePage,
+    loadedThemes,
     setLoadedThemes,
     applyCustomThemes,
   } = useContext(RegisterContext);
@@ -67,7 +68,9 @@ export default function App() {
       update
     </button>
   );
-
+  useEffect(() => {
+    console.log(loadedThemes);
+  }, [loadedThemes]);
   function handleLoadThemes() {
     let color = localStorage.getItem("theme");
     let customThemes = JSON.parse(localStorage.getItem("custom-themes"));

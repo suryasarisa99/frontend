@@ -6,9 +6,14 @@
   --brand-color: var(--acent-color);
 }
 
-.pink-theme {
-  --acent-color: rgb(255, 90, 252);
-  --main-color: rgb(29, 8, 26);
+.red-theme {
+  --acent-color: red;
+  --main-color: #170000;
+}
+
+.yellow-theme {
+  --acent-color: yellow;
+  --main-color: rgb(15, 15, 5);
 }
 
 .green-theme {
@@ -16,23 +21,53 @@
   --main-color: rgb(6, 27, 12);
 }
 
+.cyan-theme {
+  --acent-color: cyan;
+  --main-color: rgb(7, 22, 31);
+}
+
+.sky-blue-theme {
+  --acent-color: rgb(0, 162, 255);
+  --main-color: rgb(7, 22, 31);
+}
+
 .blue-theme {
   --acent-color: rgb(64, 115, 255);
   --main-color: rgb(7, 18, 33);
 }
 
-.red-theme {
-  --acent-color: red;
-  --main-color: rgb(23, 0, 0);
+.violet-theme {
+  --acent-color: rgb(132, 0, 255);
+  --main-color: rgb(14, 6, 22);
 }
 
-.amoled-pink-theme {
+.pink-theme {
   --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(29, 8, 26);
+}
+
+.amoled-red-theme {
+  --acent-color: red;
   --main-color: rgb(0, 0, 0);
+}
+
+.amoled-yellow-theme {
+  --acent-color: yellow;
+  background-color: black;
 }
 
 .amoled-green-theme {
   --acent-color: rgb(89, 255, 64);
+  --main-color: rgb(0, 0, 0);
+}
+
+.amoled-cyan-theme {
+  --acent-color: cyan;
+  --main-color: black;
+}
+
+.amoled-sky-blue-theme {
+  --acent-color: rgb(0, 162, 255);
   --main-color: rgb(0, 0, 0);
 }
 
@@ -41,9 +76,176 @@
   --main-color: rgb(0, 0, 0);
 }
 
-.amoled-red-theme {
-  --acent-color: red;
+.amoled-violet-theme {
+  --acent-color: rgb(132, 0, 255);
   --main-color: rgb(0, 0, 0);
+}
+
+.amoled-pink-theme {
+  --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(0, 0, 0);
+}
+
+.slant-yellow-theme {
+  --acent-color: #6d6648;
+  --brand-color: #92865d;
+  --main-color: #c2be97;
+  --secondary-color: #464428;
+  --text-color: #141414;
+}
+
+.slant-pink-theme {
+  --acent-color: #6d486a;
+  --brand-color: #925d92;
+  --main-color: #c297c2;
+  --secondary-color: #432846;
+  --text-color: #141414;
+}
+
+.slant-red-theme {
+  --acent-color: #6d4848;
+  --brand-color: #925d5d;
+  --main-color: #c29797;
+  --secondary-color: #462828;
+  --text-color: #141414;
+}
+
+.slant-blue-theme {
+  --acent-color: #484a6d;
+  --brand-color: #5d5e92;
+  --main-color: #9b97c2;
+  --secondary-color: #282946;
+  --text-color: #141414;
+}
+
+.slant-green-theme {
+  --acent-color: #486d5a;
+  --brand-color: #5d9273;
+  --main-color: #97c2a7;
+  --secondary-color: #28463a;
+  --text-color: #141414;
+  --list-items-color: black;
+}
+
+.slant-pink-theme {
+  --acent-color: #cf78c8;
+  --brand-color: #a537a5;
+  --main-color: #f1daf1;
+  --secondary-color: #cf78c8;
+  --text-color: #141414;
+  --list-items-color: black;
+}
+
+.dark-slant-yellow-theme {
+  --acent-color: #575448;
+  --brand-color: #7a776d;
+  --main-color: #110e09;
+  --secondary-color: #313022;
+  --text-color: #9a9996;
+}
+
+.dark-slant-pink-theme {
+  --acent-color: #564857;
+  --brand-color: #7a6d7a;
+  --main-color: #150e16;
+  --secondary-color: #312230;
+  --text-color: #9a9996;
+}
+
+.dark-slant-blue-theme {
+  --acent-color: #485457;
+  --brand-color: #6c6b7a;
+  --main-color: #0e1416;
+  --secondary-color: #222c31;
+  --text-color: #9a9996;
+}
+
+.dark-slant-cyan-theme {
+  --acent-color: #485457;
+  --brand-color: #6b757a;
+  --main-color: #0e1416;
+  --secondary-color: #222c31;
+  --text-color: #9a9996;
+}
+
+.dark-slant-red-theme {
+  --acent-color: #574848;
+  --brand-color: #7a6b6b;
+  --main-color: #160e0e;
+  --secondary-color: #312222;
+  --text-color: #9a9996;
+}
+
+.dark-slant-green-theme {
+  --acent-color: #48574c;
+  --brand-color: #6b7a75;
+  --main-color: #0e160f;
+  --secondary-color: #22312b;
+  --text-color: #9a9996;
+}
+
+.dark-slant-violet-theme {
+  --acent-color: #4c4857;
+  --brand-color: #6f6d7a;
+  --main-color: #100e16;
+  --secondary-color: #272231;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-yellow-theme {
+  --acent-color: #575448;
+  --brand-color: #7a776d;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-pink-theme {
+  --acent-color: #564857;
+  --brand-color: #7a6d7a;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-blue-theme {
+  --acent-color: #485457;
+  --brand-color: #6b6e7a;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-cyan-theme {
+  --acent-color: #485457;
+  --brand-color: #6b747a;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-red-theme {
+  --acent-color: #574848;
+  --brand-color: #7a6b6b;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-green-theme {
+  --acent-color: #48574c;
+  --brand-color: #6b7a75;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+}
+
+.amoled-slant-violet-theme {
+  --acent-color: #4c4857;
+  --brand-color: #6f6d7a;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
 }
 
 * {
@@ -69,6 +271,9 @@ li {
   text-decoration: none;
 }
 
+input {
+  background-color: var(--acent-color);
+}
 input:focus {
   outline: none;
 }
@@ -103,8 +308,8 @@ input {
   outline: none;
   padding: 10px 8px;
   font-size: 22px;
-  color: white;
-  background-color: rgb(32, 33, 33);
+  color: var(--text-color);
+  background-color: var(--main-color);
   border-radius: 8px;
 }
 input:focus {
@@ -252,7 +457,7 @@ nav input {
   height: 30px;
   width: 150px;
   font-size: 18px;
-  background-color: rgb(34, 34, 34);
+  background-color: var(--main-color);
   padding-left: 15px;
   color: var(--acent-color);
   border-radius: 5px;
@@ -356,7 +561,7 @@ div .info-head,
   border: none;
   font-size: 20px;
   background-color: inherit;
-  color: var(--text-color);
+  color: var(--list-items-color);
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid grey;
@@ -672,26 +877,6 @@ div .info-head,
   height: 50px;
 }
 
-.color-themes {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  width: 250px;
-  margin: 30px auto;
-}
-.color-themes .green-color {
-  background-color: green;
-}
-.color-themes .red-color {
-  background-color: red;
-}
-.color-themes .blue-color {
-  background-color: blue;
-}
-.color-themes .pink-color {
-  background-color: pink;
-}
-
 .theme-page button {
   background-color: grey;
   padding: 8px 18px;
@@ -702,17 +887,64 @@ div .info-head,
   border-radius: 3px;
   border: none;
 }
-
-.dark-themes .green-color {
-  background-color: rgb(4, 51, 4);
+.theme-page .color-box {
+  height: 40px;
 }
-.dark-themes .red-color {
+.theme-page .color-themes {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 400px;
+  justify-content: end;
+  align-items: center;
+  margin: 30px auto;
+}
+.theme-page .color-themes .red-color {
+  background-color: red;
+}
+.theme-page .color-themes .yellow-color {
+  background-color: yellow;
+}
+.theme-page .color-themes .green-color {
+  background-color: green;
+}
+.theme-page .color-themes .blue-color {
+  background-color: blue;
+}
+.theme-page .color-themes .cyan-color {
+  background-color: cyan;
+}
+.theme-page .color-themes .sky-blue-color {
+  background-color: rgb(0, 140, 255);
+}
+.theme-page .color-themes .pink-color {
+  background-color: pink;
+}
+.theme-page .color-themes .violet-color {
+  background-color: #6200ff;
+}
+.theme-page .dark-themes .red-color {
   background-color: rgb(69, 8, 8);
 }
-.dark-themes .blue-color {
+.theme-page .dark-themes .yellow-color {
+  background-color: rgb(94, 94, 0);
+}
+.theme-page .dark-themes .green-color {
+  background-color: rgb(4, 51, 4);
+}
+.theme-page .dark-themes .cyan-color {
+  background-color: rgb(3, 54, 54);
+}
+.theme-page .dark-themes .sky-blue-color {
+  background-color: rgb(0, 54, 105);
+}
+.theme-page .dark-themes .blue-color {
   background-color: rgb(10, 55, 87);
 }
-.dark-themes .pink-color {
+.theme-page .dark-themes .violet-color {
+  background-color: rgb(23, 12, 49);
+}
+.theme-page .dark-themes .pink-color {
   background-color: rgb(81, 9, 52);
 }
 

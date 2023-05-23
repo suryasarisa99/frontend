@@ -1,5 +1,7 @@
 import RegisterContext from "../../context/registerId";
 import { useContext, useEffect } from "react";
+import ThemeLayout from "../components/ThemeLayout";
+
 export default function Theme({}) {
   let {
     closeThemePage,
@@ -82,18 +84,28 @@ export default function Theme({}) {
 
         <div className="color-themes">
           <div
-            className="color-box green-color"
-            value="green"
-            onClick={setTheme}
-          ></div>
-          <div
             className="color-box red-color"
             value="red"
             onClick={setTheme}
           ></div>
           <div
-            className="color-box pink-color"
-            value="pink"
+            className="color-box yellow-color"
+            value="yellow"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box green-color"
+            value="green"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box cyan-color"
+            value="cyan"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box sky-blue-color"
+            value="sky-blue"
             onClick={setTheme}
           ></div>
           <div
@@ -101,21 +113,41 @@ export default function Theme({}) {
             value="blue"
             onClick={setTheme}
           ></div>
-        </div>
-        <div className="color-themes dark-themes">
           <div
-            className="color-box green-color"
-            value="amoled-green"
+            className="color-box violet-color"
+            value="violet"
             onClick={setTheme}
           ></div>
+          <div
+            className="color-box pink-color"
+            value="pink"
+            onClick={setTheme}
+          ></div>
+        </div>
+        <div className="color-themes dark-themes">
           <div
             className="color-box red-color"
             value="amoled-red"
             onClick={setTheme}
           ></div>
           <div
-            className="color-box pink-color"
-            value="amoled-pink"
+            className="color-box yellow-color"
+            value="amoled-yellow"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box green-color"
+            value="amoled-green"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box cyan-color"
+            value="amoled-cyan"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box sky-blue-color"
+            value="amoled-sky-blue"
             onClick={setTheme}
           ></div>
           <div
@@ -123,45 +155,148 @@ export default function Theme({}) {
             value="amoled-blue"
             onClick={setTheme}
           ></div>
+          <div
+            className="color-box violet-color"
+            value="amoled-violet"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box pink-color"
+            value="amoled-pink"
+            onClick={setTheme}
+          ></div>
+        </div>
+        <div className="color-themes slant-themes">
+          <div
+            className="color-box red-color"
+            value="slant-red"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box yellow-color"
+            value="slant-yellow"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box green-color"
+            value="slant-green"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box cyan-color"
+            value="slant-cyan"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box sky-blue-color"
+            value="slant-sky-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box blue-color"
+            value="slant-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box violet-color"
+            value="slant-violet"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box pink-color"
+            value="slant-pink"
+            onClick={setTheme}
+          ></div>
+        </div>
+        <div className="color-themes dark-slant-themes">
+          <div
+            className="color-box red-color"
+            value="dark-slant-red"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box yellow-color"
+            value="dark-slant-yellow"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box green-color"
+            value="dark-slant-green"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box cyan-color"
+            value="dark-slant-cyan"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box sky-blue-color"
+            value="dark-slant-sky-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box blue-color"
+            value="dark-slant-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box violet-color"
+            value="dark-slant-violet"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box pink-color"
+            value="dark-slant-pink"
+            onClick={setTheme}
+          ></div>
+        </div>
+        <div className="color-themes amoled-slant-themes">
+          <div
+            className="color-box red-color"
+            value="amoled-slant-red"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box yellow-color"
+            value="amoled-slant-yellow"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box green-color"
+            value="amoled-slant-green"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box cyan-color"
+            value="amoled-slant-cyan"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box sky-blue-color"
+            value="amoled-slant-sky-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box blue-color"
+            value="amoled-slant-blue"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box violet-color"
+            value="amoled-slant-violet"
+            onClick={setTheme}
+          ></div>
+          <div
+            className="color-box pink-color"
+            value="amoled-slant-pink"
+            onClick={setTheme}
+          ></div>
         </div>
 
         <div className="custom-theme-wrapper">
           <div className="custom-themes">
             {loadedThemes?.map((theme, index) => {
-              return (
-                <div
-                  className="theme-layout"
-                  key={index}
-                  value={index}
-                  // style={{ backgroundColor: loadedThemes[index]["--main-color"] }}
-                  onClick={() => applyCustomThemes(index)}
-                >
-                  <div
-                    className="theme-layout-head"
-                    style={{
-                      backgroundColor: loadedThemes[index]["--secondary-color"],
-                      borderBottom: `1px solid ${loadedThemes[index]["--acent-color"]}`,
-                    }}
-                  >
-                    <span
-                      className="title"
-                      style={{
-                        color: loadedThemes[index]["--acent-color"],
-                      }}
-                    >
-                      surya
-                    </span>
-                  </div>
-                  <div
-                    className="theme-layout-body"
-                    style={{
-                      backgroundColor: loadedThemes[index]["--main-color"],
-                    }}
-                  ></div>
-
-                  {/* {theme.name || index} */}
-                </div>
-              );
+              return <ThemeLayout theme={theme} index={index} />;
             })}
           </div>
         </div>
