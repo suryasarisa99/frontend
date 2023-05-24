@@ -347,7 +347,7 @@ function RegisterProvider({ children }) {
         break;
 
       default:
-        setImgUrl(red);
+        setImgUrl(slantViolet);
     }
   }
   function applyCustomThemes(colorIndex, dontSave) {
