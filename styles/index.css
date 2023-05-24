@@ -1,89 +1,106 @@
 :root {
-  --acent-color: red;
-  --main-color: rgb(0, 0, 0);
   --secondary-color: rgb(0, 0, 0);
   --text-color: rgb(255, 255, 255);
   --brand-color: var(--acent-color);
+  --acent-color: rgb(132, 0, 255);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(29, 13, 37);
 }
 
 .red-theme {
   --acent-color: red;
   --main-color: #170000;
+  --input-color: rgb(37, 13, 13);
 }
 
 .yellow-theme {
   --acent-color: yellow;
   --main-color: rgb(15, 15, 5);
+  --input-color: rgb(37, 35, 13);
 }
 
 .green-theme {
   --acent-color: rgb(89, 255, 64);
   --main-color: rgb(6, 27, 12);
+  --input-color: rgb(13, 37, 14);
 }
 
 .cyan-theme {
   --acent-color: cyan;
   --main-color: rgb(7, 22, 31);
+  --input-color: rgb(13, 37, 37);
 }
 
 .sky-blue-theme {
   --acent-color: rgb(0, 162, 255);
   --main-color: rgb(7, 22, 31);
+  --input-color: rgb(13, 26, 37);
 }
 
 .blue-theme {
   --acent-color: rgb(64, 115, 255);
   --main-color: rgb(7, 18, 33);
+  --input-color: rgb(13, 17, 37);
 }
 
 .violet-theme {
   --acent-color: rgb(132, 0, 255);
   --main-color: rgb(14, 6, 22);
+  --input-color: rgb(29, 13, 37);
 }
 
 .pink-theme {
   --acent-color: rgb(255, 90, 252);
   --main-color: rgb(29, 8, 26);
+  --input-color: rgb(35, 13, 37);
 }
 
 .amoled-red-theme {
   --acent-color: red;
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(37, 13, 13);
 }
 
 .amoled-yellow-theme {
   --acent-color: yellow;
   background-color: black;
+  --input-color: rgb(37, 35, 13);
 }
 
 .amoled-green-theme {
   --acent-color: rgb(89, 255, 64);
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(13, 37, 14);
 }
 
 .amoled-cyan-theme {
   --acent-color: cyan;
   --main-color: black;
+  --input-color: rgb(13, 37, 37);
 }
 
 .amoled-sky-blue-theme {
   --acent-color: rgb(0, 162, 255);
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(13, 26, 37);
 }
 
 .amoled-blue-theme {
   --acent-color: rgb(64, 115, 255);
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(13, 17, 37);
 }
 
 .amoled-violet-theme {
   --acent-color: rgb(132, 0, 255);
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(29, 13, 37);
 }
 
 .amoled-pink-theme {
   --acent-color: rgb(255, 90, 252);
   --main-color: rgb(0, 0, 0);
+  --input-color: rgb(35, 13, 37);
 }
 
 .slant-yellow-theme {
@@ -317,6 +334,25 @@ input:focus {
   display: none;
 }
 
+.points-flex-box {
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+.points-div {
+  background-color: var(--acent-color);
+  padding: 6px 12px;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.points-div .points {
+  font-weight: 900;
+}
+
 .update-box {
   background-color: var(--secondary-color);
   position: fixed;
@@ -381,17 +417,13 @@ input:focus {
   bottom: 25px;
   position: absolute;
 }
-.update-box .icon-box .close-btn {
-  color: rgb(69, 69, 69);
-  font-size: 20px;
-}
 
 .data {
-  margin-bottom: 20px;
   padding: 15px;
   border-radius: 8px;
   max-width: 700px;
   margin: 20px auto;
+  margin-bottom: 0px;
 }
 .data .data-head {
   display: flex;
