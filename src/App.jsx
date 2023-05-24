@@ -83,7 +83,7 @@ export default function App() {
     } else {
       setColorTheme(color);
       if (color) document.documentElement.classList.add(`${color}-theme`);
-      else setColorTheme("red");
+      else setColorTheme("slant-violet");
       setLogoColor(color);
     }
   }
