@@ -6,6 +6,15 @@ import red from "../src/asserts/logos/red.png";
 import pink from "../src/asserts/logos/pink.png";
 import green from "../src/asserts/logos/green.png";
 import blue from "../src/asserts/logos/blue.png";
+
+import slantBlue from "../src/asserts/slant/slant-blue.png";
+import slantGreen from "../src/asserts/slant/slant-green.png";
+import slantRed from "../src/asserts/slant/slant-red.png";
+import slantYellow from "../src/asserts/slant/slant-yellow.png";
+import slantCyan from "../src/asserts/slant/slant-cyan.png";
+import slantViolet from "../src/asserts/slant/slant-violet.png";
+import slantPink from "../src/asserts/slant/slant-pink.png";
+// import slantBlue from "../src/asserts/slant/slant-blue.png"
 import { saveAs } from "file-saver";
 let RegisterContext = createContext();
 
@@ -308,6 +317,35 @@ function RegisterProvider({ children }) {
       case "amoled-blue":
         setImgUrl(blue);
         break;
+      case "dark-slant-red":
+      case "amoled-slant-red":
+        setImgUrl(slantRed);
+        break;
+      case "dark-slant-yellow":
+      case "amoled-slant-yellow":
+        setImgUrl(slantYellow);
+        break;
+      case "dark-slant-green":
+      case "amoled-slant-green":
+        setImgUrl(slantGreen);
+        break;
+      case "dark-slant-cyan":
+      case "amoled-slant-cyan":
+        setImgUrl(slantCyan);
+        break;
+      case "dark-slant-blue":
+      case "amoled-slant-blue":
+        setImgUrl(slantBlue);
+        break;
+      case "dark-slant-violet":
+      case "amoled-slant-violet":
+        setImgUrl(slantViolet);
+        break;
+      case "dark-slant-pink":
+      case "amoled-slant-pink":
+        setImgUrl(slantPink);
+        break;
+
       default:
         setImgUrl(red);
     }
