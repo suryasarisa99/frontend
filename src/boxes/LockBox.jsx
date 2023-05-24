@@ -23,11 +23,7 @@ export default function LockBox() {
         <label htmlFor="Password For Protection" autoFocus>
           Set Password
         </label>
-        <GiCrossedSwords
-          // fill="red"
-          className="close-btn"
-          onClick={closeLockBox}
-        />
+        <GiCrossedSwords className="close-btn" onClick={closeLockBox} />
         <input type="password" name="password" />
         <button>Submit</button>
       </form>
