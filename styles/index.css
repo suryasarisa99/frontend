@@ -1,10 +1,10 @@
 :root {
-  --secondary-color: rgb(0, 0, 0);
-  --text-color: rgb(255, 255, 255);
-  --brand-color: var(--acent-color);
-  --acent-color: rgb(132, 0, 255);
-  --main-color: rgb(0, 0, 0);
-  --input-color: rgb(29, 13, 37);
+  --acent-color: #4c4857;
+  --brand-color: #6f6d7a;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #1c181d;
 }
 
 .red-theme {
