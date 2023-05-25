@@ -46,7 +46,6 @@ export default function unLockBox() {
             {wrongPass ? "Entered Wrong Password" : "Enter the passsword: "}
           </label>
           <GiCrossedSwords
-            fill="red"
             className="close-btn"
             onClick={closeUnlockBox}
           />
