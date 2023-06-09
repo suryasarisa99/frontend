@@ -24,6 +24,7 @@ function RegisterProvider({ children }) {
   let [validRegId, setValidRegId] = useState(false);
   let [regTerm, setRegTerm] = useState("");
   let [data, setData] = useState({});
+  let [analysisData, setAnalysisData] = useState([]);
   let [sidePannel, setSidePannel] = useState(false);
   let [updateName, setUpdateName] = useState(false);
   let [lockBox, setLockBox] = useState(false);
@@ -448,6 +449,8 @@ function RegisterProvider({ children }) {
         aysYear,
         setAysBranch,
         setAysYear,
+        analysisData,
+        setAnalysisData,
       }}
     >
       {children}

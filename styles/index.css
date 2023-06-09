@@ -699,8 +699,9 @@ div .info-head,
   margin: 20px auto;
 }
 
-.select {
-  max-width: 600px;
+.filter {
+  display: flex;
+  max-width: 95%;
   margin: 10px auto;
   text-align: center;
   color: black;
@@ -712,15 +713,22 @@ div .info-head,
   position: relative;
   border-radius: 8px;
 }
-.select .hidden-options {
+.filter .sort-order {
+  width: 50%;
+}
+.filter .sort {
+  width: 50%;
+  border-right: 2px solid black;
+}
+.filter .sort .hidden-options {
   display: none;
 }
-.select .options {
+.filter .sort .options {
   font-weight: 450;
   font-size: 18px;
-  padding: 15px 20px;
-  width: 550px;
-  text-align: center;
+  padding: 15px 10px;
+  width: 95%;
+  text-align: left;
   position: absolute;
   top: 52px;
   border-radius: 12px;
@@ -730,14 +738,34 @@ div .info-head,
   transform: translate(-50%);
   background-color: rgb(27, 27, 27);
 }
-.select .options li {
+.filter .sort .options li {
   background-color: rgb(27, 27, 27);
-  padding-bottom: 15px;
   border-bottom: 1px solid rgb(108, 108, 108);
+}
+.filter .sort .options li div {
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.filter .sort .options li div .icon {
+  position: absolute;
+  right: 15px;
+  color: rgb(156, 156, 156);
+  font-size: 22px;
+}
+.filter .sort .options li .sub-menu {
+  padding-top: 10px;
+}
+.filter .sort .options li .sub-menu li div {
+  padding: 0px 0px 0px 65px;
+}
+.filter .sort .options li:last-child {
+  border: none;
 }
 
 .branches {
-  max-width: 550px;
+  max-width: 97%;
   background-color: var(--acent-color);
   margin: 20px auto;
   display: flex;
@@ -745,4 +773,26 @@ div .info-head,
 }
 .branches button {
   font-size: 22px;
+}
+
+.ranks {
+  display: flex;
+  width: 70%;
+  margin: 20px auto;
+  gap: 8px;
+  color: black;
+  flex-direction: column;
+}
+.ranks .row {
+  padding: 10px 15px;
+  background-color: var(--acent-color);
+  display: flex;
+  border-radius: 5px;
+  gap: 25px;
+}
+.ranks .row .rank {
+  width: 25%;
+}
+.ranks .row .id {
+  width: 50%;
 }/*# sourceMappingURL=index.css.map */

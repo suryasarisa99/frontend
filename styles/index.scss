@@ -455,50 +455,112 @@ div .info-head,
   margin: 20px auto;
 }
 
-.select {
-  max-width: 600px;
+.filter {
+  display: flex;
+  // justify-content: space-evenly;
+
+  max-width: 95%;
   margin: 10px auto;
   text-align: center;
   color: black;
   font-size: 20px;
   font-weight: 550;
-  // height: 45px;
   padding: 10px 20px;
   background-color: var(--acent-color);
   margin-bottom: 25px;
   position: relative;
+  // align-items: center;
+  // justify-content: ;
+
   border-radius: 8px;
-  .hidden-options {
-    display: none;
+  .sort-order {
+    width: 50%;
   }
-  .options {
-    font-weight: 450;
-    font-size: 18px;
-    padding: 15px 20px;
-    width: 550px;
-    text-align: center;
-    position: absolute;
-    top: 52px;
-    border-radius: 12px;
-    z-index: 999;
-    color: white;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: rgb(27, 27, 27);
-    li {
+  .sort {
+    width: 50%;
+    border-right: 2px solid black;
+    .hidden-options {
+      display: none;
+    }
+    .options {
+      font-weight: 450;
+      font-size: 18px;
+      padding: 15px 10px;
+      width: 95%;
+      text-align: left;
+
+      position: absolute;
+      top: 52px;
+      border-radius: 12px;
+      z-index: 999;
+      color: white;
+      left: 50%;
+      transform: translate(-50%);
       background-color: rgb(27, 27, 27);
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgb(108, 108, 108);
+
+      li {
+        background-color: rgb(27, 27, 27);
+        // padding-bottom: 15px;
+        border-bottom: 1px solid rgb(108, 108, 108);
+        div {
+          padding-left: 40px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          .icon {
+            position: absolute;
+            right: 15px;
+            color: rgb(156, 156, 156);
+            font-size: 22px;
+          }
+        }
+        .sub-menu {
+          // margin-left: %;
+          padding-top: 10px;
+          li {
+            div {
+              padding: 0px 0px 0px 65px;
+            }
+            // border: none;
+          }
+        }
+      }
+      li:last-child {
+        border: none;
+      }
     }
   }
 }
 .branches {
-  max-width: 550px;
+  max-width: 97%;
   background-color: var(--acent-color);
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
   button {
     font-size: 22px;
+  }
+}
+
+.ranks {
+  display: flex;
+  width: 70%;
+  margin: 20px auto;
+  gap: 8px;
+  color: black;
+  flex-direction: column;
+  .row {
+    padding: 10px 15px;
+    background-color: var(--acent-color);
+    display: flex;
+    border-radius: 5px;
+    gap: 25px;
+    .rank {
+      width: 25%;
+    }
+    .id {
+      width: 50%;
+    }
+    // justify-content: space-between;
   }
 }
