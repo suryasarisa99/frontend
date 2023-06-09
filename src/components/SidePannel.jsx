@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom";
 import { useEffect, useContext } from "react";
 import RegisterContext from "../../context/registerId";
-
+import { useNavigate, Link } from "react-router-dom";
 export default function SidePannel({}) {
+  let navigate = useNavigate();
   let {
     // onUpdateHandle,
     openUpdateName,
@@ -75,6 +76,8 @@ export default function SidePannel({}) {
         <a href="https://student546.vercel.app" target="_blank">
           other site
         </a>
+        <button onClick={() => navigate("/ays")}>haa</button>
+        {/* <Link to="/ays">baa</Link> */}
       </div>
     </>
     // document.getElementById("overlay")

@@ -94,7 +94,7 @@ function calculateResults(data) {
   console.log(`Total Points: ${points / credits}`);
   console.log(`Total Credits: ` + credits);
   // return Math.round(points / credits, 3);
-  return (points / credits).toFixed(3);
+  return points / credits;
 }
 
 function getPoints(grade) {

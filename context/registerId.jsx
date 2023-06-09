@@ -31,8 +31,8 @@ function RegisterProvider({ children }) {
   let [tempId, setTempId] = useState("");
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
-  let [server, setServer] = useState("https://get-std-res.vercel.app");
-  // let [server, setServer] = useState("http://localhost:4000");
+  // let [server, setServer] = useState("https://get-std-res.vercel.app");
+  let [server, setServer] = useState("http://localhost:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
@@ -44,6 +44,8 @@ function RegisterProvider({ children }) {
   let [startPage, setStartPage] = useState(true);
   let [colorTheme, setColorTheme] = useState(false);
   let [loadedThemes, setLoadedThemes] = useState([]);
+  let [aysYear, setAysYear] = useState("");
+  let [aysBranch, setAysBranch] = useState("");
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -441,6 +443,11 @@ function RegisterProvider({ children }) {
         setLoadedThemes,
         loadedThemes,
         applyCustomThemes,
+
+        aysBranch,
+        aysYear,
+        setAysBranch,
+        setAysYear,
       }}
     >
       {children}
