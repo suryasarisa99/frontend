@@ -1,6 +1,6 @@
 import axios from "axios";
-import "../styles/index.scss";
-import "../styles/colors.scss";
+import "../styles/index.css";
+import "../styles/colors.css";
 import { useContext, useState, useEffect } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";

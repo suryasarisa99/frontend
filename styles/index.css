@@ -664,7 +664,7 @@ div .info-head,
   width: 280px;
   height: 320px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   margin: 0px auto;
 }
 
@@ -672,7 +672,7 @@ div .info-head,
   display: flex;
   flex-direction: column;
   align-items: center;
-} /*# sourceMappingURL=index.css.map */
+}
 
 .download-box {
   display: flex;
@@ -688,4 +688,4 @@ div .info-head,
 }
 #download .icon {
   color: red;
-}
+}/*# sourceMappingURL=index.css.map */
