@@ -40,7 +40,7 @@ export default function SidePannel({}) {
 
   function closeSidePannel(e, cb) {
     setSidePannel(false);
-    cb(cb(e));
+    if (cb) cb(cb(e));
   }
   function sample() {
     console.log("test  -1");
@@ -50,6 +50,10 @@ export default function SidePannel({}) {
     if (e.target.tagName !== "BUTTON") {
       e.stopPropagation();
     }
+  }
+  function openAnalysis(e) {
+    navigate("/ays");
+    closeSidePannel();
   }
   // ReactDOM.createPortal
   return (
@@ -76,7 +80,7 @@ export default function SidePannel({}) {
         <a href="https://student546.vercel.app" target="_blank">
           other site
         </a>
-        <button onClick={() => navigate("/ays")}>haa</button>
+        <button onClick={openAnalysis}>Analysis</button>
         {/* <Link to="/ays">baa</Link> */}
       </div>
     </>
