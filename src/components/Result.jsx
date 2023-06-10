@@ -1,12 +1,10 @@
 import RegisterContext from "../../context/registerId";
-import { useContext } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 export default function Result({ data, yr, id }) {
   if (!data?.subjects) {
     return null;
   }
   useEffect(() => {
-    if (!data) prompt("Fuck off");
     // setPoints(calculateResults(data));
   });
   let [points, setPoints] = useState(NaN);
@@ -49,11 +47,17 @@ export default function Result({ data, yr, id }) {
           ))}
         </div>
       </div>
-      {/* <div className="points-flex-box">
+      <div className="points-flex-box">
         <div className="points-div">
-          Points: <span className="points">{points}</span>
+          <div className="points">
+            {" "}
+            <span className="points-title">Points: </span>
+            <span className="points-value">
+              {data.points?.toFixed(3) || "NaN"}
+            </span>
+          </div>
         </div>
-      </div> */}
+      </div>
       {
         <div
           className={

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import axios from "axios";
 import RegisterContext from "../../context/registerId";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,9 @@ export default function AnalysisId({ params }) {
     useContext(RegisterContext);
   //   let { aysBranch, setAysBranch } = useContext(RegisterContext);
   let navigate = useNavigate();
+  useEffect(() => {
+    setAnalysisData([]);
+  }, []);
 
   let onClick = async (year) => {
     setAysYear(year);
@@ -20,6 +23,7 @@ export default function AnalysisId({ params }) {
     setAnalysisData(data);
     console.log(data);
   };
+
   return (
     <div>
       {/* <Navbar /> */}

@@ -80,225 +80,240 @@ export default function Theme({}) {
   return (
     <>
       <div className="theme-page">
-        <button onClick={closeThemePage}>Back</button>
+        {/* <button onClick={()=>navigate("/")}>Back</button> */}
 
-        <div className="color-themes">
-          <div
-            className="color-box red-color"
-            value="red"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box yellow-color"
-            value="yellow"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box green-color"
-            value="green"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box cyan-color"
-            value="cyan"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box sky-blue-color"
-            value="sky-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box blue-color"
-            value="blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box violet-color"
-            value="violet"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box pink-color"
-            value="pink"
-            onClick={setTheme}
-          ></div>
-        </div>
-        <div className="color-themes dark-themes">
-          <div
-            className="color-box red-color"
-            value="amoled-red"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box yellow-color"
-            value="amoled-yellow"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box green-color"
-            value="amoled-green"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box cyan-color"
-            value="amoled-cyan"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box sky-blue-color"
-            value="amoled-sky-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box blue-color"
-            value="amoled-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box violet-color"
-            value="amoled-violet"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box pink-color"
-            value="amoled-pink"
-            onClick={setTheme}
-          ></div>
-        </div>
-        <div className="color-themes slant-themes">
-          <div
-            className="color-box red-color"
-            value="slant-red"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box yellow-color"
-            value="slant-yellow"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box green-color"
-            value="slant-green"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box cyan-color"
-            value="slant-cyan"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box sky-blue-color"
-            value="slant-sky-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box blue-color"
-            value="slant-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box violet-color"
-            value="slant-violet"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box pink-color"
-            value="slant-pink"
-            onClick={setTheme}
-          ></div>
-        </div>
-        <div className="color-themes dark-slant-themes">
-          <div
-            className="color-box red-color"
-            value="dark-slant-red"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box yellow-color"
-            value="dark-slant-yellow"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box green-color"
-            value="dark-slant-green"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box cyan-color"
-            value="dark-slant-cyan"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box sky-blue-color"
-            value="dark-slant-sky-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box blue-color"
-            value="dark-slant-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box violet-color"
-            value="dark-slant-violet"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box pink-color"
-            value="dark-slant-pink"
-            onClick={setTheme}
-          ></div>
-        </div>
-        <div className="color-themes amoled-slant-themes">
-          <div
-            className="color-box red-color"
-            value="amoled-slant-red"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box yellow-color"
-            value="amoled-slant-yellow"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box green-color"
-            value="amoled-slant-green"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box cyan-color"
-            value="amoled-slant-cyan"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box sky-blue-color"
-            value="amoled-slant-sky-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box blue-color"
-            value="amoled-slant-blue"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box violet-color"
-            value="amoled-slant-violet"
-            onClick={setTheme}
-          ></div>
-          <div
-            className="color-box pink-color"
-            value="amoled-slant-pink"
-            onClick={setTheme}
-          ></div>
-        </div>
-
-        <div className="custom-theme-wrapper">
-          <div className="custom-themes">
-            {loadedThemes?.map((theme, index) => {
-              return <ThemeLayout theme={theme} index={index} />;
-            })}
+        <div className="default-themes">
+          <div className="red-themes">
+            <div
+              className="color-box red-color"
+              value="red"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-red"
+              onClick={setTheme}
+            ></div>
+            {/* <div
+              className="color-box red-color"
+              value="slant-red"
+              onClick={setTheme}
+            ></div> */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-red"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-red"
+              onClick={setTheme}
+            ></div>
           </div>
+
+          <div className="yellow-themes">
+            <div
+              className="color-box yellow-color"
+              value="yellow"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-yellow"
+              onClick={setTheme}
+            ></div>{" "}
+            {/* <div
+              className="color-box yellow-color"
+              value="slant-yellow"
+              onClick={setTheme}
+            ></div> */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-yellow"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-yellow"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="green-themes">
+            <div
+              className="color-box green-color"
+              value="green"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-green"
+              onClick={setTheme}
+            ></div>
+            {/* <div
+              className="color-box green-color"
+              value="slant-green"
+              onClick={setTheme}
+            ></div>{" "} */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-green"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-green"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="cyan-themes">
+            <div
+              className="color-box cyan-color"
+              value="cyan"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-cyan"
+              onClick={setTheme}
+            ></div>{" "}
+            {/* <div
+              className="color-box cyan-color"
+              value="slant-cyan"
+              onClick={setTheme}
+            ></div>{" "} */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-cyan"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-cyan"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="sky-blue-themes">
+            <div
+              className="color-box sky-blue-color"
+              value="sky-blue"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-sky-blue"
+              onClick={setTheme}
+            ></div>{" "}
+            {/* <div
+              className="color-box sky-blue-color"
+              value="slant-sky-blue"
+              onClick={setTheme}
+            ></div> */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-sky-blue"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-sky-blue"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="blue-themes">
+            <div
+              className="color-box blue-color"
+              value="blue"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-color"
+              value="amoled-blue"
+              onClick={setTheme}
+            ></div>{" "}
+            {/* <div
+              className="color-box blue-color"
+              value="slant-blue"
+              onClick={setTheme}
+            ></div> */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-blue"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-blue"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="violet-themes">
+            <div
+              className="color-box violet-color"
+              value="violet"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-color"
+              value="amoled-violet"
+              onClick={setTheme}
+            ></div>
+            {/* <div
+              className="color-box violet-color"
+              value="slant-violet"
+              onClick={setTheme}
+            ></div> */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-violet"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-violet"
+              onClick={setTheme}
+            ></div>
+          </div>
+
+          <div className="pink-themes">
+            <div
+              className="color-box pink-color"
+              value="pink"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-color"
+              value="amoled-pink"
+              onClick={setTheme}
+            ></div>
+            {/* <div
+              className="color-box pink-color"
+              value="slant-pink"
+              onClick={setTheme}
+            ></div>{" "} */}
+            <div
+              className="color-box slant-color"
+              value="dark-slant-pink"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box amoled-slant-color"
+              value="amoled-slant-pink"
+              onClick={setTheme}
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="custom-theme-wrapper">
+        <div className="custom-themes">
+          {loadedThemes?.map((theme, index) => {
+            return <ThemeLayout theme={theme} index={index} />;
+          })}
         </div>
       </div>
       <div action="" className="custom-theme-maker">

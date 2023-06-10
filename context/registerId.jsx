@@ -53,7 +53,25 @@ function RegisterProvider({ children }) {
     setData(mydata);
     setValidRegId(true);
     setName(mydata.name);
+    // fetch(manifestUrl)
+    //   .then((response) => response.json())
+    //   .then((manifest) => {
+    //     manifest.theme_color = ""; // Set the new theme color
+    //     const updatedManifestJson = JSON.stringify(manifest);
+    //     const updatedManifestBlob = new Blob([updatedManifestJson], {
+    //       type: "application/json",
+    //     });
+    //     const updatedManifestUrl = URL.createObjectURL(updatedManifestBlob);
+    //     currentManifest.setAttribute("href", updatedManifestUrl);
+    //   });
   }, []);
+
+  // Get the current manifest data
+  const currentManifest = document.querySelector('link[rel="manifest"]');
+  const manifestUrl = currentManifest.getAttribute("href");
+
+  // Fetch the manifest file
+
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;

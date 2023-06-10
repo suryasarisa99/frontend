@@ -225,8 +225,8 @@
 }
 
 .amoled-slant-yellow-theme {
-  --acent-color: #575448;
-  --brand-color: #7a776d;
+  --acent-color: #726c54;
+  --brand-color: #918b78;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -234,8 +234,8 @@
 }
 
 .amoled-slant-pink-theme {
-  --acent-color: #564857;
-  --brand-color: #7a6d7a;
+  --acent-color: #755d77;
+  --brand-color: #8b728b;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -243,8 +243,8 @@
 }
 
 .amoled-slant-blue-theme {
-  --acent-color: #484c57;
-  --brand-color: #6b6e7a;
+  --acent-color: #69738f;
+  --brand-color: #727996;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #96969a;
@@ -252,8 +252,8 @@
 }
 
 .amoled-slant-cyan-theme {
-  --acent-color: #485457;
-  --brand-color: #6b747a;
+  --acent-color: #617980;
+  --brand-color: #6c8291;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -261,8 +261,8 @@
 }
 
 .amoled-slant-red-theme {
-  --acent-color: #574848;
-  --brand-color: #7a6b6b;
+  --acent-color: #795c5c;
+  --brand-color: #8f7171;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -270,8 +270,8 @@
 }
 
 .amoled-slant-green-theme {
-  --acent-color: #48574c;
-  --brand-color: #6b7a75;
+  --acent-color: #587260;
+  --brand-color: #5b756d;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -279,8 +279,8 @@
 }
 
 .amoled-slant-violet-theme {
-  --acent-color: #4c4857;
-  --brand-color: #6f6d7a;
+  --acent-color: #6e647e;
+  --brand-color: #8a7ca0;
   --main-color: #000000;
   --secondary-color: #000000;
   --text-color: #9a9996;
@@ -305,110 +305,110 @@
 .theme-page .color-box {
   height: 40px;
 }
-.theme-page .color-themes {
+.theme-page .default-themes div {
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
-  width: 400px;
+  width: 300px;
   justify-content: end;
   align-items: center;
-  margin: 30px auto;
+  margin: 1cqb auto;
 }
-.theme-page .color-themes .red-color {
+.theme-page .red-themes .red-color {
   background-color: red;
 }
-.theme-page .color-themes .yellow-color {
-  background-color: yellow;
-}
-.theme-page .color-themes .green-color {
-  background-color: green;
-}
-.theme-page .color-themes .blue-color {
-  background-color: blue;
-}
-.theme-page .color-themes .cyan-color {
-  background-color: cyan;
-}
-.theme-page .color-themes .sky-blue-color {
-  background-color: rgb(0, 140, 255);
-}
-.theme-page .color-themes .pink-color {
-  background-color: rgb(255, 0, 200);
-}
-.theme-page .color-themes .violet-color {
-  background-color: #6200ff;
-}
-.theme-page .dark-themes .red-color {
+.theme-page .red-themes .amoled-color {
   background-color: rgb(69, 8, 8);
 }
-.theme-page .dark-themes .yellow-color {
-  background-color: rgb(94, 94, 0);
-}
-.theme-page .dark-themes .green-color {
-  background-color: rgb(4, 51, 4);
-}
-.theme-page .dark-themes .cyan-color {
-  background-color: rgb(3, 54, 54);
-}
-.theme-page .dark-themes .sky-blue-color {
-  background-color: rgb(0, 54, 105);
-}
-.theme-page .dark-themes .blue-color {
-  background-color: rgb(10, 55, 87);
-}
-.theme-page .dark-themes .violet-color {
-  background-color: rgb(23, 12, 49);
-}
-.theme-page .dark-themes .pink-color {
-  background-color: rgb(81, 9, 52);
-}
-.theme-page .dark-slant-themes .red-color {
-  background-color: #574848;
-}
-.theme-page .dark-slant-themes .yellow-color {
-  background-color: #575448;
-}
-.theme-page .dark-slant-themes .green-color {
-  background-color: #48574c;
-}
-.theme-page .dark-slant-themes .cyan-color {
-  background-color: #485457;
-}
-.theme-page .dark-slant-themes .sky-blue-color {
-  background-color: #484a57;
-}
-.theme-page .dark-slant-themes .blue-color {
-  background-color: #484a57;
-}
-.theme-page .dark-slant-themes .violet-color {
-  background-color: #4c4857;
-}
-.theme-page .dark-slant-themes .pink-color {
-  background-color: #564857;
-}
-.theme-page .amoled-slant-themes .red-color {
+.theme-page .red-themes .amoled-slant-color {
   background-color: #2e2626;
 }
-.theme-page .amoled-slant-themes .yellow-color {
+.theme-page .red-themes .slant-color {
+  background-color: #574848;
+}
+.theme-page .yellow-themes .yellow-color {
+  background-color: yellow;
+}
+.theme-page .yellow-themes .dark-color {
+  background-color: rgb(94, 94, 0);
+}
+.theme-page .yellow-themes .amoled-color {
   background-color: #302e27;
 }
-.theme-page .amoled-slant-themes .green-color {
+.theme-page .yellow-themes .slant-color {
+  background-color: #575448;
+}
+.theme-page .green-themes .green-color {
+  background-color: green;
+}
+.theme-page .green-themes .dark-color {
+  background-color: rgb(4, 51, 4);
+}
+.theme-page .green-themes .amoled-color {
   background-color: #232b25;
 }
-.theme-page .amoled-slant-themes .cyan-color {
+.theme-page .green-themes .slant-color {
+  background-color: #48574c;
+}
+.theme-page .cyan-themes .cyan-color {
+  background-color: cyan;
+}
+.theme-page .cyan-themes .dark-color {
+  background-color: rgb(3, 54, 54);
+}
+.theme-page .cyan-themes .amoled-color {
   background-color: #2b3335;
 }
-.theme-page .amoled-slant-themes .sky-blue-color {
+.theme-page .cyan-themes .slant-color {
+  background-color: #485457;
+}
+.theme-page .sky-blue-themes .sky-blue-color {
+  background-color: rgb(0, 140, 255);
+}
+.theme-page .sky-blue-themes .dark-color {
+  background-color: rgb(0, 54, 105);
+}
+.theme-page .sky-blue-themes .amoled-color {
   background-color: #2a2b33;
 }
-.theme-page .amoled-slant-themes .blue-color {
+.theme-page .sky-blue-themes .slant-color {
+  background-color: #484a57;
+}
+.theme-page .blue-themes .blue-color {
+  background-color: blue;
+}
+.theme-page .blue-themes .dark-blue-color {
+  background-color: rgb(10, 55, 87);
+}
+.theme-page .blue-themes .amoled-color {
   background-color: #24252c;
 }
-.theme-page .amoled-slant-themes .violet-color {
+.theme-page .blue-themes .slant-color {
+  background-color: #484a57;
+}
+.theme-page .violet-themes .violet-color {
+  background-color: #6200ff;
+}
+.theme-page .violet-themes .dark-violet-color {
+  background-color: rgb(23, 12, 49);
+}
+.theme-page .violet-themes .amoled-color {
   background-color: #2c2a33;
 }
-.theme-page .amoled-slant-themes .pink-color {
+.theme-page .violet-themes .slant-color {
+  background-color: #4c4857;
+}
+.theme-page .pink-themes .pink-color {
+  background-color: rgb(255, 0, 200);
+}
+.theme-page .pink-themes .dark-pink-color {
+  background-color: rgb(81, 9, 52);
+}
+.theme-page .pink-themes .amoled-color {
   background-color: #312931;
+}
+.theme-page .pink-themes .slant-color {
+  background-color: #564857;
 }
 
 .custom-theme-maker {

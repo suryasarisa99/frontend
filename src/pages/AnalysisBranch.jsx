@@ -16,6 +16,7 @@ export default function AnalysisId({ params }) {
   let [sortOrder, setSortOrder] = useState(-1);
   let [sortOn, setSortOn] = useState();
   let [sortType, setSortType] = useState();
+  let [dataLoaded, setDataLoaded] = useState(false);
   let navigate = useNavigate();
   useEffect(() => {
     if (aysYear === "") {
@@ -35,9 +36,9 @@ export default function AnalysisId({ params }) {
     const isClickedInsideOptions = options.contains(targetElement);
     const isClickedOnSort = sort.contains(targetElement);
     // console.log(buttons[0].contains(targetElement));
-    console.log(targetElement.parentNode.parentNode);
-    console.log(buttons[0].parentNode);
-    console.log(buttons[0].contains(targetElement));
+    // console.log(targetElement.parentNode.parentNode);
+    // console.log(buttons[0].parentNode);
+    // console.log(buttons[0].contains(targetElement));
     if (isClickedOnSort) return null;
     let buttonClicked = false;
     buttons.forEach((button) => {
@@ -49,16 +50,24 @@ export default function AnalysisId({ params }) {
         return;
       }
     });
-    console.log("button clicked", buttonClicked);
+
+    // console.log("button clicked", buttonClicked);
     // for (let button of buttons) if (button.contains(targetElement)) return;
     if (!isClickedInsideOptions && !buttonClicked) {
-      console.log("Inside Block");
+      // console.log("Inside Block");
       closeOptions();
     }
   };
 
-  let onClick = (branch, index) => {
+  useEffect(() => {
+    setDataLoaded(analysisData.length === 0 ? false : true);
+  }, [analysisData]);
+
+  let onClick = async (branch, index) => {
     setAysBranch(branch);
+    while (!dataLoaded) {
+      console.log("loop");
+    }
     setAData(analysisData[index]);
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
     console.log(s);

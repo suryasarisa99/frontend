@@ -57,14 +57,22 @@ input {
   margin-right: 20px;
 }
 .points-div {
-  background-color: var(--acent-color);
-  padding: 6px 12px;
   color: black;
-  width: fit-content;
-  border-radius: 8px;
-  font-weight: 500;
+  max-width: 700px;
+  width: 98%;
+  display: flex;
+  justify-content: end;
+  margin: 0px auto;
   .points {
-    font-weight: 900;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background-color: var(--acent-color);
+    .points-title {
+      font-weight: 500;
+    }
+    .points-value {
+      font-weight: 900;
+    }
   }
 }
 @mixin box {
