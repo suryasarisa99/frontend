@@ -59,14 +59,13 @@ export default function AnalysisId({ params }) {
     }
   };
 
-  useEffect(() => {
-    setDataLoaded(analysisData.length === 0 ? false : true);
-  }, [analysisData]);
-
   let onClick = async (branch, index) => {
     setAysBranch(branch);
-    while (!dataLoaded) {
-      console.log("loop");
+    if (analysisData.length === 0) {
+      await new Promise((resolve) => {
+        console.log("##### Waiting @@@@@");
+        setTimeout(resolve, 200);
+      });
     }
     setAData(analysisData[index]);
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
@@ -81,9 +80,6 @@ export default function AnalysisId({ params }) {
     //   console.log(res.data);
     // });
   };
-  useEffect(() => {
-    console.log(`Sort Order ---- ${sortOrder}`);
-  }, [sortOrder]);
   function toggleSortOrder() {
     setSortOrder((prvOrder) => {
       let order = prvOrder == -1 ? 1 : -1;
