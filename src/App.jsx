@@ -134,9 +134,9 @@ export default function App() {
                 <h1 className="reg-id">Register No: {data._id}</h1>
               </div>
               <div className="info"></div>
-              <Result data={data["2-1"]} yr={"2-1"} id={data._id} />
+              <Result data={data["2-1"]} yr="2-1" id={data._id} />
               <Result data={data["1-2"]} yr="1-2" id={data._id} />
-              <Result data={data["1-1"]} yr="1-1" id={data._id} />
+              <Result data={data?.["1-1"]} yr="1-1" id={data._id} />
               <GoCloudDownload
                 id="download"
                 onClick={() => {

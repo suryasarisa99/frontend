@@ -2,9 +2,12 @@ import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 import { useEffect, useState } from "react";
 export default function Result({ data, yr, id }) {
-  if (!data) return null;
+  if (!data?.subjects) {
+    return null;
+  }
   useEffect(() => {
-    setPoints(calculateResults(data));
+    if (!data) prompt("Fuck off");
+    // setPoints(calculateResults(data));
   });
   let [points, setPoints] = useState(NaN);
 
@@ -21,7 +24,9 @@ export default function Result({ data, yr, id }) {
           {id.startsWith("21") && <div className="cell">Internals</div>}
         </div>
         <div className="data-body">
-          {Object?.entries(data.subjects).map(([subject, result]) => (
+          {console.log("inner:")}
+          {console.log(data)}
+          {Object?.entries(data?.subjects)?.map(([subject, result]) => (
             <div className="row" key={subject}>
               <div className="cell">{subject}</div>
               <div
@@ -44,11 +49,11 @@ export default function Result({ data, yr, id }) {
           ))}
         </div>
       </div>
-      <div className="points-flex-box">
+      {/* <div className="points-flex-box">
         <div className="points-div">
           Points: <span className="points">{points}</span>
         </div>
-      </div>
+      </div> */}
       {
         <div
           className={

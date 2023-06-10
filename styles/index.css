@@ -196,6 +196,7 @@ nav {
   margin-bottom: 40px;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 nav .left-bar {
   display: flex;
@@ -701,24 +702,26 @@ div .info-head,
 
 .filter {
   display: flex;
+  align-items: center;
   max-width: 95%;
-  margin: 10px auto;
+  margin: 0px auto;
   text-align: center;
   color: black;
   font-size: 20px;
   font-weight: 550;
-  padding: 10px 20px;
+  padding: 5px 20px;
   background-color: var(--acent-color);
   margin-bottom: 25px;
   position: relative;
   border-radius: 8px;
 }
 .filter .sort-order {
-  width: 50%;
+  width: 30%;
 }
 .filter .sort {
-  width: 50%;
+  width: 70%;
   border-right: 2px solid black;
+  font-size: 16px;
 }
 .filter .sort .hidden-options {
   display: none;
@@ -732,15 +735,16 @@ div .info-head,
   position: absolute;
   top: 52px;
   border-radius: 12px;
-  z-index: 999;
-  color: white;
+  z-index: 8;
+  box-shadow: 0px 10px 10px rgb(24, 24, 24);
+  color: black;
   left: 50%;
   transform: translate(-50%);
-  background-color: rgb(27, 27, 27);
+  background-color: var(--acent-color);
 }
 .filter .sort .options li {
-  background-color: rgb(27, 27, 27);
-  border-bottom: 1px solid rgb(108, 108, 108);
+  background-color: inherit;
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 .filter .sort .options li div {
   padding-left: 40px;
@@ -751,7 +755,7 @@ div .info-head,
 .filter .sort .options li div .icon {
   position: absolute;
   right: 15px;
-  color: rgb(156, 156, 156);
+  color: rgb(0, 0, 0);
   font-size: 22px;
 }
 .filter .sort .options li .sub-menu {
@@ -777,7 +781,7 @@ div .info-head,
 
 .ranks {
   display: flex;
-  width: 70%;
+  width: 95%;
   margin: 20px auto;
   gap: 8px;
   color: black;
@@ -785,14 +789,23 @@ div .info-head,
 }
 .ranks .row {
   padding: 10px 15px;
-  background-color: var(--acent-color);
+  background-color: rgb(10, 0, 0);
   display: flex;
+  color: white;
   border-radius: 5px;
   gap: 25px;
+  display: grid;
+  grid-template-columns: 35px 1fr 0.8fr;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+  align-items: center;
 }
 .ranks .row .rank {
-  width: 25%;
+  text-align: center;
 }
 .ranks .row .id {
-  width: 50%;
+  text-align: center;
+}
+.ranks .row .result {
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
