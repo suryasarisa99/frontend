@@ -1,0 +1,93 @@
+{
+  "name": {
+    "fname": "Jaya",
+    "sname": "Surya",
+    "lname": "Sarisa"
+  },
+  "1-2": {
+    "subjects": {
+      "MATHEMATICS-II": {
+        "grade": "A+",
+        "internals": "26"
+      },
+      "APPLIED CHEMISTRY": {
+        "grade": "F",
+        "internals": "24"
+      },
+      "COMPUTER ORGANIZATION": {
+        "grade": "D",
+        "internals": "26"
+      },
+      "DATA STRUCTURES": {
+        "grade": "A",
+        "internals": "24"
+      },
+      "PYTHON PROGRAMMING": {
+        "grade": "A",
+        "internals": "27"
+      }
+    },
+    "labs": {
+      "APPLIED CHEMISTRY LABORATORY": {
+        "grade": "A",
+        "internals": "12"
+      },
+      "DATA STRUCTURES LABORATORY": {
+        "grade": "A+",
+        "internals": "15"
+      },
+      "PYTHON PROGRAMMING LABORATORY": {
+        "grade": "A+",
+        "internals": "15"
+      }
+    }
+  },
+  "2-1": {
+    "subjects": {
+      "MATHEMATICS-III": {
+        "grade": "D",
+        "internals": "27"
+      },
+      "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
+        "grade": "A",
+        "internals": "29"
+      },
+      "OPERATING SYSTEMS": {
+        "grade": "C",
+        "internals": "26"
+      },
+      "SOFTWARE ENGINEERING": {
+        "grade": "C",
+        "internals": "29"
+      },
+      "MATHEMATICAL FOUNDATIONS OF COMPUTER SCI": {
+        "grade": "D",
+        "internals": "29"
+      }
+    },
+    "labs": {
+      "COMMUNITY SERVICES PROJECT": {
+        "grade": "A+",
+        "internals": "0"
+      },
+      "OBJECT ORIENTED PROGRAMMING THROUGH C++": {
+        "grade": "A+",
+        "internals": "15"
+      },
+      "OPERATING SYSTEMS LAB": {
+        "grade": "A+",
+        "internals": "15"
+      },
+      "SOFTWARE ENGINEERING LAB": {
+        "grade": "A+",
+        "internals": "15"
+      },
+      "APPLICATIONS OF PYTHON-NUMPY(SKILL ORIEN": {
+        "grade": "A+",
+        "internals": "0"
+      }
+    }
+  },
+  "photo": "dummyText",
+  "_id": "21U41A0546"
+}

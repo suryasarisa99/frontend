@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import storage from "../firebaseConfig";
@@ -6,7 +6,7 @@ import red from "../src/asserts/logos/red.png";
 import pink from "../src/asserts/logos/pink.png";
 import green from "../src/asserts/logos/green.png";
 import blue from "../src/asserts/logos/blue.png";
-
+import mydata from "../src/temp.json";
 import slantBlue from "../src/asserts/slant/slant-blue.png";
 import slantGreen from "../src/asserts/slant/slant-green.png";
 import slantRed from "../src/asserts/slant/slant-red.png";
@@ -17,7 +17,7 @@ import slantPink from "../src/asserts/slant/slant-pink.png";
 // import slantBlue from "../src/asserts/slant/slant-blue.png"
 import { saveAs } from "file-saver";
 let RegisterContext = createContext();
-
+import { useNavigate } from "react-router-dom";
 function RegisterProvider({ children }) {
   let [emptyRegId, setEmptyRegId] = useState(false);
   let [invalidRegId, setInvalidRegId] = useState(false);
@@ -47,6 +47,13 @@ function RegisterProvider({ children }) {
   let [loadedThemes, setLoadedThemes] = useState([]);
   let [aysYear, setAysYear] = useState("");
   let [aysBranch, setAysBranch] = useState("");
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    setData(mydata);
+    setValidRegId(true);
+    setName(mydata.name);
+  }, []);
   function submitHandle(e) {
     e.preventDefault();
     let id = e.target.id.value;
@@ -70,6 +77,7 @@ function RegisterProvider({ children }) {
         } else {
           setImgUrl(false);
           setStartPage(false);
+          navigate("/");
           if (res.data.photo) getImg(res.data.photo);
           else setImgUrl(false);
           // handleDownload(res.data);
@@ -294,14 +302,7 @@ function RegisterProvider({ children }) {
     window.history.pushState(null, "", "popup");
     setThemePage(true);
   }
-  function closeThemePage() {
-    setThemePage(false);
-    window.history.pushState(
-      null,
-      "",
-      window.location.pathname.split("/").slice(0, -1).join("/") || "/"
-    );
-  }
+
   function setLogoColor(color) {
     switch (color) {
       case "red":
@@ -431,7 +432,6 @@ function RegisterProvider({ children }) {
         themePage,
         setThemePage,
         openThemePage,
-        closeThemePage,
         imgLoaded,
         setImgLoaded,
         getImg,

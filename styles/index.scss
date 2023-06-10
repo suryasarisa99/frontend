@@ -559,12 +559,13 @@ div .info-head,
     color: white;
     border-radius: 5px;
     gap: 25px;
+    border-bottom: 1px solid rgb(126, 126, 126);
     // justify-content: space-around;
-    display: grid;
-    grid-template-columns: 35px 1fr 0.8fr;
-    column-gap: 35px;
+    display: flex;
+    // grid-template-columns: 35px 1fr 0.8fr;
+    // column-gap: 35px;
     // margin: 0px 20px;
-    // justify-content: center;
+    justify-content: space-around;
     align-items: center;
     .rank {
       // width: 10px;
@@ -577,6 +578,7 @@ div .info-head,
     .result {
       // width: 100%;
       text-align: center;
+      min-width: 45px;
     }
     // justify-content: space-between;
   }

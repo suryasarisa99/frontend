@@ -13,7 +13,6 @@ export default function AnalysisId({ params }) {
   let [selectedMenu, setSelectedMenu] = useState(-1);
   let [selectedSubMenu, setSelectedSubMenu] = useState(-1);
   let [sortedData, setSortedData] = useState([]);
-  let [branchIndex, setBranchIndex] = useState(-1);
   let [sortOrder, setSortOrder] = useState(-1);
   let [sortOn, setSortOn] = useState();
   let [sortType, setSortType] = useState();
@@ -24,35 +23,46 @@ export default function AnalysisId({ params }) {
       navigate("/ays");
     }
 
-    document.addEventListener("click", (event) => {
-      const targetElement = event.target;
-      const options = document.querySelector(".options");
-      const isClickedInsideOptions = options.contains(targetElement);
-      const sort = document.querySelector(".sort");
-      console.log(sort);
-      console.log(targetElement);
-      const isClickedOnSort = sort.contains(targetElement);
-      // const isClickedOnSort = sort == targetElement;
-      console.log(`isClickedOnSort: ${isClickedOnSort}`);
-      console.log(`isClickedOnOptions: ${isClickedInsideOptions}`);
-      if (isClickedOnSort) return null;
-      if (!isClickedInsideOptions) {
-        // Click occurred outside the popup box, close the popup
-        console.log("Inside Block");
-        // options.style.display = "none";
-        closeOptions();
-      }
-    });
+    document.addEventListener("click", closeFilter);
   });
 
+  const closeFilter = (event) => {
+    const targetElement = event.target;
+    const options = document.querySelector(".options");
+    const buttons = document.querySelectorAll(".options li .icon");
+    const sort = document.querySelector(".sort");
+
+    const isClickedInsideOptions = options.contains(targetElement);
+    const isClickedOnSort = sort.contains(targetElement);
+    // console.log(buttons[0].contains(targetElement));
+    console.log(targetElement.parentNode.parentNode);
+    console.log(buttons[0].parentNode);
+    console.log(buttons[0].contains(targetElement));
+    if (isClickedOnSort) return null;
+    let buttonClicked = false;
+    buttons.forEach((button) => {
+      if (
+        button === targetElement ||
+        button.contains(targetElement.parentNode)
+      ) {
+        buttonClicked = true;
+        return;
+      }
+    });
+    console.log("button clicked", buttonClicked);
+    // for (let button of buttons) if (button.contains(targetElement)) return;
+    if (!isClickedInsideOptions && !buttonClicked) {
+      console.log("Inside Block");
+      closeOptions();
+    }
+  };
+
   let onClick = (branch, index) => {
-    // console.log(analysisData);
     setAysBranch(branch);
     setAData(analysisData[index]);
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
     console.log(s);
     setSortedData(s);
-    setBranchIndex(index);
     // navigate("/");
     // let url = `${server}/ays/${aysYear + branch}`;
     // console.log(url);
@@ -73,22 +83,22 @@ export default function AnalysisId({ params }) {
     });
   }
   function openOptions(e) {
-    console.log("open options");
+    // console.log("open options");
     let options = document.querySelector(".options");
     options.classList.remove("hidden-options");
     e.stopPropagation();
   }
   function closeOptions() {
-    console.log("close options");
+    // console.log("close options");
     let options = document.querySelector(".options");
     options.classList.add("hidden-options");
   }
   function openSubMenu(e, index) {
-    console.log("opened opened menu");
+    // console.log("opened opened menu");
     setSelectedMenu(index);
   }
   function closeSubMenu(e, index) {
-    console.log("closed opened menu");
+    // console.log("closed opened menu");
     setSelectedMenu(-1);
   }
   function selectSubMenu(e, index) {
@@ -96,10 +106,8 @@ export default function AnalysisId({ params }) {
     let sort_type;
     let sort_on;
     e.stopPropagation();
-    if (index == 99) sort_on = "_id";
     if (selectedMenu == 0) sort_type = "points";
     if (selectedMenu == 1) sort_type = "backlogs_cnt";
-    if (selectedMenu == 2) sort_type = "_id";
     setSortType(sort_type);
 
     if (index == 0) sort_on = "total";
@@ -107,7 +115,7 @@ export default function AnalysisId({ params }) {
     else if (index === 2) sort_on = "1-2";
     else if (index === 3) sort_on = "2-1";
     setSortOn(sort_on);
-    let x = sortBy(aData, sort_on, sort_type);
+    let x = sortBy(aData, sort_on, sort_type, sortOrder);
     console.log(x);
     setSortedData(x);
     setSelectedSubMenu(index);
@@ -137,8 +145,6 @@ export default function AnalysisId({ params }) {
 
   return (
     <div>
-      <Navbar />
-
       <div className="filter">
         <div className="sort">
           <div onClick={openOptions}>
@@ -227,13 +233,9 @@ export default function AnalysisId({ params }) {
                     : std["total_" + sortType]?.toFixed(3)}
                 </p>
               ) : sortOn === undefined ? (
-                <p className="result">
-                  {std.total_points?.toFixed(3) ?? "Null"}
-                </p>
+                <p className="result">{std.total_points?.toFixed(3)}</p>
               ) : (
                 <p className="result">
-                  {" "}
-                  {/* {sortType} */}
                   {sortType != "points"
                     ? std[sortOn][sortType]
                     : std[sortOn][sortType]?.toFixed(3)}

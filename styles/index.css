@@ -794,10 +794,9 @@ div .info-head,
   color: white;
   border-radius: 5px;
   gap: 25px;
-  display: grid;
-  grid-template-columns: 35px 1fr 0.8fr;
-  -moz-column-gap: 35px;
-       column-gap: 35px;
+  border-bottom: 1px solid rgb(126, 126, 126);
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 .ranks .row .rank {
@@ -808,4 +807,5 @@ div .info-head,
 }
 .ranks .row .result {
   text-align: center;
+  min-width: 45px;
 }/*# sourceMappingURL=index.css.map */

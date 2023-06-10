@@ -1,49 +1,33 @@
-import ReactDOM from "react-dom";
 import { useEffect, useContext } from "react";
 import RegisterContext from "../../context/registerId";
 import { useNavigate, Link } from "react-router-dom";
 export default function SidePannel({}) {
   let navigate = useNavigate();
   let {
-    // onUpdateHandle,
     openUpdateName,
-    updateName,
     setSidePannel,
-    lockBox,
     openLockBox,
-    onOverlayClick,
     openUpdatePassword,
-    data,
     privateAccount,
     openUpdatePhoto,
     imgUrl,
     name,
-    openThemePage,
   } = useContext(RegisterContext);
 
   useEffect(() => {
-    // let overlay = document.getElementById("overlay");
-    let sidepannel = document.querySelector(".side-pannel");
-    // overlay.addEventListener("click", onOverlayClick);
-    // sidepannel.addEventListener("click", onSidePannelClick);
-    // window.addEventListener("scroll", () => {
-    //   if (window.scrollY > 60) {
-    //     // console.log("working--");
-    //     sidepannel.style.top = "0";
-    //   }
-    // });
+    document.addEventListener("click", handleClose);
     return () => {
-      // overlay.removeEventListener("click", onOverlayClick);
-      // sidepannel.removeEventListener("click", onSidePannelClick);
+      document.removeEventListener("click", handleClose);
     };
   }, []);
-
+  function handleClose(e) {
+    let sidepannel = document.querySelector(".side-pannel");
+    if (!sidepannel.contains(e.target)) closeSidePannel(e);
+  }
   function closeSidePannel(e, cb) {
     setSidePannel(false);
-    if (cb) cb(cb(e));
-  }
-  function sample() {
-    console.log("test  -1");
+    if (typeof cb === "function") cb(e);
+    else if (typeof cb === "string") navigate(cb);
   }
 
   function onSidePannelClick(e) {
@@ -51,10 +35,7 @@ export default function SidePannel({}) {
       e.stopPropagation();
     }
   }
-  function openAnalysis(e) {
-    navigate("/ays");
-    closeSidePannel();
-  }
+
   // ReactDOM.createPortal
   return (
     <>
@@ -74,14 +55,11 @@ export default function SidePannel({}) {
         <button onClick={(e) => closeSidePannel(e, openUpdatePhoto)}>
           {imgUrl ? "Update Photo" : "Add Photo"}
         </button>
-        <button onClick={(e) => closeSidePannel(e, openThemePage)}>
-          Themes
-        </button>
+        <button onClick={(e) => closeSidePannel(e, "/themes")}>Themes</button>
+        <button onClick={(e) => closeSidePannel(e, "/ays")}>Analysis</button>
         <a href="https://student546.vercel.app" target="_blank">
           other site
         </a>
-        <button onClick={openAnalysis}>Analysis</button>
-        {/* <Link to="/ays">baa</Link> */}
       </div>
     </>
     // document.getElementById("overlay")
