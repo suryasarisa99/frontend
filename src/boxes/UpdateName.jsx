@@ -3,6 +3,7 @@ import { useEffect, useContext, useState } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 import axios from "axios";
+import { motion } from "framer-motion";
 export default function UpdateName() {
   let { updateName, setUpdateName, name, setName, server, data } =
     useContext(RegisterContext);
@@ -51,23 +52,39 @@ export default function UpdateName() {
 
   return ReactDOM.createPortal(
     <>
-      <form action="" className="update-box" onSubmit={handleUpdateName}>
+      <motion.form
+        action=""
+        initial={{ y: -320, x: -205 }}
+        animate={{ y: updateName ? 0 : 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="update-box"
+        onSubmit={handleUpdateName}
+      >
         <GiCrossedSwords className="close-btn" onClick={onClose} />
-        <input
+        <motion.input
+          // initial={{ height: 0 }}
+          // animate={{ height: updateName ? 80 : 0 }}
+          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="First Name"
           name="fname"
           value={fname}
           onChange={(e) => setFname(e.target.value)}
         />
-        <input
+        <motion.input
+          // initial={{ height: 0 }}
+          // animate={{ height: updateName ? 80 : 0 }}
+          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="Second Name"
           name="sname"
           value={sname}
           onChange={(e) => setSname(e.target.value)}
         />
-        <input
+        <motion.input
+          // initial={{ height: 0 }}
+          // animate={{ height: updateName ? 80 : 0 }}
+          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="Last Name"
           name="lname"
@@ -75,7 +92,7 @@ export default function UpdateName() {
           onChange={(e) => setLname(e.target.value)}
         />
         <button>Update</button>
-      </form>
+      </motion.form>
     </>,
     document.getElementById("overlay")
   );

@@ -60,15 +60,22 @@ input:focus {
 }
 
 .points-div {
-  background-color: var(--acent-color);
-  padding: 6px 12px;
   color: black;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 8px;
-  font-weight: 500;
+  max-width: 700px;
+  width: 98%;
+  display: flex;
+  justify-content: end;
+  margin: 0px auto;
 }
 .points-div .points {
+  border-radius: 8px;
+  padding: 6px 12px;
+  background-color: var(--acent-color);
+}
+.points-div .points .points-title {
+  font-weight: 500;
+}
+.points-div .points .points-value {
   font-weight: 900;
 }
 
@@ -185,17 +192,24 @@ input:focus {
   color: rgb(145, 255, 145);
 }
 
+root div {
+  display: absolute;
+}
+
 nav {
   height: 60px;
   background-color: var(--secondary-color);
   border-bottom: 2px solid var(--acent-color);
   display: flex;
+  position: absolute;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   position: sticky;
+  left: 0;
   top: 0;
+  bottom: 0;
   z-index: 10;
 }
 nav .left-bar {
@@ -304,12 +318,14 @@ div .info-head,
   position: fixed;
   top: 60px;
   height: 100vh;
-  width: 265px;
+  width: 250px;
+  left: 0;
   padding: 20px 20px 20px 30px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--acent-color);
-  z-index: 10;
+  z-index: 100;
+  transition: left 0.3s ease-out;
 }
 .side-pannel a,
 .side-pannel button {
@@ -649,10 +665,6 @@ div .info-head,
   border: 0;
   outline: none;
   margin-top: 0px;
-  background-color: var(--main-color);
-}
-.img-box .profile-photo {
-  background-color: var(--main-color);
 }
 .img-box .img-border {
   border: 10px solid var(--acent-color);
@@ -673,6 +685,7 @@ div .info-head,
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .download-box {
@@ -722,9 +735,6 @@ div .info-head,
   width: 70%;
   border-right: 2px solid black;
   font-size: 16px;
-}
-.filter .sort .hidden-options {
-  display: none;
 }
 .filter .sort .options {
   font-weight: 450;

@@ -3,12 +3,15 @@ import RegisterContext from "../../context/registerId";
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
 import axios from "axios";
+import { motion } from "framer-motion";
 export default function unLockBox() {
   let {
     onOverlayClick,
     wrongPass,
     passTerm,
     setPassTerm,
+    unLockBox,
+    isLocked,
     onPasswordInput,
     submitUnlockBox,
     closeUnlockBox,
@@ -36,7 +39,13 @@ export default function unLockBox() {
 
   return ReactDOM.createPortal(
     <>
-      <form className="unlock-box" onSubmit={submitUnlockBox}>
+      <motion.form
+        initial={{ y: -150, x: -207 }}
+        animate={{ y: isLocked ? 0 : -140 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="unlock-box"
+        onSubmit={submitUnlockBox}
+      >
         <div className="row">
           <label
             htmlFor="Password For Protection"
@@ -45,10 +54,7 @@ export default function unLockBox() {
           >
             {wrongPass ? "Entered Wrong Password" : "Enter the passsword: "}
           </label>
-          <GiCrossedSwords
-            className="close-btn"
-            onClick={closeUnlockBox}
-          />
+          <GiCrossedSwords className="close-btn" onClick={closeUnlockBox} />
         </div>
         <input
           type="password"
@@ -57,7 +63,7 @@ export default function unLockBox() {
           onChange={onPasswordInput}
         />
         <button>Submit</button>
-      </form>
+      </motion.form>
     </>,
     document.getElementById("overlay")
   );

@@ -1,13 +1,20 @@
 import "../styles/index.css";
 import "../styles/colors.css";
-import { useContext, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  useContext,
+  useState,
+  useImperativeHandle,
+  useEffect,
+  forwardRef,
+} from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
 import StartPage from "./components/StartPage";
 
 import userProffile from "./asserts/user_profile.png";
-export default function App() {
+const App = forwardRef((props, ref) => {
   let {
     validRegId,
     data,
@@ -17,7 +24,6 @@ export default function App() {
     openUpdateName,
     handleDownload,
   } = useContext(RegisterContext);
-
   let updateBtn = (
     <button className="update-btn" onClick={openUpdateName}>
       update
@@ -25,12 +31,17 @@ export default function App() {
   );
 
   return (
-    <>
+    <div className="page" ref={ref}>
       {!isLocked && (
-        <div className="page">
+        <div className="page1">
           {validRegId ? (
             <div className="data2">
-              <div className="img-box">
+              <motion.div
+                // initial={{ rotate: -180 }}
+                whileHover={{ rotate: 360, scale: 0.6, borderRadius: 50 }}
+                whileInView={{ scale: 1, rotate: 180 }}
+                className="img-box"
+              >
                 {data.photo && (
                   <img
                     src={imgUrl || userProffile}
@@ -38,7 +49,7 @@ export default function App() {
                     className="profile-photo"
                   />
                 )}
-              </div>
+              </motion.div>
               <div className="info">
                 <h1 className="reg-id">
                   Name:{" "}
@@ -64,6 +75,8 @@ export default function App() {
           )}
         </div>
       )}
-    </>
+    </div>
   );
-}
+});
+
+export default App;

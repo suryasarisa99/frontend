@@ -1,7 +1,8 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, forwardRef, useImperativeHandle } from "react";
 import RegisterContext from "../../context/registerId";
 import { useNavigate, Link } from "react-router-dom";
-export default function SidePannel({}) {
+import { motion } from "framer-motion";
+const SidePannel = forwardRef((props, ref) => {
   let navigate = useNavigate();
   let {
     openUpdateName,
@@ -11,6 +12,7 @@ export default function SidePannel({}) {
     privateAccount,
     openUpdatePhoto,
     imgUrl,
+    sidePannel,
     name,
   } = useContext(RegisterContext);
 
@@ -20,10 +22,12 @@ export default function SidePannel({}) {
       document.removeEventListener("click", handleClose);
     };
   }, []);
+
   function handleClose(e) {
     let sidepannel = document.querySelector(".side-pannel");
     if (!sidepannel.contains(e.target)) closeSidePannel(e);
   }
+
   function closeSidePannel(e, cb) {
     setSidePannel(false);
     if (typeof cb === "function") cb(e);
@@ -36,10 +40,16 @@ export default function SidePannel({}) {
     }
   }
 
-  // ReactDOM.createPortal
   return (
     <>
-      <div className="side-pannel">
+      <motion.div
+        ref={ref}
+        initial={{ x: -300 }} // Initial position outside the viewport
+        animate={{ x: sidePannel ? 0 : -300 }} // Move to the visible position
+        exit={{ x: -300 }}
+        transition={{ duration: 0.3, ease: "easeOut" }} // Transition properties
+        className="side-pannel"
+      >
         <button onClick={(e) => closeSidePannel(e, openUpdateName)}>
           {name?.fname ? "Update Name" : "Add Name"}
         </button>
@@ -60,8 +70,9 @@ export default function SidePannel({}) {
         <a href="https://student546.vercel.app" target="_blank">
           other site
         </a>
-      </div>
+      </motion.div>
     </>
-    // document.getElementById("overlay")
   );
-}
+});
+
+export default SidePannel;

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, forwardRef } from "react";
 import RegisterContext from "../../context/registerId";
 import { FaBars } from "react-icons/fa";
 export default function Navbar({ toggleSidePanel }) {

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useContext, useState, useEffect } from "react";
 import RegisterContext from "../../context/registerId";
 import { useNavigate, Link } from "react-router-dom";
@@ -16,7 +17,7 @@ export default function AnalysisId({ params }) {
   let [sortOrder, setSortOrder] = useState(-1);
   let [sortOn, setSortOn] = useState();
   let [sortType, setSortType] = useState();
-  let [dataLoaded, setDataLoaded] = useState(false);
+  let [showOptions, setShowOptions] = useState(false);
   let navigate = useNavigate();
   useEffect(() => {
     if (aysYear === "") {
@@ -90,13 +91,15 @@ export default function AnalysisId({ params }) {
   function openOptions(e) {
     // console.log("open options");
     let options = document.querySelector(".options");
-    options.classList.remove("hidden-options");
+    // options.classList.remove("hidden-options");
+    setShowOptions(true);
     e.stopPropagation();
   }
   function closeOptions() {
     // console.log("close options");
     let options = document.querySelector(".options");
-    options.classList.add("hidden-options");
+    // options.classList.add("hidden-options");
+    setShowOptions(false);
   }
   function openSubMenu(e, index) {
     // console.log("opened opened menu");
@@ -157,60 +160,86 @@ export default function AnalysisId({ params }) {
               Sort By: {sortOn}-{sortType}
             </p>
           </div>
-          <ul className="options hidden-options">
-            {options.map((item, index) => {
-              if (index === selectedMenu)
+          {showOptions && (
+            <motion.ul
+              // 85 15 15 115
+              // initial={{ height: 0 }}
+              // animate={{ height: selectedMenu != -1 ? 300 : 100 }}
+              className="options hidden-options"
+            >
+              {options.map((item, index) => {
+                if (index === selectedMenu)
+                  return (
+                    <li>
+                      <div
+                        // initial={{ height: 0 }}
+                        // animate={{ height: 50 }}
+                        onClick={(e) => closeSubMenu(e, index)}
+                      >
+                        Sort By {item} <FaAngleUp className="icon" />
+                      </div>
+                      <motion.ol
+                        initial={{ height: 0, x: -20 }}
+                        animate={{
+                          height: selectedMenu != -1 ? 180 : 0,
+                          x: 20,
+                        }}
+                        className="sub-menu"
+                      >
+                        <li>
+                          <div onClick={(e) => selectSubMenu(e, 0)}>
+                            On Total {options[selectedMenu]}
+                          </div>
+                        </li>
+                        <li>
+                          <div onClick={(e) => selectSubMenu(e, 1)}>
+                            On Sem 1-1 {options[selectedMenu]}
+                          </div>
+                        </li>
+                        <li>
+                          <div onClick={(e) => selectSubMenu(e, 2)}>
+                            On Sem 1-2 {options[selectedMenu]}
+                          </div>
+                        </li>
+                        <li>
+                          <div onClick={(e) => selectSubMenu(e, 3)}>
+                            On Sem 2-1 {options[selectedMenu]}
+                          </div>
+                        </li>
+                      </motion.ol>
+                    </li>
+                  );
+                if (index === 2) {
+                  return (
+                    <li onClick={(e) => selectSubMenu(e, 99)}>
+                      <div>
+                        Sort By {item} <div className="icon"></div>
+                      </div>
+                    </li>
+                  );
+                }
                 return (
-                  <li>
-                    <div onClick={(e) => closeSubMenu(e, index)}>
-                      Sort By {item} <FaAngleUp className="icon" />
-                    </div>
-                    <ol className="sub-menu">
-                      <li>
-                        <div onClick={(e) => selectSubMenu(e, 0)}>
-                          On Total {options[selectedMenu]}
-                        </div>
-                      </li>
-                      <li>
-                        <div onClick={(e) => selectSubMenu(e, 1)}>
-                          On Sem 1-1 {options[selectedMenu]}
-                        </div>
-                      </li>
-                      <li>
-                        <div onClick={(e) => selectSubMenu(e, 2)}>
-                          On Sem 1-2 {options[selectedMenu]}
-                        </div>
-                      </li>
-                      <li>
-                        <div onClick={(e) => selectSubMenu(e, 3)}>
-                          On Sem 2-1 {options[selectedMenu]}
-                        </div>
-                      </li>
-                    </ol>
-                  </li>
-                );
-              if (index === 2) {
-                return (
-                  <li onClick={(e) => selectSubMenu(e, 99)}>
+                  <li
+                    // initial={{ height: 0 }}
+                    // animate={{ height: 50 }}
+                    onClick={(e) => openSubMenu(e, index)}
+                  >
                     <div>
-                      Sort By {item} <div className="icon"></div>
+                      Sort By {item}{" "}
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: 50 }}
+                        className="icon"
+                      >
+                        <FaAngleDown />
+                      </motion.div>
                     </div>
                   </li>
                 );
-              }
-              return (
-                <li onClick={(e) => openSubMenu(e, index)}>
-                  <div>
-                    Sort By {item}{" "}
-                    <div className="icon">
-                      <FaAngleDown />
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-            <ol className="sub-menu hidden-sub-menu"></ol>
-          </ul>
+              })}
+              <ol className="sub-menu hidden-sub-menu"></ol>
+            </motion.ul>
+          )}
         </div>
         <div className="sort-order" onClick={toggleSortOrder}>
           {sortOrder == -1 ? "Highest" : "Lowest"}

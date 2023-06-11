@@ -1,4 +1,5 @@
 import RegisterContext from "../../context/registerId";
+import { motion } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 export default function Result({ data, yr, id }) {
   if (!data?.subjects) {
@@ -11,7 +12,11 @@ export default function Result({ data, yr, id }) {
 
   return (
     <div className="data-tables">
-      <div
+      <motion.div
+        initial={{ scale: 0.8 }}
+        whileInView={{ scale: 1 }}
+        whileTap={{ scale: 1.07 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }} // Transition properties
         className={
           "subjects data " + (id.startsWith("21") ? "data-has-internals" : "")
         }
@@ -46,7 +51,7 @@ export default function Result({ data, yr, id }) {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
       <div className="points-flex-box">
         <div className="points-div">
           <div className="points">
@@ -59,7 +64,11 @@ export default function Result({ data, yr, id }) {
         </div>
       </div>
       {
-        <div
+        <motion.div
+          initial={{ scale: 0.8 }}
+          whileInView={{ scale: 1 }}
+          whileTap={{ scale: 1.07 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }} // Transition properties
           className={
             "labs data " + (id.startsWith("21") ? "data-has-internals" : "")
           }
@@ -82,7 +91,7 @@ export default function Result({ data, yr, id }) {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       }
     </div>
   );
