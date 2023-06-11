@@ -7,6 +7,8 @@ const SidePannel = forwardRef((props, ref) => {
   let {
     openUpdateName,
     setSidePannel,
+    isOpened,
+    setIsOpened,
     openLockBox,
     openUpdatePassword,
     privateAccount,
@@ -29,7 +31,7 @@ const SidePannel = forwardRef((props, ref) => {
   }
 
   function closeSidePannel(e, cb) {
-    setSidePannel(false);
+    setIsOpened(false);
     if (typeof cb === "function") cb(e);
     else if (typeof cb === "string") navigate(cb);
   }
@@ -44,9 +46,9 @@ const SidePannel = forwardRef((props, ref) => {
     <>
       <motion.div
         ref={ref}
-        initial={{ x: sidePannel ? -300 : 0 }} // Initial position outside the viewport
-        animate={{ x: sidePannel ? 0 : -300 }} // Move to the visible position
-        exit={{ x: -300 }}
+        // initial={{ x: sidePannel ? -300 : 0 }} // Initial position outside the viewport
+        // animate={{ x: sidePannel ? 0 : -300 }} // Move to the visible position
+        // exit={{ x: -300 }}
         transition={{ duration: 0.3, ease: "easeOut" }} // Transition properties
         className="side-pannel"
       >

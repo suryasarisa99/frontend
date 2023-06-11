@@ -48,6 +48,7 @@ function RegisterProvider({ children }) {
   let [aysYear, setAysYear] = useState("");
   let [aysBranch, setAysBranch] = useState("");
   let navigate = useNavigate();
+  const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
     setData(mydata);
@@ -469,6 +470,8 @@ function RegisterProvider({ children }) {
         setAysYear,
         analysisData,
         setAnalysisData,
+        isOpened,
+        setIsOpened,
       }}
     >
       {children}

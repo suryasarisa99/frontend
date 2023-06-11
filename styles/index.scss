@@ -300,50 +300,6 @@ div .info-head,
   flex-direction: column;
   align-items: center;
 }
-.page {
-  // position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // transition: transform 0.3s ease, opacity 0.3s ease;
-  // z-index: 2;
-  // top: 40;
-  // left: 0;
-}
-.side-pannel {
-  background-color: var(--secondary-color);
-  position: fixed;
-  top: 60px;
-  height: 100vh;
-  width: 250px;
-  left: 0;
-  padding: 20px 20px 20px 30px;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid var(--acent-color);
-  z-index: 100;
-  transition: left 0.3s ease-out;
-
-  // position: absolute;
-  // top: 0;
-  // height: 100%;
-  // width: 40%;
-  // left: -40%;
-  // z-index: 10;
-  // transition: transform 0.3s ease, opacity 0.3s ease;
-
-  a,
-  button {
-    border: none;
-    font-size: 20px;
-    background-color: inherit;
-    color: var(--list-items-color);
-
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid grey;
-    text-decoration: none;
-  }
-}
 
 .lock-box {
   @include box;
@@ -617,18 +573,69 @@ div .info-head,
   }
 }
 .container {
-  // position: relative;
+  position: relative;
+
   // overflow: hidden;
-  // height: 100vh;
+  // width: 100%;
+  // overflow-x: auto;
+}
+.container.open {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  // transform: translateX(250px);
+  // transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: background-color 2s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  // z-index: 2;
+}
+
+.side-pannel {
+  background-color: var(--secondary-color);
+  position: fixed;
+  top: 60px;
+  height: 100vh;
+  width: 250px;
+  left: 0;
+  padding: 20px 20px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--acent-color);
+  z-index: 100;
+  transition: left 0.3s ease-out;
+  // transform: translateX(0px);
+  opacity: 0.5;
+  transform: translateX(-255px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  a,
+  button {
+    border: none;
+    font-size: 20px;
+    background-color: inherit;
+    color: var(--list-items-color);
+
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    text-decoration: none;
+  }
 }
 .container.open .page {
   // width: 30px;
-  // transform: translate(50%);
-  // opacity: 0.5;
+  transform: translate(250px);
+  opacity: 0.5;
+  // box-shadow: 10px 10px 10px rgb(127, 127, 127);
   // background-color: red;
 }
 
 .container.open .side-pannel {
-  // transform: translateX(0);
-  // opacity: 1;
+  transform: translateX(0px);
+  // background-color: green;
+  opacity: 1;
 }

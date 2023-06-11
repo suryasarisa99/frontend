@@ -24,13 +24,15 @@ export default function Home({}) {
     server,
     sidePannel,
     setSidePannel,
+    isOpened,
+    setIsOpened,
     updatePassword,
     lockBox,
     isLocked,
     updateName,
     updatePhoto,
   } = useContext(RegisterContext);
-  const [isOpened, setIsOpened] = useState(false);
+  // const [isOpened, setIsOpened] = useState(false);
   const container = useRef(null);
   const mainPage = useRef(null);
   const sidebar = useRef(null);
@@ -41,10 +43,10 @@ export default function Home({}) {
   useEffect(() => {
     axios.get(`${server}/start`).then((res) => console.log(res));
     window.addEventListener("keydown", (e) => {
-      if (e.altKey && e.key === "n") openUpdateName();
-      if (e.altKey && e.key === "l") openLockBox();
-      if (e.altKey && e.key === "p") openUpdatePhoto();
-      if (e.altKey && e.key === "x") openThemePage();
+      // if (e.altKey && e.key === "n") openUpdateName();
+      // if (e.altKey && e.key === "l") openLockBox();
+      // if (e.altKey && e.key === "p") openUpdatePhoto();
+      // if (e.altKey && e.key === "x") openThemePage();
     });
     window.addEventListener("focus", handleOnFocus);
     handleLoadThemes();
@@ -87,61 +89,66 @@ export default function Home({}) {
   let handleOnFocus = () => {
     axios.get(`${server}/start`).then((res) => console.log("Focused"));
   };
-  function toggleSidePanel(e) {
-    setSidePannel((prevSidePannel) => !prevSidePannel);
-    e.stopPropagation();
-  }
   // function toggleSidePanel(e) {
-  //   setIsOpened((prevIsOpened) => !prevIsOpened);
+  // setSidePannel((prevSidePannel) => !prevSidePannel);
   //   e.stopPropagation();
   // }
+  function toggleSidePanel(e) {
+    // setSidePannel((prevSidePannel) => !prevSidePannel);
+    setIsOpened((prvOpened) => !prvOpened);
+    e.stopPropagation();
+  }
   function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
-    isSwiping = true;
+    // isSwiping = true;
     console.log(container);
     console.log(sidebar);
     console.log(mainPage);
   }
 
   function handleTouchMove(event) {
-    if (!isSwiping) return;
+    // if (!isSwiping) return;
+    isSwiping = true;
     touchMoveX = event.touches[0].clientX;
-
+    console.log(touchMoveX);
+    console.log("+++++ Touch Move +++++=");
     const swipeDistance = touchMoveX - touchStartX;
     const maxSwipeDistance = sidebar.current.offsetWidth;
 
     if (swipeDistance > 0 && swipeDistance <= maxSwipeDistance) {
-      mainPage.current.style.transform = `translateX(${
-        swipeDistance * isOpened
-      }px)`;
+      console.log("Checking This");
+      mainPage.current.style.transform = `translateX(${swipeDistance}px)`;
       sidebar.current.style.transform = `translateX(-${
-        (maxSwipeDistance - swipeDistance) * isOpened
+        maxSwipeDistance - swipeDistance
       }px)`;
     }
   }
 
   function handleTouchEnd() {
+    console.log(isSwiping);
     if (!isSwiping) return;
+    isSwiping = false;
 
     const swipeDistance = touchMoveX - touchStartX;
     const maxSwipeDistance = sidebar.current.offsetWidth;
-
+    console.log("----handle TouchEnd---");
+    // if (swipeDistance < 0) return;
     if (swipeDistance > maxSwipeDistance / 2) {
+      console.log("----handle TouchEnd--- OPEN");
       container.current.classList.add("open");
       setIsOpened(true);
     } else {
+      console.log("----handle TouchEnd--- CLOSE");
       container.current.classList.remove("open");
-      setIsOpened(false);
+      // setIsOpened(false);
     }
 
     // console.log(m)
-    // mainPage.current.style.transform = "";
+    mainPage.current.style.transform = "";
     console.log(sidebar);
     sidebar.current.style.transform = "";
     mainPage.current.style.opacity = "";
     sidebar.current.style.opacity = "";
-
-    isSwiping = false;
   }
 
   return (
@@ -154,9 +161,9 @@ export default function Home({}) {
       // onTouchEnd={handleTouchEnd}
     >
       <Navbar toggleSidePanel={toggleSidePanel} />
-      {sidePannel && <SidePannel />}
-      {/* <SidePannel ref={sidebar}></SidePannel> */}
-      {lockBox && <LockBox />}
+      {/* {sidePannel && <SidePannel />} */}
+      <SidePannel ref={sidebar}></SidePannel>
+      {/* {lockBox && <LockBox />} */}
       {isLocked && <UnlockBox />}
       {updatePassword && <UpdatePassword />}
       {updatePhoto && <UpdatePhoto></UpdatePhoto>}
