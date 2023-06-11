@@ -369,7 +369,7 @@ function RegisterProvider({ children }) {
         break;
 
       default:
-        setImgUrl(slantViolet);
+        setImgUrl(slantGreen);
     }
   }
   function applyCustomThemes(colorIndex, dontSave) {

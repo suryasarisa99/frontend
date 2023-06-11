@@ -44,7 +44,7 @@ const SidePannel = forwardRef((props, ref) => {
     <>
       <motion.div
         ref={ref}
-        initial={{ x: -300 }} // Initial position outside the viewport
+        initial={{ x: sidePannel ? -300 : 0 }} // Initial position outside the viewport
         animate={{ x: sidePannel ? 0 : -300 }} // Move to the visible position
         exit={{ x: -300 }}
         transition={{ duration: 0.3, ease: "easeOut" }} // Transition properties

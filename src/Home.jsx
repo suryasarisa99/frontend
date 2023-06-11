@@ -80,7 +80,7 @@ export default function Home({}) {
     } else {
       setColorTheme(color);
       if (color) document.documentElement.classList.add(`${color}-theme`);
-      else setColorTheme("slant-violet");
+      else setColorTheme("slant-green");
       setLogoColor(color);
     }
   }
