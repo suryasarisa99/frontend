@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useContext, useState, useEffect, useRef } from "react";
 import RegisterContext from "../../context/registerId";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -23,6 +23,7 @@ export default function AnalysisId({ params }) {
   let [searchTerm, setSearchTerm] = useState("");
   let [showOptions, setShowOptions] = useState(false);
   let navigate = useNavigate();
+  let [goIcon, setGoIcon] = useState(true);
   // let history = useHistory();
   let touchStartX = 0;
   let touchStartY = 0;
@@ -32,6 +33,7 @@ export default function AnalysisId({ params }) {
   let goRef = useRef(null);
   let iconRef = useRef(null);
   let iconORef = useRef(null);
+  let location = useLocation();
   useEffect(() => {
     if (aysYear === "") {
       console.log("No ays year");
@@ -40,6 +42,11 @@ export default function AnalysisId({ params }) {
 
     document.addEventListener("click", closeFilter);
   }, []);
+  useEffect(() => {
+    console.log("welcome #$#$#$#%#$##$#$");
+    let id = window.location.hash.substring(1);
+    blink(id);
+  }, [location]);
   function handleTouchStart(e) {
     // goRef.current.style.backgroundColor = "red";
     touchStartX = e.touches[0].clientX;
@@ -73,7 +80,8 @@ export default function AnalysisId({ params }) {
       } else {
         if (deltaY < 0) {
           // goRef.current.style.backgroundColor = "violet";
-          navigate(-1);
+
+          if (window.location.hash.trim()) navigate(-1);
         } else {
           navigate(1);
           // goRef.current.style.backgroundColor = "blue";
@@ -87,13 +95,13 @@ export default function AnalysisId({ params }) {
     const options = document.querySelector(".options");
     const buttons = document.querySelectorAll(".options li .arrow-icon");
     const sort = document.querySelector(".sort");
-    console.log(buttons[0]?.parentNode);
-    console.log(buttons[0].isEqualNode(targetElement));
-    console.log(buttons[1]);
+    // console.log(buttons[0]?.parentNode);
+    // console.log(buttons[0].isEqualNode(targetElement));
+    // console.log(buttons[1]);
     const isClickedInsideOptions = options?.contains(targetElement);
     const isClickedOnSort = sort?.contains(targetElement);
-    console.log(targetElement.tagName);
-    console.log(targetElement);
+    // console.log(targetElement.tagName);
+    // console.log(targetElement);
     if (targetElement.tagName == "svg" || targetElement.tagName === "path")
       return null;
     if (isClickedOnSort) return null;
@@ -121,7 +129,9 @@ export default function AnalysisId({ params }) {
 
   let onClick = async (branch, index) => {
     setSortedData([]);
+    setGoIcon(false);
     await new Promise((resolve, reject) => setTimeout(resolve, 50));
+    setGoIcon(true);
     setAysBranch(branch);
     setAData(analysisData[index]);
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
@@ -140,7 +150,9 @@ export default function AnalysisId({ params }) {
   };
   async function toggleSortOrder() {
     setSortedData([]);
+    setGoIcon(false);
     await new Promise((resolve, reject) => setTimeout(resolve, 250));
+    setGoIcon(true);
     setSortOrder((prvOrder) => {
       let order = prvOrder == -1 ? 1 : -1;
       setSortedData(sortBy(aData, sortOn, sortType, order));
@@ -170,7 +182,9 @@ export default function AnalysisId({ params }) {
   }
   async function selectSubMenu(e, index) {
     setSortedData([]);
+    setGoIcon(false);
     await new Promise((resolve, reject) => setTimeout(resolve, 250));
+    setGoIcon(true);
     closeOptions();
     let sort_type;
     let sort_on;
@@ -212,7 +226,7 @@ export default function AnalysisId({ params }) {
         id += value.toUpperCase();
       }
       console.log(id);
-      blink(id);
+      // blink(id);
       goLink.setAttribute("href", "#" + id);
       goLink.click();
       await new Promise((resolve, reject) => setTimeout(resolve, 100));
@@ -225,7 +239,7 @@ export default function AnalysisId({ params }) {
   async function blink(id) {
     let li = document.getElementById(id);
     li.classList.add("go-selected");
-    await new Promise((res, rej) => setTimeout(res, 1400));
+    await new Promise((res, rej) => setTimeout(res, 1000));
     li.classList.remove("go-selected");
   }
   function sortBy(data, sortOn, sortType, order) {
@@ -261,25 +275,26 @@ export default function AnalysisId({ params }) {
 
   return (
     <div>
-      {/* initial={{ opacity: 0, y: -50 }}
-        animate={{
-          opacity: sortedData.length > 0 ? 1 : 0,
-          y: sortedData.length > 0 ? 0 : -50,
-        }}
-        transition={{ duration: 0.5, delay: 12 * 0.05 }} */}
       <div
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <input
-          ref={goRef}
-          onChange={go}
-          placeholder="No"
-          value={searchTerm}
-          type="text"
-          className="go-input"
-        />
+        {goIcon && (
+          <motion.input
+            initial={{ opacity: 0, y: -50 }}
+            animate={{
+              opacity: sortedData.length > 0 ? 1 : 0,
+              y: sortedData.length > 0 ? 0 : -50,
+            }}
+            transition={{ duration: 0.5, delay: 12 * 0.05 }}
+            ref={goRef}
+            onChange={go}
+            value={searchTerm}
+            type="text"
+            className="go-input"
+          />
+        )}
       </div>
       <a href="#" className="go-link">
         hi

@@ -847,7 +847,7 @@ div .info-head,
 }
 
 .go-selected {
-  animation: blink 1.2s 1 ease-in-out;
+  animation: blink 1.2s infinite ease-in-out;
 }
 
 @keyframes blink {
