@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import RegisterContext from "../../context/registerId";
 import { useNavigate, Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import axios from "axios";
+
 import Navbar from "../components/Navbar";
 // import { FaAngleDown } from "react-icons/fa";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
@@ -17,8 +19,19 @@ export default function AnalysisId({ params }) {
   let [sortOrder, setSortOrder] = useState(-1);
   let [sortOn, setSortOn] = useState();
   let [sortType, setSortType] = useState();
+  let [branch, setBranch] = useState(-1);
+  let [searchTerm, setSearchTerm] = useState("");
   let [showOptions, setShowOptions] = useState(false);
   let navigate = useNavigate();
+  // let history = useHistory();
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const swipeThreshold = 50;
+  let goRef = useRef(null);
+  let iconRef = useRef(null);
+  let iconORef = useRef(null);
   useEffect(() => {
     if (aysYear === "") {
       console.log("No ays year");
@@ -26,27 +39,73 @@ export default function AnalysisId({ params }) {
     }
 
     document.addEventListener("click", closeFilter);
-  });
+  }, []);
+  function handleTouchStart(e) {
+    // goRef.current.style.backgroundColor = "red";
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }
+  function handleTouchMove(e) {
+    // goRef.current.style.backgroundColor = "blue";
+    e.preventDefault();
+  }
+  function handleTouchEnd(e) {
+    // goRef.current.style.backgroundColor = "red";
+    // touchEndX = e.touches[0].clientX;
+    // touchEndY = e.touches[0].clientY;
+    touchEndX = e.changedTouches[0].clientX;
+    touchEndY = e.changedTouches[0].clientY;
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
 
+    if (
+      Math.abs(deltaX) > swipeThreshold ||
+      Math.abs(deltaY) > swipeThreshold
+    ) {
+      if (Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX > 0) {
+          // goRef.current.style.backgroundColor = "green";
+          navigate("/ays");
+        } else {
+          // goRef.current.style.backgroundColor = "pink";
+          navigate("/");
+        }
+      } else {
+        if (deltaY < 0) {
+          // goRef.current.style.backgroundColor = "violet";
+          navigate(-1);
+        } else {
+          navigate(1);
+          // goRef.current.style.backgroundColor = "blue";
+          console.log("/  swip right");
+        }
+      }
+    }
+  }
   const closeFilter = (event) => {
     const targetElement = event.target;
     const options = document.querySelector(".options");
-    const buttons = document.querySelectorAll(".options li .icon");
+    const buttons = document.querySelectorAll(".options li .arrow-icon");
     const sort = document.querySelector(".sort");
-
-    const isClickedInsideOptions = options.contains(targetElement);
-    const isClickedOnSort = sort.contains(targetElement);
-    // console.log(buttons[0].contains(targetElement));
-    // console.log(targetElement.parentNode.parentNode);
-    // console.log(buttons[0].parentNode);
-    // console.log(buttons[0].contains(targetElement));
+    console.log(buttons[0]?.parentNode);
+    console.log(buttons[0].isEqualNode(targetElement));
+    console.log(buttons[1]);
+    const isClickedInsideOptions = options?.contains(targetElement);
+    const isClickedOnSort = sort?.contains(targetElement);
+    console.log(targetElement.tagName);
+    console.log(targetElement);
+    if (targetElement.tagName == "svg" || targetElement.tagName === "path")
+      return null;
     if (isClickedOnSort) return null;
     let buttonClicked = false;
     buttons.forEach((button) => {
       if (
-        button === targetElement ||
-        button.contains(targetElement.parentNode)
+        button.parentnode === targetElement ||
+        button.parentNode.contains(targetElement) ||
+        targetElement.parentNode === button ||
+        button === targetElement
       ) {
+        console.log(true);
         buttonClicked = true;
         return;
       }
@@ -68,6 +127,8 @@ export default function AnalysisId({ params }) {
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
     console.log(s);
     setSortedData(s);
+    // setAysBranch(index);
+    setBranch(index);
     // navigate("/");
     // let url = `${server}/ays/${aysYear + branch}`;
     // console.log(url);
@@ -130,6 +191,43 @@ export default function AnalysisId({ params }) {
     setSelectedMenu(-1);
   }
 
+  async function go(e) {
+    e.preventDefault();
+    // let goInput = document.querySelector(".go-input");
+    let value = e.target.value;
+    setSearchTerm(value);
+
+    if (
+      (value.length === 3 && value.startsWith("n")) ||
+      (value.length === 2 && !value.startsWith("n"))
+    ) {
+      let id;
+      let goLink = document.querySelector(".go-link");
+      if (value.startsWith("n") && value.length === 3) {
+        let index = value.substr(1) - 1;
+        console.log(index);
+        id = sortedData[index]._id;
+      } else if (value.length === 2) {
+        id = getId();
+        id += value.toUpperCase();
+      }
+      console.log(id);
+      blink(id);
+      goLink.setAttribute("href", "#" + id);
+      goLink.click();
+      await new Promise((resolve, reject) => setTimeout(resolve, 100));
+      window.scrollTo({ top: window.scrollY - 60 });
+      setSearchTerm("");
+    }
+
+    // console.log(value);
+  }
+  async function blink(id) {
+    let li = document.getElementById(id);
+    li.classList.add("go-selected");
+    await new Promise((res, rej) => setTimeout(res, 1400));
+    li.classList.remove("go-selected");
+  }
   function sortBy(data, sortOn, sortType, order) {
     console.log(sortOn, sortType, sortOrder);
     if (!sortOn) {
@@ -147,12 +245,46 @@ export default function AnalysisId({ params }) {
       });
     }
   }
+  function getId() {
+    let id = aysYear + "U41A";
+    if (branch === 0) id += "05";
+    else if (branch === 1) id += "01";
+    else if (branch === 2) id += "02";
+    else if (branch === 3) id += "04";
+    else if (branch === 4) id += "44";
+    else if (branch === 5) id += "42";
+    return id;
+  }
 
   let options = ["Points", "Backlogs"];
   // let SelectedOption = 0;
 
   return (
     <div>
+      {/* initial={{ opacity: 0, y: -50 }}
+        animate={{
+          opacity: sortedData.length > 0 ? 1 : 0,
+          y: sortedData.length > 0 ? 0 : -50,
+        }}
+        transition={{ duration: 0.5, delay: 12 * 0.05 }} */}
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <input
+          ref={goRef}
+          onChange={go}
+          placeholder="No"
+          value={searchTerm}
+          type="text"
+          className="go-input"
+        />
+      </div>
+      <a href="#" className="go-link">
+        hi
+      </a>
+
       <div className="filter">
         <div className="sort">
           <div onClick={openOptions}>
@@ -176,7 +308,12 @@ export default function AnalysisId({ params }) {
                         // animate={{ height: 50 }}
                         onClick={(e) => closeSubMenu(e, index)}
                       >
-                        Sort By {item} <FaAngleUp className="icon" />
+                        Sort By {item}{" "}
+                        {/* <div ref={iconORef} className="icon-overlay"> */}
+                        <div className="arrow-icon">
+                          <FaAngleUp />
+                        </div>
+                        {/* </div> */}
                       </div>
                       <motion.ol
                         initial={{ height: 0, x: -20 }}
@@ -209,15 +346,7 @@ export default function AnalysisId({ params }) {
                       </motion.ol>
                     </li>
                   );
-                if (index === 2) {
-                  return (
-                    <li onClick={(e) => selectSubMenu(e, 99)}>
-                      <div>
-                        Sort By {item} <div className="icon"></div>
-                      </div>
-                    </li>
-                  );
-                }
+
                 return (
                   <li
                     // initial={{ height: 0 }}
@@ -226,13 +355,9 @@ export default function AnalysisId({ params }) {
                   >
                     <div>
                       Sort By {item}{" "}
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: 50 }}
-                        className="icon"
-                      >
+                      <div className="arrow-icon">
                         <FaAngleDown />
-                      </motion.div>
+                      </div>
                     </div>
                   </li>
                 );
@@ -265,6 +390,8 @@ export default function AnalysisId({ params }) {
                 delay: index < 30 ? index * 0.05 : 0,
               }}
               className="row"
+              key={std._id}
+              id={std._id}
             >
               <p className="rank">{index + 1}</p>
               <p className="id">{std._id}</p>

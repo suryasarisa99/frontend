@@ -342,6 +342,9 @@ div .info-head,
     padding: 10px;
     border-bottom: 1px solid grey;
     text-decoration: none;
+    &:hover {
+      background-color: rgb(20, 20, 20);
+    }
   }
 }
 
@@ -543,9 +546,13 @@ div .info-head,
           display: flex;
           align-items: center;
           position: relative;
-          .icon {
-            position: absolute;
+          .icon-overlay {
+            // z-index: 100;
+            background-color: red;
+          }
+          .arrow-icon {
             right: 15px;
+            position: absolute;
             color: rgb(0, 0, 0);
             font-size: 22px;
           }
@@ -632,4 +639,53 @@ div .info-head,
 .container.open .side-pannel {
   // transform: translateX(0);
   // opacity: 1;
+}
+
+.go-link {
+  display: none;
+}
+
+.go-input {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 15px;
+  width: 60px;
+  position: fixed;
+  font-size: 18px;
+  bottom: 50px;
+  right: 30px;
+  // opacity: 0.9;
+  // color: white;
+  font-weight: 500;
+  text-align: center;
+  // width: 100%;
+  // height: 70px;
+  // right: 0;
+  touch-action: none;
+}
+
+.go-selected {
+  // background-color: var(--acent-color);
+  animation: blink 1.2s 1 ease-in-out;
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--acent-color);
+  }
+  20% {
+    background-color: var(--main-color);
+  }
+  40% {
+    background-color: var(--acent-color);
+  }
+  60% {
+    background-color: var(--main-color);
+  }
+  80% {
+    background-color: var(--acent-color);
+  }
+  100% {
+    background-color: var(--main-color);
+  }
 }
