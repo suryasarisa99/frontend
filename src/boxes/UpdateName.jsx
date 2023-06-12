@@ -54,14 +54,14 @@ export default function UpdateName() {
     <>
       <motion.form
         action=""
-        initial={{ y: -320, x: -205 }}
-        animate={{ y: updateName ? 0 : 0 }}
+        initial={{ y: -200, x: -207 }}
+        animate={{ y: updateName ? 0 : -200 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-box"
         onSubmit={handleUpdateName}
       >
         <GiCrossedSwords className="close-btn" onClick={onClose} />
-        <motion.input
+        <input
           // initial={{ height: 0 }}
           // animate={{ height: updateName ? 80 : 0 }}
           // transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -71,7 +71,7 @@ export default function UpdateName() {
           value={fname}
           onChange={(e) => setFname(e.target.value)}
         />
-        <motion.input
+        <input
           // initial={{ height: 0 }}
           // animate={{ height: updateName ? 80 : 0 }}
           // transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -81,7 +81,7 @@ export default function UpdateName() {
           value={sname}
           onChange={(e) => setSname(e.target.value)}
         />
-        <motion.input
+        <input
           // initial={{ height: 0 }}
           // animate={{ height: updateName ? 80 : 0 }}
           // transition={{ duration: 0.3, ease: "easeInOut" }}

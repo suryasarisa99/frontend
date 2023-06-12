@@ -50,26 +50,73 @@ const SidePannel = forwardRef((props, ref) => {
         transition={{ duration: 0.3, ease: "easeOut" }} // Transition properties
         className="side-pannel"
       >
-        <button onClick={(e) => closeSidePannel(e, openUpdateName)}>
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5, delay: 0 * 0.05 }}
+          onClick={(e) => closeSidePannel(e, openUpdateName)}
+        >
           {name?.fname ? "Update Name" : "Add Name"}
-        </button>
+        </motion.button>
         {privateAccount ? (
-          <button onClick={(e) => closeSidePannel(e, openUpdatePassword)}>
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.5, delay: 1 * 0.05 }}
+            onClick={(e) => closeSidePannel(e, openUpdatePassword)}
+          >
             Update Password
-          </button>
+          </motion.button>
         ) : (
-          <button onClick={(e) => closeSidePannel(e, openLockBox)}>
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.5, delay: 1 * 0.05 }}
+            onClick={(e) => closeSidePannel(e, openLockBox)}
+          >
             Add Password
-          </button>
+          </motion.button>
         )}
-        <button onClick={(e) => closeSidePannel(e, openUpdatePhoto)}>
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5, delay: 2 * 0.05 }}
+          onClick={(e) => closeSidePannel(e, openUpdatePhoto)}
+        >
           {imgUrl ? "Update Photo" : "Add Photo"}
-        </button>
-        <button onClick={(e) => closeSidePannel(e, "/themes")}>Themes</button>
-        <button onClick={(e) => closeSidePannel(e, "/ays")}>Analysis</button>
-        <a href="https://student546.vercel.app" target="_blank">
+        </motion.button>
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5, delay: 3 * 0.05 }}
+          onClick={(e) => closeSidePannel(e, "/themes")}
+        >
+          Themes
+        </motion.button>
+        <motion.button
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5, delay: 4 * 0.05 }}
+          onClick={(e) => closeSidePannel(e, "/ays")}
+        >
+          Analysis
+        </motion.button>
+        <motion.a
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5, delay: 5 * 0.05 }}
+          href="https://student546.vercel.app"
+          target="_blank"
+        >
           other site
-        </a>
+        </motion.a>
       </motion.div>
     </>
   );

@@ -39,7 +39,7 @@ const App = forwardRef((props, ref) => {
               <motion.div
                 // initial={{ rotate: -180 }}
                 whileHover={{ rotate: 360, scale: 0.6, borderRadius: 50 }}
-                whileInView={{ scale: 1, rotate: 180 }}
+                // whileInView={{ scale: 1, rotate: 180 }}
                 className="img-box"
               >
                 {data.photo && (

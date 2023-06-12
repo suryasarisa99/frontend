@@ -2,12 +2,13 @@ import { useEffect, useContext } from "react";
 import RegisterContext from "../../context/registerId";
 import ReactDOM from "react-dom";
 import { GiCrossedSwords } from "react-icons/gi";
-
+import { motion } from "framer-motion";
 export default function unLockBox() {
   let {
     onOverlayClick,
     // closeUpdatePassword,
     submitUpdatePassword,
+    updatePassword,
     wrongPass,
     passTerm,
     setPassTerm,
@@ -23,7 +24,13 @@ export default function unLockBox() {
   }, []);
   return ReactDOM.createPortal(
     <>
-      <form className="update-password" onSubmit={submitUpdatePassword}>
+      <motion.form
+        initial={{ y: -220, x: -205 }}
+        animate={{ y: updatePassword ? 0 : 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="update-password"
+        onSubmit={submitUpdatePassword}
+      >
         <label
           htmlFor="Password For Protection"
           className={wrongPass ? "wrong-pass" : ""}
@@ -49,7 +56,7 @@ export default function unLockBox() {
           //   onChange={onPasswordInput}
         />
         <button>Submit</button>
-      </form>
+      </motion.form>
     </>,
     document.getElementById("overlay")
   );

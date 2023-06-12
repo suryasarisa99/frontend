@@ -49,23 +49,23 @@ export default function Home({}) {
     window.addEventListener("focus", handleOnFocus);
     handleLoadThemes();
 
-    container.current.addEventListener("touchstart", handleTouchStart, false);
-    container.current.addEventListener("touchmove", handleTouchMove, false);
-    container.current.addEventListener("touchend", handleTouchEnd, false);
+    // container.current.addEventListener("touchstart", handleTouchStart, false);
+    // container.current.addEventListener("touchmove", handleTouchMove, false);
+    // container.current.addEventListener("touchend", handleTouchEnd, false);
 
-    return () => {
-      container.current.removeEventListener(
-        "touchstart",
-        handleTouchStart,
-        false
-      );
-      container.current.removeEventListener(
-        "touchmove",
-        handleTouchMove,
-        false
-      );
-      container.current.removeEventListener("touchend", handleTouchEnd, false);
-    };
+    // return () => {
+    //   container.current.removeEventListener(
+    //     "touchstart",
+    //     handleTouchStart,
+    //     false
+    //   );
+    //   container.current.removeEventListener(
+    //     "touchmove",
+    //     handleTouchMove,
+    //     false
+    //   );
+    //   container.current.removeEventListener("touchend", handleTouchEnd, false);
+    // };
   }, []);
 
   function handleLoadThemes() {
@@ -95,54 +95,54 @@ export default function Home({}) {
   //   setIsOpened((prevIsOpened) => !prevIsOpened);
   //   e.stopPropagation();
   // }
-  function handleTouchStart(event) {
-    touchStartX = event.touches[0].clientX;
-    isSwiping = true;
-    console.log(container);
-    console.log(sidebar);
-    console.log(mainPage);
-  }
+  // function handleTouchStart(event) {
+  //   touchStartX = event.touches[0].clientX;
+  //   isSwiping = true;
+  //   console.log(container);
+  //   console.log(sidebar);
+  //   console.log(mainPage);
+  // }
 
-  function handleTouchMove(event) {
-    if (!isSwiping) return;
-    touchMoveX = event.touches[0].clientX;
+  // function handleTouchMove(event) {
+  //   if (!isSwiping) return;
+  //   touchMoveX = event.touches[0].clientX;
 
-    const swipeDistance = touchMoveX - touchStartX;
-    const maxSwipeDistance = sidebar.current.offsetWidth;
+  //   const swipeDistance = touchMoveX - touchStartX;
+  //   const maxSwipeDistance = sidebar.current.offsetWidth;
 
-    if (swipeDistance > 0 && swipeDistance <= maxSwipeDistance) {
-      mainPage.current.style.transform = `translateX(${
-        swipeDistance * isOpened
-      }px)`;
-      sidebar.current.style.transform = `translateX(-${
-        (maxSwipeDistance - swipeDistance) * isOpened
-      }px)`;
-    }
-  }
+  //   if (swipeDistance > 0 && swipeDistance <= maxSwipeDistance) {
+  //     mainPage.current.style.transform = `translateX(${
+  //       swipeDistance * isOpened
+  //     }px)`;
+  //     sidebar.current.style.transform = `translateX(-${
+  //       (maxSwipeDistance - swipeDistance) * isOpened
+  //     }px)`;
+  //   }
+  // }
 
-  function handleTouchEnd() {
-    if (!isSwiping) return;
+  // function handleTouchEnd() {
+  //   if (!isSwiping) return;
 
-    const swipeDistance = touchMoveX - touchStartX;
-    const maxSwipeDistance = sidebar.current.offsetWidth;
+  //   const swipeDistance = touchMoveX - touchStartX;
+  //   const maxSwipeDistance = sidebar.current.offsetWidth;
 
-    if (swipeDistance > maxSwipeDistance / 2) {
-      container.current.classList.add("open");
-      setIsOpened(true);
-    } else {
-      container.current.classList.remove("open");
-      setIsOpened(false);
-    }
+  //   if (swipeDistance > maxSwipeDistance / 2) {
+  //     container.current.classList.add("open");
+  //     setIsOpened(true);
+  //   } else {
+  //     container.current.classList.remove("open");
+  //     setIsOpened(false);
+  //   }
 
-    // console.log(m)
-    // mainPage.current.style.transform = "";
-    console.log(sidebar);
-    sidebar.current.style.transform = "";
-    mainPage.current.style.opacity = "";
-    sidebar.current.style.opacity = "";
+  // console.log(m)
+  // mainPage.current.style.transform = "";
+  //   console.log(sidebar);
+  //   sidebar.current.style.transform = "";
+  //   mainPage.current.style.opacity = "";
+  //   sidebar.current.style.opacity = "";
 
-    isSwiping = false;
-  }
+  //   isSwiping = false;
+  // }
 
   return (
     <div

@@ -61,13 +61,9 @@ export default function AnalysisId({ params }) {
   };
 
   let onClick = async (branch, index) => {
+    setSortedData([]);
+    await new Promise((resolve, reject) => setTimeout(resolve, 50));
     setAysBranch(branch);
-    if (analysisData.length === 0) {
-      await new Promise((resolve) => {
-        console.log("##### Waiting @@@@@");
-        setTimeout(resolve, 200);
-      });
-    }
     setAData(analysisData[index]);
     let s = sortBy(analysisData[index], sortOn, sortType, sortOrder);
     console.log(s);
@@ -81,7 +77,9 @@ export default function AnalysisId({ params }) {
     //   console.log(res.data);
     // });
   };
-  function toggleSortOrder() {
+  async function toggleSortOrder() {
+    setSortedData([]);
+    await new Promise((resolve, reject) => setTimeout(resolve, 250));
     setSortOrder((prvOrder) => {
       let order = prvOrder == -1 ? 1 : -1;
       setSortedData(sortBy(aData, sortOn, sortType, order));
@@ -109,7 +107,9 @@ export default function AnalysisId({ params }) {
     // console.log("closed opened menu");
     setSelectedMenu(-1);
   }
-  function selectSubMenu(e, index) {
+  async function selectSubMenu(e, index) {
+    setSortedData([]);
+    await new Promise((resolve, reject) => setTimeout(resolve, 250));
     closeOptions();
     let sort_type;
     let sort_on;
@@ -257,7 +257,15 @@ export default function AnalysisId({ params }) {
       <div className="ranks">
         {sortedData.map((std, index) => {
           return (
-            <div className="row">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: index < 30 ? index * 0.05 : 0,
+              }}
+              className="row"
+            >
               <p className="rank">{index + 1}</p>
               <p className="id">{std._id}</p>
               {sortOn === "total" ? (
@@ -275,7 +283,7 @@ export default function AnalysisId({ params }) {
                     : std[sortOn][sortType]?.toFixed(3)}
                 </p>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>

@@ -3,6 +3,7 @@ import { GiCrossedSwords } from "react-icons/gi";
 import { useContext, useEffect } from "react";
 import RegisterContext from "../../context/registerId";
 import axios from "axios";
+import { motion } from "framer-motion";
 export default function UpdatePhoto() {
   let {
     closeUpdatePhoto,
@@ -11,6 +12,7 @@ export default function UpdatePhoto() {
     imgUrl,
     setData,
     server,
+    updatePhoto,
     data,
   } = useContext(RegisterContext);
   useEffect(() => {
@@ -47,7 +49,10 @@ export default function UpdatePhoto() {
   }
   return ReactDOM.createPortal(
     <>
-      <form
+      <motion.form
+        initial={{ y: -180, x: -205 }}
+        animate={{ y: updatePhoto ? 0 : -180 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-photo"
         encType="multipart/form-data"
         onSubmit={submitUpdatePhoto}
@@ -62,7 +67,7 @@ export default function UpdatePhoto() {
           </button>
           <button>Submit</button>
         </div>
-      </form>
+      </motion.form>
     </>,
     document.getElementById("root")
   );
