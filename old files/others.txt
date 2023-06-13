@@ -1,0 +1,60 @@
+function makeId(branch, id) {
+    let regId = "21U41A0500";
+
+    switch (branch) {
+      case "cse":
+        regId = "21U41A0500";
+        break;
+      case "csm":
+        regId = "21U41A4200";
+        break;
+      case "csd":
+        regId = "21U41A4400";
+        break;
+      case "ece":
+        regId = "21U41A0400";
+        break;
+    }
+    return regId.substring(0, 10 - id.length) + id;
+  }
+
+          {/* <form action="POST" className="register" onSubmit={submitHandle}>
+          <div className="fields">
+            <div className="row">
+              <select name="branch" id="">
+                <option value="cse">CSE</option>
+                <option value="csm">CSM</option>
+                <option value="csd">CSD</option>
+                <option value="ece">ECE</option>
+              </select>
+              <input
+                type="text"
+                name="id"
+                onChange={onChange}
+                value={regTerm}
+                placeholder="Register Id"
+                autoFocus
+              />
+            </div>
+            {emptyRegId && <p>Register Id Must Be Required</p>}
+            {invalidRegId && <p>Invalid RegId</p>}
+          </div>
+          <div className="row">
+            <div className="checkbox-bar">
+              <label htmlFor="labs">Labs</label>
+              <input
+                type="checkbox"
+                value={labs}
+                onClick={() => setLabs((prvLabs) => !prvLabs)}
+                name="labs"
+              />
+            </div>
+            <button
+              type="button"
+              className="server-change"
+              onClick={toogleServer}
+            >
+              Change Server
+            </button>
+          </div>
+        </form> */}

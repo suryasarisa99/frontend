@@ -1,0 +1,606 @@
+:root {
+  --acent-color: #587260;
+  --brand-color: #5b756d;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #181d1a;
+  --acent-text-color: black;
+  --acent-text-color: black;
+}
+
+.red-theme {
+  --acent-color: red;
+  --main-color: #170000;
+  --input-color: rgb(37, 13, 13);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.yellow-theme {
+  --acent-color: yellow;
+  --main-color: rgb(15, 15, 5);
+  --input-color: rgb(37, 35, 13);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.green-theme {
+  --acent-color: rgb(89, 255, 64);
+  --main-color: rgb(6, 27, 12);
+  --input-color: rgb(13, 37, 14);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.cyan-theme {
+  --acent-color: cyan;
+  --main-color: rgb(7, 22, 31);
+  --input-color: rgb(13, 37, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.sky-blue-theme {
+  --acent-color: rgb(0, 162, 255);
+  --main-color: rgb(7, 22, 31);
+  --input-color: rgb(13, 26, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.blue-theme {
+  --acent-color: rgb(64, 115, 255);
+  --main-color: rgb(7, 18, 33);
+  --input-color: rgb(13, 17, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.violet-theme {
+  --acent-color: rgb(132, 0, 255);
+  --main-color: rgb(14, 6, 22);
+  --input-color: rgb(29, 13, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.pink-theme {
+  --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(29, 8, 26);
+  --input-color: rgb(35, 13, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+
+// =================   AMOLED THEMEs =======================
+.amoled-red-theme {
+  --acent-color: red;
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(18, 6, 6);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-yellow-theme {
+  --acent-color: yellow;
+  --main-color: black;
+  --input-color: rgb(22, 21, 8);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-green-theme {
+  --acent-color: rgb(89, 255, 64);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(7, 19, 7);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-cyan-theme {
+  --acent-color: cyan;
+  --main-color: black;
+  --input-color: rgb(8, 22, 22);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-sky-blue-theme {
+  --acent-color: rgb(0, 162, 255);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(7, 15, 21);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-blue-theme {
+  --acent-color: rgb(64, 115, 255);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(7, 9, 19);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-violet-theme {
+  --acent-color: rgb(132, 0, 255);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(13, 7, 17);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+.amoled-pink-theme {
+  --acent-color: rgb(255, 90, 252);
+  --main-color: rgb(0, 0, 0);
+  --input-color: rgb(14, 5, 16);
+  --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
+}
+// ===================   SLANT THEMES   ==============================
+// ===================================================================
+
+//  ======  Slant Colors ======
+// ==================================
+
+.slant-red-theme {
+  --acent-color: #805555;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c9b6b6;
+}
+.slant-yellow-theme {
+  --acent-color: #948859;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c8c9b6;
+}
+.slant-green-theme {
+  --acent-color: #5e8169;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6c9bf;
+}
+.slant-cyan-theme {
+  --acent-color: #608a97;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6c9bf;
+}
+.slant-sky-blue-theme {
+}
+.slant-blue-theme {
+  --acent-color: #5f71a3;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6bcc9;
+}
+.slant-violet-theme {
+  --acent-color: #796896;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #bcb6c9;
+}
+.slant-pink-theme {
+  --acent-color: #906694;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c8b6c9;
+}
+
+// ============== Dark Slant Themes =================
+// ==================================================
+
+.dark-slant-yellow-theme {
+  --acent-color: #575448;
+  --brand-color: #7a776d;
+  --main-color: #110e09;
+  --secondary-color: #313022;
+  --text-color: #9a9996;
+  --input-color: #3f3f32;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-pink-theme {
+  --acent-color: #564857;
+  --brand-color: #7a6d7a;
+  --main-color: #150e16;
+  --secondary-color: #312230;
+  --text-color: #9a9996;
+  --input-color: #3f323f;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-blue-theme {
+  --acent-color: #484a57;
+  --brand-color: #6b6e7a;
+  --main-color: #0e1016;
+  --secondary-color: #222531;
+  --text-color: #96979a;
+  --input-color: #32323f;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-cyan-theme {
+  --acent-color: #485457;
+  --brand-color: #6b757a;
+  --main-color: #0e1416;
+  --secondary-color: #222c31;
+  --text-color: #9a9996;
+  --input-color: #323a3f;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-red-theme {
+  --acent-color: #574848;
+  --brand-color: #7a6b6b;
+  --main-color: #160e0e;
+  --secondary-color: #312222;
+  --text-color: #9a9996;
+  --input-color: #3f3232;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-green-theme {
+  --acent-color: #48574c;
+  --brand-color: #6b7a75;
+  --main-color: #0e160f;
+  --secondary-color: #22312b;
+  --text-color: #9a9996;
+  --input-color: #323f37;
+  --acent-text-color: var(--main-color);
+}
+.dark-slant-violet-theme {
+  --acent-color: #4c4857;
+  --brand-color: #6f6d7a;
+  --main-color: #100e16;
+  --secondary-color: #272231;
+  --text-color: #9a9996;
+  --input-color: #34323f;
+  --acent-text-color: var(--main-color);
+}
+
+//  ====== Amoled Slant Colors ======
+// ==================================
+
+.amoled-slant-yellow-theme {
+  --acent-color: #726c54;
+  --brand-color: #918b78;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #1d1d18;
+  --acent-text-color: black;
+}
+.amoled-slant-pink-theme {
+  --acent-color: #755d77;
+  --brand-color: #8b728b;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #1c181d;
+  --acent-text-color: black;
+}
+// dark-slant
+.amoled-slant-blue-theme {
+  --acent-color: #69738f;
+  --brand-color: #727996;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #96969a;
+  --input-color: #18181d;
+  --acent-text-color: black;
+}
+.amoled-slant-cyan-theme {
+  --acent-color: #617980;
+  --brand-color: #6c8291;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #181c1d;
+  --acent-text-color: black;
+}
+.amoled-slant-red-theme {
+  --acent-color: #795c5c;
+  --brand-color: #8f7171;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #1d1818;
+  --acent-text-color: black;
+}
+.amoled-slant-green-theme {
+  --acent-color: #587260;
+  --brand-color: #5b756d;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #181d1a;
+  --acent-text-color: black;
+  --acent-text-color: black;
+}
+.amoled-slant-violet-theme {
+  --acent-color: #6e647e;
+  --brand-color: #8a7ca0;
+  --main-color: #000000;
+  --secondary-color: #000000;
+  --text-color: #9a9996;
+  --input-color: #1c181d;
+  --acent-text-color: black;
+}
+
+.color-box {
+  width: 50px;
+  height: 50px;
+}
+
+.theme-page {
+  input {
+    border: 1px;
+  }
+  button {
+    background-color: grey;
+    padding: 8px 18px;
+    font-size: 20px;
+    margin-left: 20px;
+    background-color: var(--acent-color);
+    color: black;
+
+    border-radius: 3px;
+    border: none;
+  }
+  .color-box {
+    height: 40px;
+  }
+  .default-themes {
+    div {
+      display: flex;
+      // gap: 25px;
+      width: 250px;
+      justify-content: end;
+      align-items: center;
+      margin: 5px auto;
+    }
+  }
+  .red-themes {
+    .red-color {
+      background-color: red;
+    }
+    .amoled-color {
+      background-color: rgb(196, 0, 0);
+    }
+    .amoled-slant-color {
+      background-color: #795c5c;
+    }
+    .dark-slant-color {
+      background-color: #574848;
+    }
+    .slant-color {
+      background-color: #805555;
+    }
+  }
+
+  .yellow-themes {
+    .yellow-color {
+      background-color: yellow;
+    }
+    .amoled-color {
+      background-color: #c99d00;
+    }
+    .slant-color {
+      background-color: #948859;
+    }
+    .dark-slant-color {
+      background-color: #575448;
+    }
+    .amoled-slant-color {
+      background-color: #726c54;
+    }
+  }
+
+  .green-themes {
+    .green-color {
+      background-color: rgb(0, 253, 0);
+    }
+
+    .amoled-color {
+      background-color: #00ca33;
+    }
+    .slant-color {
+      background-color: #5e8169;
+    }
+    .dark-slant-color {
+      background-color: #48574c;
+    }
+    .amoled-slant-color {
+      background-color: #587260;
+    }
+  }
+
+  .cyan-themes {
+    .cyan-color {
+      background-color: cyan;
+    }
+    .amoled-color {
+      background-color: #009ac0;
+    }
+    .slant-color {
+      background-color: #608a97;
+    }
+    .dark-slant-color {
+      background-color: #485457;
+    }
+    .amoled-slant-color {
+      background-color: #617980;
+    }
+  }
+
+  .sky-blue-themes {
+    .sky-blue-color {
+      background-color: rgb(0, 140, 255);
+    }
+    .amoled-color {
+      background-color: #0075c4;
+    }
+    .slant-color {
+      background-color: rgb(70, 101, 129);
+    }
+    .dark-slant-color {
+      background-color: rgb(66, 74, 82);
+    }
+    .amoled-slant-color {
+      background-color: rgb(70, 101, 129);
+    }
+  }
+
+  .blue-themes {
+    .blue-color {
+      background-color: blue;
+    }
+
+    .amoled-color {
+      background-color: #001ccf;
+    }
+    .slant-color {
+      background-color: #5f71a3;
+    }
+    .dark-slant-color {
+      background-color: #484a57;
+    }
+    .amoled-slant-color {
+      background-color: #69738f;
+    }
+  }
+
+  .violet-themes {
+    .violet-color {
+      background-color: #6200ff;
+    }
+
+    .amoled-color {
+      background-color: #7000cc;
+    }
+    .slant-color {
+      background-color: #796896;
+    }
+    .dark-slant-color {
+      background-color: #4c4857;
+    }
+    .amoled-slant-color {
+      background-color: #6e647e;
+    }
+  }
+
+  .pink-themes {
+    .pink-color {
+      background-color: rgb(255, 0, 200);
+    }
+    .amoled-color {
+      background-color: #c400c4;
+    }
+    .slant-color {
+      background-color: #906694;
+    }
+    .dark-slant-color {
+      background-color: #564857;
+    }
+    .amoled-slant-color {
+      background-color: #755d77;
+    }
+  }
+}
+
+.custom-theme-maker {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .field {
+    display: flex;
+    margin-bottom: 5px;
+    p {
+      width: 200px;
+    }
+
+    input[type="color"] {
+      width: 80px;
+      height: 30px;
+      border: none;
+      outline: none;
+      margin: none;
+      &:hover {
+        outline: none;
+        border: none;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+  button {
+    padding: 8px 15px;
+    background-color: var(--acent-color);
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+}
+
+.custom-theme-wrapper {
+  .custom-themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 62px);
+    column-gap: 15px;
+    row-gap: 8px;
+    justify-content: center;
+    .theme-layout {
+      border: 1px solid rgb(39, 39, 39);
+      .theme-layout-head {
+        height: 25px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+          font-size: 10px;
+        }
+      }
+      .theme-layout-body {
+        width: 60px;
+        height: 40px;
+      }
+    }
+  }
+}

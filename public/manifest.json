@@ -1,0 +1,40 @@
+{
+  "name": "surya",
+  "short_name": "surya",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "142x142",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/logos/red.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/logos/blue.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/logos/green.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/logos/pink.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
