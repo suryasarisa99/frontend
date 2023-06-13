@@ -16,6 +16,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .yellow-theme {
   --acent-color: yellow;
@@ -24,6 +25,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .green-theme {
   --acent-color: rgb(89, 255, 64);
@@ -32,6 +34,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .cyan-theme {
   --acent-color: cyan;
@@ -40,6 +43,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .sky-blue-theme {
   --acent-color: rgb(0, 162, 255);
@@ -48,6 +52,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .blue-theme {
   --acent-color: rgb(64, 115, 255);
@@ -56,6 +61,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .violet-theme {
   --acent-color: rgb(132, 0, 255);
@@ -64,6 +70,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 .pink-theme {
   --acent-color: rgb(255, 90, 252);
@@ -72,6 +79,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 // =================   AMOLED THEMEs =======================

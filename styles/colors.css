@@ -16,6 +16,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .yellow-theme {
@@ -25,6 +26,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .green-theme {
@@ -34,6 +36,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .cyan-theme {
@@ -43,6 +46,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .sky-blue-theme {
@@ -52,6 +56,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .blue-theme {
@@ -61,6 +66,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .violet-theme {
@@ -70,6 +76,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .pink-theme {
@@ -79,6 +86,7 @@
   --text-color: white;
   --acent-text-color: var(--main-color);
   --secondary-color: black;
+  --brand-color: var(--acent-color);
 }
 
 .amoled-red-theme {

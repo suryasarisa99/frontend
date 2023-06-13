@@ -72,9 +72,9 @@ function RegisterProvider({ children }) {
 
   // Fetch the manifest file
 
-  function submitHandle(e) {
+  function submitHandle(e, value) {
     e.preventDefault();
-    let id = e.target.id.value;
+    let id = value || e.target.id.value;
     if (!id) {
       setEmptyRegId(true);
       setValidRegId(false);
@@ -109,7 +109,11 @@ function RegisterProvider({ children }) {
     }
   }
   function onChange(e) {
-    setRegTerm(e.target.value.toUpperCase());
+    let value = e.target.value;
+    if (value.length <= 10) setRegTerm(value.toUpperCase());
+    if (value.length === 10) {
+      submitHandle(e, value.toUpperCase());
+    }
     if (emptyRegId && regTerm) setEmptyRegId(false);
     if (invalidRegId) setInvalidRegId(false);
   }

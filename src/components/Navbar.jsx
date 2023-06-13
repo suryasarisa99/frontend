@@ -22,6 +22,8 @@ export default function Navbar({ toggleSidePanel }) {
           placeholder="Register Id"
           autoFocus
           name="id"
+          type="text"
+          max="10"
         />
       </form>
     </nav>
