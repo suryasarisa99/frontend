@@ -94,13 +94,13 @@ export default function Theme({}) {
               value="amoled-red"
               onClick={setTheme}
             ></div>
-            {/* <div
-              className="color-box red-color"
-              value="slant-red"
-              onClick={setTheme}
-            ></div> */}
             <div
               className="color-box slant-color"
+              value="slant-red"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-red"
               onClick={setTheme}
             ></div>{" "}
@@ -122,13 +122,13 @@ export default function Theme({}) {
               value="amoled-yellow"
               onClick={setTheme}
             ></div>{" "}
-            {/* <div
-              className="color-box yellow-color"
-              value="slant-yellow"
-              onClick={setTheme}
-            ></div> */}
             <div
               className="color-box slant-color"
+              value="slant-yellow"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-yellow"
               onClick={setTheme}
             ></div>{" "}
@@ -150,13 +150,13 @@ export default function Theme({}) {
               value="amoled-green"
               onClick={setTheme}
             ></div>
-            {/* <div
-              className="color-box green-color"
-              value="slant-green"
-              onClick={setTheme}
-            ></div>{" "} */}
             <div
               className="color-box slant-color"
+              value="slant-green"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-green"
               onClick={setTheme}
             ></div>{" "}
@@ -178,13 +178,13 @@ export default function Theme({}) {
               value="amoled-cyan"
               onClick={setTheme}
             ></div>{" "}
-            {/* <div
-              className="color-box cyan-color"
-              value="slant-cyan"
-              onClick={setTheme}
-            ></div>{" "} */}
             <div
               className="color-box slant-color"
+              value="slant-cyan"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-cyan"
               onClick={setTheme}
             ></div>{" "}
@@ -206,13 +206,13 @@ export default function Theme({}) {
               value="amoled-sky-blue"
               onClick={setTheme}
             ></div>{" "}
-            {/* <div
-              className="color-box sky-blue-color"
-              value="slant-sky-blue"
-              onClick={setTheme}
-            ></div> */}
             <div
               className="color-box slant-color"
+              value="slant-sky-blue"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-sky-blue"
               onClick={setTheme}
             ></div>
@@ -234,13 +234,13 @@ export default function Theme({}) {
               value="amoled-blue"
               onClick={setTheme}
             ></div>{" "}
-            {/* <div
-              className="color-box blue-color"
-              value="slant-blue"
-              onClick={setTheme}
-            ></div> */}
             <div
               className="color-box slant-color"
+              value="slant-blue"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-blue"
               onClick={setTheme}
             ></div>
@@ -262,13 +262,13 @@ export default function Theme({}) {
               value="amoled-violet"
               onClick={setTheme}
             ></div>
-            {/* <div
-              className="color-box violet-color"
-              value="slant-violet"
-              onClick={setTheme}
-            ></div> */}
             <div
               className="color-box slant-color"
+              value="slant-violet"
+              onClick={setTheme}
+            ></div>
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-violet"
               onClick={setTheme}
             ></div>
@@ -290,13 +290,13 @@ export default function Theme({}) {
               value="amoled-pink"
               onClick={setTheme}
             ></div>
-            {/* <div
-              className="color-box pink-color"
-              value="slant-pink"
-              onClick={setTheme}
-            ></div>{" "} */}
             <div
               className="color-box slant-color"
+              value="slant-pink"
+              onClick={setTheme}
+            ></div>{" "}
+            <div
+              className="color-box dark-slant-color"
               value="dark-slant-pink"
               onClick={setTheme}
             ></div>{" "}

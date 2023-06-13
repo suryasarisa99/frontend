@@ -40,7 +40,7 @@ export default function unLockBox() {
   return ReactDOM.createPortal(
     <>
       <motion.form
-        initial={{ y: -150, x: -207 }}
+        initial={{ y: -50, x: -207 }}
         animate={{ y: isLocked ? 0 : -140 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="unlock-box"

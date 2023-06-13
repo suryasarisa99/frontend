@@ -54,7 +54,7 @@ export default function UpdateName() {
     <>
       <motion.form
         action=""
-        initial={{ y: -200, x: -207 }}
+        initial={{ y: -50, x: -207 }}
         animate={{ y: updateName ? 0 : -200 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-box"

@@ -32,13 +32,13 @@ input {
 .reg-id {
   font-size: 22px;
   padding: 5px;
-  color: var(--acent2-color);
+  color: var(--acent-color);
 }
 .update-btn {
-  color: red;
-  background-color: rgb(49, 1, 1);
+  color: var(--acent-text-color);
+  background-color: var(--acent-color);
   padding: 5px 12px;
-  border: 1px solid rgb(225, 13, 13);
+  // border: 1px solid rgb(225, 13, 13);
   border-radius: 5px;
 }
 #overlay {
@@ -92,12 +92,12 @@ input {
   gap: 30px;
   max-width: 600px;
   label {
-    color: rgb(0, 0, 0);
-    font-size: var(--text-color);
+    color: var(--text-color);
+    font-size: 20px;
   }
 
   button {
-    background-color: var(--acent2-color);
+    background-color: var(--acent-color);
     font-size: 22px;
     padding: 10px 20px;
     width: fit-content;
@@ -108,7 +108,7 @@ input {
   .close-btn {
     position: absolute;
     right: 35px;
-    color: var(--acent2-color);
+    color: var(--acent-color);
   }
   .wrong-pass {
     color: red;
@@ -127,7 +127,7 @@ input {
     outline: none;
     padding: 10px 8px;
     font-size: 22px;
-    color: var(--acent2-color);
+    color: var(--acent-color);
     // background-color: rgb(32, 33, 33);
     background-color: var(--input-color);
     border-radius: 8px;
@@ -243,7 +243,7 @@ nav {
     font-size: 18px;
     background-color: var(--input-color);
     padding-left: 15px;
-    color: var(--acent2-color);
+    color: var(--acent-color);
     border-radius: 5px;
     border: none;
     &:focus {
@@ -259,7 +259,7 @@ nav {
     color: red;
   }
   .menu-icon {
-    color: var(--acent2-color);
+    color: var(--acent-color);
   }
 }
 
@@ -574,16 +574,34 @@ div .info-head,
   }
 }
 .branches {
-  max-width: 97%;
+  max-width: 95%;
   background-color: var(--acent-color);
-  margin: 20px auto;
-  margin-bottom: 40px;
+  margin: 0px auto;
+  margin-bottom: 15px;
   display: flex;
+  gap: 0px;
+  padding: 2px 5px;
+
+  border-radius: 12px;
+  background-color: var(--main-color);
   justify-content: space-between;
   color: var(--acent-text-color);
+  border: 1px solid var(--acent-color);
+  align-items: center;
   button {
-    font-size: 22px;
-    color: var(--acent-text-color);
+    font-size: 20px;
+    background-color: var(--main-color);
+    color: var(--acent-color);
+    &:first-child,
+    &:last-child {
+      border-radius: 12px;
+    }
+    &.selected {
+      background-color: var(--acent-color);
+      color: var(--acent-text-color);
+      border-radius: 12px;
+      padding: 5px 12px;
+    }
   }
 }
 
@@ -592,13 +610,13 @@ div .info-head,
   width: 95%;
   margin: 20px auto;
   gap: 8px;
-  color: black;
+
   flex-direction: column;
   .row {
     padding: 10px 15px;
-    background-color: rgb(10, 0, 0);
     display: flex;
-    color: white;
+    color: var(--text-color);
+    background-color: var(--main-color);
     border-radius: 5px;
     gap: 25px;
     border-bottom: 1px solid rgb(126, 126, 126);
@@ -757,4 +775,31 @@ div .info-head,
   padding: 8px 12px;
   color: var(--acent-text-color);
   border-radius: 10px;
+}
+
+.ays-page-bar {
+  border-radius: 20px;
+  // display: flex;
+  width: fit-content;
+  // width: 200px;
+  margin: 0px auto;
+  height: 50px;
+  .ays-page {
+    width: fit-content;
+    background-color: var(--main-color);
+    border: 1px solid var(--acent-color);
+    color: var(--acent-color);
+    &.graph {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &.marks {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    &.selected {
+      background-color: var(--acent-color);
+      color: var(--acent-text-color);
+    }
+  }
 }

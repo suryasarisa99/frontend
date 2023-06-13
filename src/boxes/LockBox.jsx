@@ -20,7 +20,7 @@ export default function LockBox() {
   return (
     <>
       <motion.form
-        initial={{ y: -180, x: -205 }}
+        initial={{ y: -50, x: -205 }}
         animate={{ y: lockBox ? 0 : 0 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="lock-box"

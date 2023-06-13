@@ -35,10 +35,9 @@ input:focus {
 }
 
 .update-btn {
-  color: red;
-  background-color: rgb(49, 1, 1);
+  color: var(--acent-text-color);
+  background-color: var(--acent-color);
   padding: 5px 12px;
-  border: 1px solid rgb(225, 13, 13);
   border-radius: 5px;
 }
 
@@ -60,7 +59,7 @@ input:focus {
 }
 
 .points-div {
-  color: black;
+  color: var(--acent-text-color);
   max-width: 700px;
   width: 98%;
   display: flex;
@@ -95,6 +94,10 @@ input:focus {
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+}
+.update-box label {
+  color: var(--text-color);
+  font-size: 20px;
 }
 .update-box button {
   background-color: var(--acent-color);
@@ -164,7 +167,7 @@ input:focus {
   width: 80px;
   text-align: center;
   font-weight: 600;
-  color: black;
+  color: var(--acent-text-color);
 }
 .data .data-head .cell:first-child {
   flex-grow: 1;
@@ -360,6 +363,10 @@ div .info-head,
   gap: 30px;
   max-width: 600px;
 }
+.lock-box label {
+  color: var(--text-color);
+  font-size: 20px;
+}
 .lock-box button {
   background-color: var(--acent-color);
   font-size: 22px;
@@ -398,10 +405,6 @@ div .info-head,
 .lock-box input:focus {
   outline: none;
 }
-.lock-box label {
-  color: white;
-  font-size: 20px;
-}
 
 .update-password {
   background-color: var(--secondary-color);
@@ -419,6 +422,10 @@ div .info-head,
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+}
+.update-password label {
+  color: var(--text-color);
+  font-size: 20px;
 }
 .update-password button {
   background-color: var(--acent-color);
@@ -458,10 +465,6 @@ div .info-head,
 .update-password input:focus {
   outline: none;
 }
-.update-password label {
-  color: white;
-  font-size: 20px;
-}
 
 .unlock-box {
   background-color: var(--secondary-color);
@@ -479,6 +482,10 @@ div .info-head,
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+}
+.unlock-box label {
+  color: var(--text-color);
+  font-size: 20px;
 }
 .unlock-box button {
   background-color: var(--acent-color);
@@ -518,10 +525,6 @@ div .info-head,
 .unlock-box input:focus {
   outline: none;
 }
-.unlock-box label {
-  color: white;
-  font-size: 20px;
-}
 .unlock-box .close-btn {
   position: absolute;
   right: 35px;
@@ -543,6 +546,10 @@ div .info-head,
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+}
+.update-photo label {
+  color: var(--text-color);
+  font-size: 20px;
 }
 .update-photo button {
   background-color: var(--acent-color);
@@ -716,6 +723,9 @@ div .info-head,
   gap: 25px;
   margin: 20px auto;
 }
+.years button {
+  color: var(--acent-text-color);
+}
 
 .filter {
   display: flex;
@@ -734,11 +744,13 @@ div .info-head,
 }
 .filter .sort-order {
   width: 30%;
+  color: var(--acent-text-color);
 }
 .filter .sort {
   width: 70%;
   border-right: 2px solid black;
   font-size: 16px;
+  color: var(--acent-text-color);
 }
 .filter .sort .options {
   font-weight: 450;
@@ -759,6 +771,7 @@ div .info-head,
 .filter .sort .options li {
   background-color: inherit;
   border-bottom: 1px solid rgb(0, 0, 0);
+  color: var(--acent-text-color);
 }
 .filter .sort .options li div {
   padding-left: 40px;
@@ -766,14 +779,12 @@ div .info-head,
   align-items: center;
   position: relative;
 }
-.filter .sort .options li div .icon-overlay {
-  background-color: red;
-}
 .filter .sort .options li div .arrow-icon {
   right: 15px;
   position: absolute;
   color: rgb(0, 0, 0);
   font-size: 22px;
+  color: var(--acent-text-color);
 }
 .filter .sort .options li .sub-menu {
   padding-top: 10px;
@@ -786,15 +797,33 @@ div .info-head,
 }
 
 .branches {
-  max-width: 97%;
+  max-width: 95%;
   background-color: var(--acent-color);
-  margin: 20px auto;
-  margin-bottom: 40px;
+  margin: 0px auto;
+  margin-bottom: 15px;
   display: flex;
+  gap: 0px;
+  padding: 2px 5px;
+  border-radius: 12px;
+  background-color: var(--main-color);
   justify-content: space-between;
+  color: var(--acent-text-color);
+  border: 1px solid var(--acent-color);
+  align-items: center;
 }
 .branches button {
-  font-size: 22px;
+  font-size: 20px;
+  background-color: var(--main-color);
+  color: var(--acent-color);
+}
+.branches button:first-child, .branches button:last-child {
+  border-radius: 12px;
+}
+.branches button.selected {
+  background-color: var(--acent-color);
+  color: var(--acent-text-color);
+  border-radius: 12px;
+  padding: 5px 12px;
 }
 
 .ranks {
@@ -802,14 +831,13 @@ div .info-head,
   width: 95%;
   margin: 20px auto;
   gap: 8px;
-  color: black;
   flex-direction: column;
 }
 .ranks .row {
   padding: 10px 15px;
-  background-color: rgb(10, 0, 0);
   display: flex;
-  color: white;
+  color: var(--text-color);
+  background-color: var(--main-color);
   border-radius: 5px;
   gap: 25px;
   border-bottom: 1px solid rgb(126, 126, 126);
@@ -869,4 +897,91 @@ div .info-head,
   100% {
     background-color: var(--main-color);
   }
+}
+.graph-img {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+.graph-img .bar {
+  width: 50px;
+  background-color: red;
+  text-align: center;
+  padding-top: 5px;
+  color: black;
+}
+.graph-img .right-bar {
+  border-right: 3px solid var(--acent-color);
+}
+
+.graph-labels {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid grey;
+}
+.graph-labels .graph-label {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 10px;
+}
+.graph-labels .graph-label .color-box {
+  width: 20px;
+  height: 20px;
+}
+
+.graph {
+  margin-bottom: 35px;
+  position: relative;
+}
+.graph span {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+
+.graph-total {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  background-color: var(--acent-color);
+  padding: 8px 12px;
+  color: var(--acent-text-color);
+  border-radius: 10px;
+}
+
+.ays-page-bar {
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px auto;
+  height: 50px;
+}
+.ays-page-bar .ays-page {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--main-color);
+  border: 1px solid var(--acent-color);
+  color: var(--acent-color);
+}
+.ays-page-bar .ays-page.graph {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.ays-page-bar .ays-page.marks {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.ays-page-bar .ays-page.selected {
+  background-color: var(--acent-color);
+  color: var(--acent-text-color);
 }/*# sourceMappingURL=index.css.map */

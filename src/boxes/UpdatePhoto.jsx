@@ -50,7 +50,7 @@ export default function UpdatePhoto() {
   return ReactDOM.createPortal(
     <>
       <motion.form
-        initial={{ y: -180, x: -205 }}
+        initial={{ y: -50, x: -205 }}
         animate={{ y: updatePhoto ? 0 : -180 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-photo"

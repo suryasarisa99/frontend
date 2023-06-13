@@ -182,6 +182,7 @@ function RegisterProvider({ children }) {
         } else {
           setImgUrl(false);
           setStartPage(false);
+          navigate("/");
           if (res.data._id === "21U41A0546") {
             setLogoColor(colorTheme);
             res.data.photo = "dummyText";

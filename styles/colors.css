@@ -5,54 +5,80 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #181d1a;
+  --acent-text-color: black;
+  --acent-text-color: black;
 }
 
 .red-theme {
   --acent-color: red;
   --main-color: #170000;
   --input-color: rgb(37, 13, 13);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .yellow-theme {
   --acent-color: yellow;
   --main-color: rgb(15, 15, 5);
   --input-color: rgb(37, 35, 13);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .green-theme {
   --acent-color: rgb(89, 255, 64);
   --main-color: rgb(6, 27, 12);
   --input-color: rgb(13, 37, 14);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .cyan-theme {
   --acent-color: cyan;
   --main-color: rgb(7, 22, 31);
   --input-color: rgb(13, 37, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .sky-blue-theme {
   --acent-color: rgb(0, 162, 255);
   --main-color: rgb(7, 22, 31);
   --input-color: rgb(13, 26, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .blue-theme {
   --acent-color: rgb(64, 115, 255);
   --main-color: rgb(7, 18, 33);
   --input-color: rgb(13, 17, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .violet-theme {
   --acent-color: rgb(132, 0, 255);
   --main-color: rgb(14, 6, 22);
   --input-color: rgb(29, 13, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .pink-theme {
   --acent-color: rgb(255, 90, 252);
   --main-color: rgb(29, 8, 26);
   --input-color: rgb(35, 13, 37);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-red-theme {
@@ -60,13 +86,19 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(18, 6, 6);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-yellow-theme {
   --acent-color: yellow;
-  background-color: black;
+  --main-color: black;
   --input-color: rgb(22, 21, 8);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-green-theme {
@@ -74,6 +106,9 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(7, 19, 7);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-cyan-theme {
@@ -81,6 +116,9 @@
   --main-color: black;
   --input-color: rgb(8, 22, 22);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-sky-blue-theme {
@@ -88,6 +126,9 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(7, 15, 21);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-blue-theme {
@@ -95,6 +136,9 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(7, 9, 19);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-violet-theme {
@@ -102,6 +146,9 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(13, 7, 17);
   --brand-color: var(--acent-color);
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .amoled-pink-theme {
@@ -109,56 +156,79 @@
   --main-color: rgb(0, 0, 0);
   --input-color: rgb(14, 5, 16);
   --brand-color: var(--acent-color);
-}
-
-.slant-yellow-theme {
-  --acent-color: #6d6648;
-  --brand-color: #92865d;
-  --main-color: #c2be97;
-  --secondary-color: #464428;
-  --text-color: #141414;
-}
-
-.slant-pink-theme {
-  --acent-color: #6d486a;
-  --brand-color: #925d92;
-  --main-color: #c297c2;
-  --secondary-color: #432846;
-  --text-color: #141414;
+  --text-color: white;
+  --acent-text-color: var(--main-color);
+  --secondary-color: black;
 }
 
 .slant-red-theme {
-  --acent-color: #6d4848;
-  --brand-color: #925d5d;
-  --main-color: #c29797;
-  --secondary-color: #462828;
-  --text-color: #141414;
+  --acent-color: #805555;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c9b6b6;
 }
 
-.slant-blue-theme {
-  --acent-color: #484a6d;
-  --brand-color: #5d5e92;
-  --main-color: #9b97c2;
-  --secondary-color: #282946;
-  --text-color: #141414;
+.slant-yellow-theme {
+  --acent-color: #948859;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c8c9b6;
 }
 
 .slant-green-theme {
-  --acent-color: #486d5a;
-  --brand-color: #5d9273;
-  --main-color: #97c2a7;
-  --secondary-color: #28463a;
-  --text-color: #141414;
-  --list-items-color: black;
+  --acent-color: #5e8169;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6c9bf;
+}
+
+.slant-cyan-theme {
+  --acent-color: #608a97;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6c9bf;
+}
+
+.slant-blue-theme {
+  --acent-color: #5f71a3;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #b6bcc9;
+}
+
+.slant-violet-theme {
+  --acent-color: #796896;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #bcb6c9;
 }
 
 .slant-pink-theme {
-  --acent-color: #cf78c8;
-  --brand-color: #a537a5;
-  --main-color: #f1daf1;
-  --secondary-color: #cf78c8;
-  --text-color: #141414;
-  --list-items-color: black;
+  --acent-color: #906694;
+  --brand-color: var(--acent-color);
+  --secondary-color: white;
+  --main-color: #ffffff;
+  --text-color: #000000;
+  --acent-text-color: white;
+  --input-color: #c8b6c9;
 }
 
 .dark-slant-yellow-theme {
@@ -168,6 +238,7 @@
   --secondary-color: #313022;
   --text-color: #9a9996;
   --input-color: #3f3f32;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-pink-theme {
@@ -177,6 +248,7 @@
   --secondary-color: #312230;
   --text-color: #9a9996;
   --input-color: #3f323f;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-blue-theme {
@@ -186,6 +258,7 @@
   --secondary-color: #222531;
   --text-color: #96979a;
   --input-color: #32323f;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-cyan-theme {
@@ -195,6 +268,7 @@
   --secondary-color: #222c31;
   --text-color: #9a9996;
   --input-color: #323a3f;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-red-theme {
@@ -204,6 +278,7 @@
   --secondary-color: #312222;
   --text-color: #9a9996;
   --input-color: #3f3232;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-green-theme {
@@ -213,6 +288,7 @@
   --secondary-color: #22312b;
   --text-color: #9a9996;
   --input-color: #323f37;
+  --acent-text-color: var(--main-color);
 }
 
 .dark-slant-violet-theme {
@@ -222,6 +298,7 @@
   --secondary-color: #272231;
   --text-color: #9a9996;
   --input-color: #34323f;
+  --acent-text-color: var(--main-color);
 }
 
 .amoled-slant-yellow-theme {
@@ -231,6 +308,7 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #1d1d18;
+  --acent-text-color: black;
 }
 
 .amoled-slant-pink-theme {
@@ -240,6 +318,7 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #1c181d;
+  --acent-text-color: black;
 }
 
 .amoled-slant-blue-theme {
@@ -249,6 +328,7 @@
   --secondary-color: #000000;
   --text-color: #96969a;
   --input-color: #18181d;
+  --acent-text-color: black;
 }
 
 .amoled-slant-cyan-theme {
@@ -258,6 +338,7 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #181c1d;
+  --acent-text-color: black;
 }
 
 .amoled-slant-red-theme {
@@ -267,6 +348,7 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #1d1818;
+  --acent-text-color: black;
 }
 
 .amoled-slant-green-theme {
@@ -276,6 +358,8 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #181d1a;
+  --acent-text-color: black;
+  --acent-text-color: black;
 }
 
 .amoled-slant-violet-theme {
@@ -285,6 +369,7 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #1c181d;
+  --acent-text-color: black;
 }
 
 .color-box {
@@ -292,6 +377,9 @@
   height: 50px;
 }
 
+.theme-page input {
+  border: 1px;
+}
 .theme-page button {
   background-color: grey;
   padding: 8px 18px;
@@ -307,108 +395,130 @@
 }
 .theme-page .default-themes div {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  width: 300px;
+  width: 250px;
   justify-content: end;
   align-items: center;
-  margin: 1cqb auto;
+  margin: 5px auto;
 }
 .theme-page .red-themes .red-color {
   background-color: red;
 }
 .theme-page .red-themes .amoled-color {
-  background-color: rgb(69, 8, 8);
+  background-color: rgb(196, 0, 0);
 }
 .theme-page .red-themes .amoled-slant-color {
-  background-color: #2e2626;
+  background-color: #795c5c;
+}
+.theme-page .red-themes .dark-slant-color {
+  background-color: #574848;
 }
 .theme-page .red-themes .slant-color {
-  background-color: #574848;
+  background-color: #805555;
 }
 .theme-page .yellow-themes .yellow-color {
   background-color: yellow;
 }
-.theme-page .yellow-themes .dark-color {
-  background-color: rgb(94, 94, 0);
-}
 .theme-page .yellow-themes .amoled-color {
-  background-color: #302e27;
+  background-color: #c99d00;
 }
 .theme-page .yellow-themes .slant-color {
+  background-color: #948859;
+}
+.theme-page .yellow-themes .dark-slant-color {
   background-color: #575448;
 }
-.theme-page .green-themes .green-color {
-  background-color: green;
+.theme-page .yellow-themes .amoled-slant-color {
+  background-color: #726c54;
 }
-.theme-page .green-themes .dark-color {
-  background-color: rgb(4, 51, 4);
+.theme-page .green-themes .green-color {
+  background-color: rgb(0, 253, 0);
 }
 .theme-page .green-themes .amoled-color {
-  background-color: #232b25;
+  background-color: #00ca33;
 }
 .theme-page .green-themes .slant-color {
+  background-color: #5e8169;
+}
+.theme-page .green-themes .dark-slant-color {
   background-color: #48574c;
+}
+.theme-page .green-themes .amoled-slant-color {
+  background-color: #587260;
 }
 .theme-page .cyan-themes .cyan-color {
   background-color: cyan;
 }
-.theme-page .cyan-themes .dark-color {
-  background-color: rgb(3, 54, 54);
-}
 .theme-page .cyan-themes .amoled-color {
-  background-color: #2b3335;
+  background-color: #009ac0;
 }
 .theme-page .cyan-themes .slant-color {
+  background-color: #608a97;
+}
+.theme-page .cyan-themes .dark-slant-color {
   background-color: #485457;
+}
+.theme-page .cyan-themes .amoled-slant-color {
+  background-color: #617980;
 }
 .theme-page .sky-blue-themes .sky-blue-color {
   background-color: rgb(0, 140, 255);
 }
-.theme-page .sky-blue-themes .dark-color {
-  background-color: rgb(0, 54, 105);
-}
 .theme-page .sky-blue-themes .amoled-color {
-  background-color: #2a2b33;
+  background-color: #0075c4;
 }
 .theme-page .sky-blue-themes .slant-color {
-  background-color: #484a57;
+  background-color: rgb(70, 101, 129);
+}
+.theme-page .sky-blue-themes .dark-slant-color {
+  background-color: rgb(66, 74, 82);
+}
+.theme-page .sky-blue-themes .amoled-slant-color {
+  background-color: rgb(70, 101, 129);
 }
 .theme-page .blue-themes .blue-color {
   background-color: blue;
 }
-.theme-page .blue-themes .dark-blue-color {
-  background-color: rgb(10, 55, 87);
-}
 .theme-page .blue-themes .amoled-color {
-  background-color: #24252c;
+  background-color: #001ccf;
 }
 .theme-page .blue-themes .slant-color {
+  background-color: #5f71a3;
+}
+.theme-page .blue-themes .dark-slant-color {
   background-color: #484a57;
+}
+.theme-page .blue-themes .amoled-slant-color {
+  background-color: #69738f;
 }
 .theme-page .violet-themes .violet-color {
   background-color: #6200ff;
 }
-.theme-page .violet-themes .dark-violet-color {
-  background-color: rgb(23, 12, 49);
-}
 .theme-page .violet-themes .amoled-color {
-  background-color: #2c2a33;
+  background-color: #7000cc;
 }
 .theme-page .violet-themes .slant-color {
+  background-color: #796896;
+}
+.theme-page .violet-themes .dark-slant-color {
   background-color: #4c4857;
+}
+.theme-page .violet-themes .amoled-slant-color {
+  background-color: #6e647e;
 }
 .theme-page .pink-themes .pink-color {
   background-color: rgb(255, 0, 200);
 }
-.theme-page .pink-themes .dark-pink-color {
-  background-color: rgb(81, 9, 52);
-}
 .theme-page .pink-themes .amoled-color {
-  background-color: #312931;
+  background-color: #c400c4;
 }
 .theme-page .pink-themes .slant-color {
+  background-color: #906694;
+}
+.theme-page .pink-themes .dark-slant-color {
   background-color: #564857;
+}
+.theme-page .pink-themes .amoled-slant-color {
+  background-color: #755d77;
 }
 
 .custom-theme-maker {
@@ -425,13 +535,20 @@
 .custom-theme-maker .field p {
   width: 200px;
 }
-.custom-theme-maker .field input[type=text] {
-  width: 200px;
-  height: 30px;
-}
 .custom-theme-maker .field input[type=color] {
-  width: 150px;
+  width: 80px;
   height: 30px;
+  border: none;
+  outline: none;
+  margin: none;
+}
+.custom-theme-maker .field input[type=color]:hover {
+  outline: none;
+  border: none;
+}
+.custom-theme-maker .field input[type=color]:focus {
+  outline: none;
+  border: none;
 }
 .custom-theme-maker button {
   padding: 8px 15px;
