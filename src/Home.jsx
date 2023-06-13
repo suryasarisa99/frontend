@@ -14,7 +14,7 @@ import LockBox from "./boxes/LockBox";
 import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
-
+import Graph from "./components/Graph";
 export default function Home({}) {
   let {
     setLoadedThemes,
@@ -167,6 +167,7 @@ export default function Home({}) {
         <Route path={"/ays-branch"} element={<AnalysisBranch />} />
         <Route path="/" element={<App ref={mainPage} />} />
         <Route path="/themes" element={<Theme />} />
+        <Route path="/g" element={<Graph />} />
       </Routes>
     </div>
   );

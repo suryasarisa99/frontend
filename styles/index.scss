@@ -32,7 +32,7 @@ input {
 .reg-id {
   font-size: 22px;
   padding: 5px;
-  color: var(--acent-color);
+  color: var(--acent2-color);
 }
 .update-btn {
   color: red;
@@ -57,7 +57,7 @@ input {
   margin-right: 20px;
 }
 .points-div {
-  color: black;
+  color: var(--acent-text-color);
   max-width: 700px;
   width: 98%;
   display: flex;
@@ -91,9 +91,13 @@ input {
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+  label {
+    color: rgb(0, 0, 0);
+    font-size: var(--text-color);
+  }
 
   button {
-    background-color: var(--acent-color);
+    background-color: var(--acent2-color);
     font-size: 22px;
     padding: 10px 20px;
     width: fit-content;
@@ -104,7 +108,7 @@ input {
   .close-btn {
     position: absolute;
     right: 35px;
-    color: var(--acent-color);
+    color: var(--acent2-color);
   }
   .wrong-pass {
     color: red;
@@ -123,7 +127,7 @@ input {
     outline: none;
     padding: 10px 8px;
     font-size: 22px;
-    color: var(--acent-color);
+    color: var(--acent2-color);
     // background-color: rgb(32, 33, 33);
     background-color: var(--input-color);
     border-radius: 8px;
@@ -155,6 +159,7 @@ input {
   max-width: 700px;
   margin: 20px auto;
   margin-bottom: 0px;
+  // box-shadow: 0px 5px 10px rgb(179, 179, 179);
 
   .data-head {
     display: flex;
@@ -169,7 +174,8 @@ input {
       width: 80px;
       text-align: center;
       font-weight: 600;
-      color: black;
+      // color: black;
+      color: var(--acent-text-color);
 
       &:first-child {
         flex-grow: 1;
@@ -237,7 +243,7 @@ nav {
     font-size: 18px;
     background-color: var(--input-color);
     padding-left: 15px;
-    color: var(--acent-color);
+    color: var(--acent2-color);
     border-radius: 5px;
     border: none;
     &:focus {
@@ -253,7 +259,7 @@ nav {
     color: red;
   }
   .menu-icon {
-    color: var(--acent-color);
+    color: var(--acent2-color);
   }
 }
 
@@ -350,25 +356,13 @@ div .info-head,
 
 .lock-box {
   @include box;
-  label {
-    color: white;
-    font-size: 20px;
-  }
 }
 .update-password {
   @include box;
-  label {
-    color: white;
-    font-size: 20px;
-  }
 }
 .unlock-box {
   @include box;
 
-  label {
-    color: white;
-    font-size: 20px;
-  }
   .close-btn {
     position: absolute;
     right: 35px;
@@ -490,6 +484,9 @@ div .info-head,
   max-width: 500px;
   gap: 25px;
   margin: 20px auto;
+  button {
+    color: var(--acent-text-color);
+  }
 }
 
 .filter {
@@ -512,11 +509,14 @@ div .info-head,
   border-radius: 8px;
   .sort-order {
     width: 30%;
+    color: var(--acent-text-color);
   }
   .sort {
     width: 70%;
     border-right: 2px solid black;
     font-size: 16px;
+    color: var(--acent-text-color);
+
     .hidden-options {
       // display: none;
     }
@@ -541,20 +541,19 @@ div .info-head,
         background-color: inherit;
         // padding-bottom: 15px;
         border-bottom: 1px solid rgb(0, 0, 0);
+        color: var(--acent-text-color);
         div {
           padding-left: 40px;
           display: flex;
           align-items: center;
           position: relative;
-          .icon-overlay {
-            // z-index: 100;
-            background-color: red;
-          }
+
           .arrow-icon {
             right: 15px;
             position: absolute;
             color: rgb(0, 0, 0);
             font-size: 22px;
+            color: var(--acent-text-color);
           }
         }
         .sub-menu {
@@ -581,8 +580,10 @@ div .info-head,
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  color: var(--acent-text-color);
   button {
     font-size: 22px;
+    color: var(--acent-text-color);
   }
 }
 
@@ -688,4 +689,72 @@ div .info-head,
   100% {
     background-color: var(--main-color);
   }
+}
+
+.graph-img {
+  display: flex;
+  gap: 15px;
+  // justify-content: end
+  align-items: end;
+  // border-bottom: 2px solid var(--acent-color);
+  width: fit-content;
+  padding-bottom: 3px;
+  // margin: 0px auto;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  // height: 250px;
+  .bar {
+    width: 50px;
+    background-color: red;
+    text-align: center;
+    padding-top: 5px;
+    color: black;
+  }
+  .right-bar {
+    border-right: 3px solid var(--acent-color);
+    // height: 250px;
+    // padding-left: 30px;
+  }
+}
+
+.graph-labels {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid grey;
+
+  .graph-label {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+    .color-box {
+      width: 20px;
+      height: 20px;
+      // background-color: green;
+    }
+  }
+}
+.graph {
+  margin-bottom: 35px;
+  position: relative;
+
+  span {
+    background-color: red;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.graph-total {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  background-color: var(--acent-color);
+  padding: 8px 12px;
+  color: var(--acent-text-color);
+  border-radius: 10px;
 }

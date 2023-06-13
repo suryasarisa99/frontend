@@ -1,5 +1,5 @@
-import "../styles/index.css";
-import "../styles/colors.css";
+import "../styles/index.scss";
+import "../styles/colors.scss";
 import { motion } from "framer-motion";
 import {
   useContext,

@@ -4,7 +4,7 @@ import RegisterContext from "../../context/registerId";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import axios from "axios";
-
+import Graph from "../components/Graph";
 import Navbar from "../components/Navbar";
 // import { FaAngleDown } from "react-icons/fa";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
@@ -24,6 +24,8 @@ export default function AnalysisId({ params }) {
   let [showOptions, setShowOptions] = useState(false);
   let navigate = useNavigate();
   let [goIcon, setGoIcon] = useState(true);
+  let [graphData, setGraphData] = useState([]);
+  let [totalStudents, setTotalStudents] = useState([]);
   // let history = useHistory();
   let touchStartX = 0;
   let touchStartY = 0;
@@ -31,8 +33,6 @@ export default function AnalysisId({ params }) {
   let touchEndY = 0;
   const swipeThreshold = 50;
   let goRef = useRef(null);
-  let iconRef = useRef(null);
-  let iconORef = useRef(null);
   let location = useLocation();
   useEffect(() => {
     if (aysYear === "") {
@@ -47,6 +47,12 @@ export default function AnalysisId({ params }) {
     let id = window.location.hash.substring(1);
     blink(id);
   }, [location]);
+  let bl = {
+    "1-1": {},
+    "1-2": {},
+    "2-1": {},
+    "2-2": {},
+  };
   function handleTouchStart(e) {
     // goRef.current.style.backgroundColor = "red";
     touchStartX = e.touches[0].clientX;
@@ -139,6 +145,25 @@ export default function AnalysisId({ params }) {
     setSortedData(s);
     // setAysBranch(index);
     setBranch(index);
+
+    let sems = ["1-1", "1-2", "2-1"];
+    // console.log(std[sems[0]]);
+    let total = s.filter((item, index) => {
+      if (item["1-2"].points) return item;
+    });
+    setTotalStudents([total.length, s.length]);
+    for (let std of s) {
+      for (let sem of sems) {
+        for (let backlog of std[sem].backlogs) {
+          bl[sem][backlog] === undefined
+            ? (bl[sem][backlog] = 1)
+            : bl[sem][backlog]++;
+        }
+      }
+    }
+    setGraphData(bl);
+    console.log(bl);
+
     // navigate("/");
     // let url = `${server}/ays/${aysYear + branch}`;
     // console.log(url);
@@ -275,6 +300,13 @@ export default function AnalysisId({ params }) {
 
   return (
     <div>
+      {graphData["1-1"] != null && (
+        <div>
+          <Graph data={graphData["1-1"]} total={totalStudents[0]} />
+          <Graph data={graphData["1-2"]} total={totalStudents[0]} />
+          <Graph data={graphData["2-1"]} total={totalStudents[1]} />
+        </div>
+      )}
       <div
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
