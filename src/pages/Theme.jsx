@@ -2,7 +2,7 @@ import RegisterContext from "../../context/registerId";
 import { useContext, useEffect } from "react";
 import ThemeLayout from "../components/ThemeLayout";
 
-export default function Theme({}) {
+export default function Theme() {
   let {
     closeThemePage,
     setLogoColor,
@@ -60,6 +60,7 @@ export default function Theme({}) {
     root.style.setProperty("--text-color", e.target.value);
   }
   function saveCustomTheme(e) {
+    const root = document.documentElement;
     let obj = {
       "--main-color": getComputedStyle(root).getPropertyValue("--main-color"),
       "--acent-color": getComputedStyle(root).getPropertyValue("--acent-color"),
@@ -312,7 +313,7 @@ export default function Theme({}) {
       <div className="custom-theme-wrapper">
         <div className="custom-themes">
           {loadedThemes?.map((theme, index) => {
-            return <ThemeLayout theme={theme} index={index} />;
+            return <ThemeLayout theme={theme} key={theme} index={index} />;
           })}
         </div>
       </div>

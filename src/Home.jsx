@@ -15,7 +15,7 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import Graph from "./components/Graph";
-export default function Home({}) {
+export default function Home() {
   let {
     setLoadedThemes,
     setColorTheme,
@@ -29,6 +29,10 @@ export default function Home({}) {
     isLocked,
     updateName,
     updatePhoto,
+    openUpdateName,
+    openLockBox,
+    openUpdatePhoto,
+    openThemePage,
   } = useContext(RegisterContext);
   const [isOpened, setIsOpened] = useState(false);
   const container = useRef(null);
@@ -80,7 +84,7 @@ export default function Home({}) {
     } else {
       setColorTheme(color);
       if (color) document.documentElement.classList.add(`${color}-theme`);
-      else setColorTheme("slant-green");
+      else setColorTheme("amoled-slant-green");
       setLogoColor(color);
     }
   }

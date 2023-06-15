@@ -10,7 +10,7 @@
 }
 
 .red-theme {
-  --acent-color: red;
+  --acent-color: #ff0000;
   --main-color: #170000;
   --input-color: rgb(37, 13, 13);
   --text-color: white;
@@ -20,7 +20,7 @@
 }
 
 .yellow-theme {
-  --acent-color: yellow;
+  --acent-color: #ffff00;
   --main-color: rgb(15, 15, 5);
   --input-color: rgb(37, 35, 13);
   --text-color: white;
@@ -30,7 +30,7 @@
 }
 
 .green-theme {
-  --acent-color: rgb(89, 255, 64);
+  --acent-color: #59ff40;
   --main-color: rgb(6, 27, 12);
   --input-color: rgb(13, 37, 14);
   --text-color: white;
@@ -40,7 +40,7 @@
 }
 
 .cyan-theme {
-  --acent-color: cyan;
+  --acent-color: #00ffff;
   --main-color: rgb(7, 22, 31);
   --input-color: rgb(13, 37, 37);
   --text-color: white;
@@ -50,7 +50,7 @@
 }
 
 .sky-blue-theme {
-  --acent-color: rgb(0, 162, 255);
+  --acent-color: #00a2ff;
   --main-color: rgb(7, 22, 31);
   --input-color: rgb(13, 26, 37);
   --text-color: white;
@@ -60,7 +60,7 @@
 }
 
 .blue-theme {
-  --acent-color: rgb(64, 115, 255);
+  --acent-color: #4073ff;
   --main-color: rgb(7, 18, 33);
   --input-color: rgb(13, 17, 37);
   --text-color: white;
@@ -70,7 +70,7 @@
 }
 
 .violet-theme {
-  --acent-color: rgb(132, 0, 255);
+  --acent-color: #8400ff;
   --main-color: rgb(14, 6, 22);
   --input-color: rgb(29, 13, 37);
   --text-color: white;
@@ -80,7 +80,7 @@
 }
 
 .pink-theme {
-  --acent-color: rgb(255, 90, 252);
+  --acent-color: #ff5afc;
   --main-color: rgb(29, 8, 26);
   --input-color: rgb(35, 13, 37);
   --text-color: white;
@@ -371,7 +371,7 @@
 }
 
 .amoled-slant-violet-theme {
-  --acent-color: #6e647e;
+  --acent-color: #;
   --brand-color: #8a7ca0;
   --main-color: #000000;
   --secondary-color: #000000;

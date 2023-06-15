@@ -685,7 +685,8 @@ div .info-head,
   width: 220px;
 }
 .img-box .profile-photo {
-  width: 280px;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 320px;
   -o-object-fit: cover;
      object-fit: cover;

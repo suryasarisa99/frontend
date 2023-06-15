@@ -278,7 +278,7 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
               {options.map((item, index) => {
                 if (index === selectedMenu)
                   return (
-                    <li>
+                    <li key={item}>
                       <div
                         // initial={{ height: 0 }}
                         // animate={{ height: 50 }}
@@ -325,6 +325,7 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
 
                 return (
                   <li
+                    key={item}
                     // initial={{ height: 0 }}
                     // animate={{ height: 50 }}
                     onClick={(e) => openSubMenu(e, index)}

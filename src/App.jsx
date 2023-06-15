@@ -1,13 +1,7 @@
 import "../styles/index.css";
 import "../styles/colors.css";
 import { motion } from "framer-motion";
-import {
-  useContext,
-  useState,
-  useImperativeHandle,
-  useEffect,
-  forwardRef,
-} from "react";
+import { useContext, forwardRef } from "react";
 import { GoCloudDownload } from "react-icons/go";
 import RegisterContext from "../context/registerId";
 import Result from "./components/Result";
@@ -24,6 +18,7 @@ const App = forwardRef((props, ref) => {
     openUpdateName,
     handleDownload,
   } = useContext(RegisterContext);
+
   let updateBtn = (
     <button className="update-btn" onClick={openUpdateName}>
       update
@@ -78,5 +73,5 @@ const App = forwardRef((props, ref) => {
     </div>
   );
 });
-
+App.displayName = "App";
 export default App;

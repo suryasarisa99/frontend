@@ -427,15 +427,19 @@ div .info-head,
   display: flex;
   justify-content: center;
   width: fit-content;
+  // width: 500px;
+  // height: 500px;
+  // padding: 8px;
+
   margin: 0 auto;
   border-radius: 10px;
   border: 0;
   outline: none;
   margin-top: 0px;
-  // background-color: var(--main-color);
 
   .profile-photo {
     // background-color: var(--main-color);
+    // background-color: green;
   }
   .img-border {
     border: 10px solid var(--acent-color);
@@ -447,7 +451,7 @@ div .info-head,
   }
 
   .profile-photo {
-    width: 280px;
+    width: fit-content;
     height: 320px;
     // border-radius: 50%;
     object-fit: cover;

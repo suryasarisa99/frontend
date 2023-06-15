@@ -26,11 +26,12 @@ export default function GraphsPage({ branch, analysisData }) {
     setTotalStudents([total.length, data.length]);
     for (let std of data) {
       for (let sem of sems) {
-        for (let backlog of std?.[sem].backlogs) {
-          bl[sem][backlog] === undefined
-            ? (bl[sem][backlog] = 1)
-            : bl[sem][backlog]++;
-        }
+        if (std?.[sem]?.backlogs)
+          for (let backlog of std[sem].backlogs) {
+            bl[sem][backlog] === undefined
+              ? (bl[sem][backlog] = 1)
+              : bl[sem][backlog]++;
+          }
       }
     }
     setGraphData(bl);

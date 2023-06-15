@@ -3,9 +3,13 @@ import axios from "axios";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import storage from "../firebaseConfig";
 import red from "../src/asserts/logos/red.png";
-import pink from "../src/asserts/logos/pink.png";
-import green from "../src/asserts/logos/green.png";
+import yellow from "../src/asserts/logos/yellow.png";
+import cyan from "../src/asserts/logos/cyan.png";
+import skyBlue from "../src/asserts/logos/sky-blue.png";
 import blue from "../src/asserts/logos/blue.png";
+import green from "../src/asserts/logos/green.png";
+import violet from "../src/asserts/logos/violet.png";
+import pink from "../src/asserts/logos/pink.png";
 import mydata from "../src/temp.json";
 import slantBlue from "../src/asserts/slant/slant-blue.png";
 import slantGreen from "../src/asserts/slant/slant-green.png";
@@ -14,6 +18,14 @@ import slantYellow from "../src/asserts/slant/slant-yellow.png";
 import slantCyan from "../src/asserts/slant/slant-cyan.png";
 import slantViolet from "../src/asserts/slant/slant-violet.png";
 import slantPink from "../src/asserts/slant/slant-pink.png";
+import asRed from "../src/asserts/amoled-slant/red.png";
+import asYellow from "../src/asserts/amoled-slant/yellow.png";
+import asGreen from "../src/asserts/amoled-slant/green.png";
+import asCyan from "../src/asserts/amoled-slant/cyan.png";
+import asBlue from "../src/asserts/amoled-slant/blue.png";
+import asViolet from "../src/asserts/amoled-slant/violet.png";
+import asPink from "../src/asserts/amoled-slant/pink.png";
+// import asRed from
 // import slantBlue from "../src/asserts/slant/slant-blue.png"
 import { saveAs } from "file-saver";
 let RegisterContext = createContext();
@@ -34,12 +46,12 @@ function RegisterProvider({ children }) {
   let [privateAccount, setPrivateAccount] = useState(false);
   let [server, setServer] = useState("https://get-std-res.vercel.app");
   // let [server, setServer] = useState("http://localhost:4000");
+  // let [server, setServer] = useState("http://192.168.0.169:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
   let [name, setName] = useState("");
   let [imgUrl, setImgUrl] = useState("");
-  let [imgUpload, setImgUpload] = useState(null);
   let [themePage, setThemePage] = useState(false);
   let [imgLoaded, setImgLoaded] = useState(false);
   let [startPage, setStartPage] = useState(true);
@@ -48,11 +60,12 @@ function RegisterProvider({ children }) {
   let [aysYear, setAysYear] = useState("");
   let [aysBranch, setAysBranch] = useState("");
   let navigate = useNavigate();
-
+  console.log(children);
   useEffect(() => {
     setData(mydata);
     setValidRegId(true);
     setName(mydata.name);
+    // console.log(ay);
     // fetch(manifestUrl)
     //   .then((response) => response.json())
     //   .then((manifest) => {
@@ -67,8 +80,8 @@ function RegisterProvider({ children }) {
   }, []);
 
   // Get the current manifest data
-  const currentManifest = document.querySelector('link[rel="manifest"]');
-  const manifestUrl = currentManifest.getAttribute("href");
+  // const currentManifest = document.querySelector('link[rel="manifest"]');
+  // const manifestUrl = currentManifest.getAttribute("href");
 
   // Fetch the manifest file
 
@@ -332,49 +345,87 @@ function RegisterProvider({ children }) {
       case "amoled-red":
         setImgUrl(red);
         break;
-      case "pink":
-      case "amoled-pink":
-        setImgUrl(pink);
+      case "yellow":
+      case "amoled-yellow":
+        setImgUrl(yellow);
         break;
       case "green":
       case "amoled-green":
         setImgUrl(green);
         break;
+      case "cyan":
+      case "amoled-cyan":
+        setImgUrl(cyan);
+        break;
+      case "sky-blue":
+      case "amoled-sky-blue":
+        setImgUrl(skyBlue);
+        break;
+      case "violet":
+      case "amoled-violet":
+        setImgUrl(violet);
+        break;
+      case "pink":
+      case "amoled-pink":
+        setImgUrl(pink);
+        break;
       case "blue":
       case "amoled-blue":
         setImgUrl(blue);
         break;
+      // case "slant-red":
       case "dark-slant-red":
-      case "amoled-slant-red":
         setImgUrl(slantRed);
         break;
+      case "slant-red":
+      case "amoled-slant-red":
+        setImgUrl(asRed);
+        break;
       case "dark-slant-yellow":
-      case "amoled-slant-yellow":
         setImgUrl(slantYellow);
         break;
+      case "slant-yellow":
+      case "amoled-slant-yellow":
+        setImgUrl(asYellow);
+        break;
       case "dark-slant-green":
-      case "amoled-slant-green":
         setImgUrl(slantGreen);
         break;
+      case "slant-green":
+      case "amoled-slant-green":
+        setImgUrl(asGreen);
+        break;
       case "dark-slant-cyan":
-      case "amoled-slant-cyan":
         setImgUrl(slantCyan);
         break;
+      case "slant-cyan":
+      case "amoled-slant-cyan":
+        setImgUrl(asCyan);
+        break;
       case "dark-slant-blue":
-      case "amoled-slant-blue":
         setImgUrl(slantBlue);
         break;
+      case "slant-blue":
+      case "amoled-slant-blue":
+        setImgUrl(asBlue);
+        break;
       case "dark-slant-violet":
-      case "amoled-slant-violet":
         setImgUrl(slantViolet);
         break;
+      case "slant-violet":
+      case "amoled-slant-violet":
+        setImgUrl(asViolet);
+        break;
       case "dark-slant-pink":
-      case "amoled-slant-pink":
         setImgUrl(slantPink);
+        break;
+      case "slant-pink":
+      case "amoled-slant-pink":
+        setImgUrl(asPink);
         break;
 
       default:
-        setImgUrl(slantGreen);
+        setImgUrl(asGreen);
     }
   }
   function applyCustomThemes(colorIndex, dontSave) {

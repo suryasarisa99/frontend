@@ -121,5 +121,5 @@ const SidePannel = forwardRef((props, ref) => {
     </>
   );
 });
-
+SidePannel.displayName = "SidePannel";
 export default SidePannel;

@@ -1,15 +1,15 @@
 import RegisterContext from "../../context/registerId";
 import { useContext } from "react";
 
-export default function StartPage({}) {
+export default function StartPage() {
   let { invalidRegId } = useContext(RegisterContext);
   return (
     <>
       {/* <h1 className="fancy-txt">SURYA</h1> */}
       <div className="start-page">
         {invalidRegId && (
-          <div class="error-mssg">
-            <div class="error-head">Registration ID Error:</div>
+          <div className="error-mssg">
+            <div className="error-head">Registration ID Error:</div>
             Entered a Invalid Registration Id Or Registration Id Other Than
             2021-2025 and 2022-2026 Batch. For More go{" "}
             <a href="#warn-mssg">here</a>
@@ -20,7 +20,11 @@ export default function StartPage({}) {
           This Website Is Created By Jaya Surya. This Website Is Just Created
           For Testing Purpose And Just For My Satisfaction. This Website Uses
           Backend:
-          <a href="https://get-std-res.vercel.app" target="_blank">
+          <a
+            href="https://get-std-res.vercel.app"
+            target="_blank"
+            rel="noreferrer"
+          >
             get-std-res.vercel.app
           </a>
           The Backend can also Be Created By Me
