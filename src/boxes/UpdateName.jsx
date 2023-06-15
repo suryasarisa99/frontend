@@ -3,6 +3,7 @@ import { useEffect, useContext, useState } from "react";
 import { GiCrossedSwords } from "react-icons/gi";
 import RegisterContext from "../../context/registerId";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 export default function UpdateName() {
   let { updateName, setUpdateName, name, setName, server, data } =
@@ -23,7 +24,7 @@ export default function UpdateName() {
       window.removeEventListener("popstate", onClose);
     };
   }, []);
-
+  let navigate = useNavigate();
   let onClose = () => {
     setUpdateName(false);
     window.history.pushState(
@@ -31,6 +32,7 @@ export default function UpdateName() {
       "",
       window.location.pathname.split("/").slice(0, -1).join("/") || "/"
     );
+    // navigate(-1);
     document.getElementById("overlay").style.display = "none";
   };
 

@@ -173,12 +173,14 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
   }
   async function blink(id) {
     let li = document.getElementById(id);
-    li.classList.add("go-selected");
-    await new Promise((res, rej) => setTimeout(res, 1000));
-    li.classList.remove("go-selected");
+    if (li) {
+      li?.classList.add("go-selected");
+      await new Promise((res, rej) => setTimeout(res, 1000));
+      li.classList.remove("go-selected");
+    }
   }
   function sortBy(data, sortOn, sortType, order) {
-    console.log(sortOn, sortType, sortOrder);
+    console.log(sortOn, sortType, order);
     if (!sortOn) {
       console.log("sorted on: points");
       return data.sort((std1, std2) => {

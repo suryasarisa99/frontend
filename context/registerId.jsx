@@ -297,7 +297,7 @@ function RegisterProvider({ children }) {
     window.history.pushState(null, "", "popup");
     document.getElementById("overlay").style.display = "block";
   }
-  function closeUpdatePhoto() {
+  function closeUpdatePhoto(e) {
     setUpdatePhoto(false);
     window.history.pushState(
       null,

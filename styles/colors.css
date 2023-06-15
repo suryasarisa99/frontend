@@ -366,12 +366,12 @@
   --secondary-color: #000000;
   --text-color: #9a9996;
   --input-color: #181d1a;
-  --acent-text-color: black;
-  --acent-text-color: black;
+  forced-color-adjust: none;
+  --acent-text-color: rgb(0, 0, 0) !important;
 }
 
 .amoled-slant-violet-theme {
-  --acent-color: #;
+  --acent-color: #6e647e;
   --brand-color: #8a7ca0;
   --main-color: #000000;
   --secondary-color: #000000;

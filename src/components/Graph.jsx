@@ -38,7 +38,7 @@ export default function Graph({ data, total }) {
               transition={{ duration: value * 0.03 }}
               // transition={{ duration: 1 }}
               className="bar"
-              key={key + "-" + value}
+              key={key + "-" + value + index}
               style={{
                 // height: value * 5 + "px",
                 backgroundColor: colors[index],
@@ -57,7 +57,7 @@ export default function Graph({ data, total }) {
               //   animate={{ width: "100%" }}
               //   transition={{ duration: value * 0.03 }}
               className="graph-label"
-              key={"label" + "-" + "key"}
+              key={"label" + "-" + key + "-" + value}
               //   style={{ overflow: "hidden" }}
             >
               <div

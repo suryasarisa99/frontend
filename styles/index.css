@@ -168,6 +168,7 @@ input:focus {
   text-align: center;
   font-weight: 600;
   color: var(--acent-text-color);
+  forced-color-adjust: none;
 }
 .data .data-head .cell:first-child {
   flex-grow: 1;
@@ -847,6 +848,7 @@ div .info-head,
   align-items: center;
 }
 .ranks .row .rank {
+  width: 20px;
   text-align: center;
 }
 .ranks .row .id {

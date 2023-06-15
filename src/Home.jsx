@@ -172,6 +172,8 @@ export default function Home() {
         <Route path="/" element={<App ref={mainPage} />} />
         <Route path="/themes" element={<Theme />} />
         <Route path="/g" element={<Graph />} />
+        <Route path="/j" element={<UpdatePhoto />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </div>
   );
