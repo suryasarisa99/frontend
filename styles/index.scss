@@ -794,8 +794,36 @@ div .info-head,
   }
 }
 
-progress {
+.progress {
   width: 300px;
   margin: 0px auto;
+  // background-color: grey;
+  border: 1px solid rgb(149, 149, 149);
+  height: 26px;
+  border-radius: 15px;
   accent-color: var(--acent-color);
+  padding: 1.5px;
+  position: relative;
+  .inner {
+    background-color: var(--acent-color);
+    height: 22px;
+    border-radius: 15px;
+    width: 80px;
+    animation: 1s move infinite;
+    text-align: center;
+    color: var(--acent-text-color);
+    position: absolute;
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 80px);
+  }
+  100% {
+    left: 0;
+  }
 }

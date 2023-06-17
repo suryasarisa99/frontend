@@ -33,7 +33,11 @@ export default function AnalysisId({ params }) {
         <button onClick={() => onClick(21)}>2021 - 2025</button>
         <button onClick={() => onClick(22)}>2022 - 2026</button>
         {/* <button>{loading ? "Loading" : ""}</button> */}
-        {loading && <progress value={null} />}
+        {loading && (
+          <div className="progress" value={null}>
+            <div className="inner">Surya</div>{" "}
+          </div>
+        )}
       </div>
     </div>
   );
