@@ -21,7 +21,7 @@ export default function Navbar({ toggleSidePanel }) {
           autoComplete="username"
           value={regTerm}
           placeholder="Register Id"
-          autoFocus
+          // autoFocus
           name="id"
           type="text"
           max="10"

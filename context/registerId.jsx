@@ -116,6 +116,7 @@ function RegisterProvider({ children }) {
           console.log(res.data);
           setValidRegId(true);
           setName(res.data.name);
+          e.target.id.blur();
           if (privateAccount) setPrivateAccount(false);
         }
       });
