@@ -32,7 +32,8 @@ export default function AnalysisId({ params }) {
       <div className="years">
         <button onClick={() => onClick(21)}>2021 - 2025</button>
         <button onClick={() => onClick(22)}>2022 - 2026</button>
-        <button>{loading ? "Loading" : ""}</button>
+        {/* <button>{loading ? "Loading" : ""}</button> */}
+        {loading && <progress value={null} />}
       </div>
     </div>
   );

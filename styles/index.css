@@ -987,4 +987,11 @@ div .info-head,
 .ays-page-bar .ays-page.selected {
   background-color: var(--acent-color);
   color: var(--acent-text-color);
+}
+
+progress {
+  width: 300px;
+  margin: 0px auto;
+  accent-color: var(--acent-color);
+  padding: 30px;
 }/*# sourceMappingURL=index.css.map */

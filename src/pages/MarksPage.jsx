@@ -118,7 +118,7 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
   async function toggleSortOrder() {
     setSortedData([]);
     setGoIcon(false);
-    await new Promise((resolve, reject) => setTimeout(resolve, 250));
+    await new Promise((resolve, reject) => setTimeout(resolve, 5));
     setGoIcon(true);
     setSortOrder((prvOrder) => {
       let order = prvOrder == -1 ? 1 : -1;
@@ -150,7 +150,7 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
   async function selectSubMenu(e, index) {
     setSortedData([]);
     setGoIcon(false);
-    await new Promise((resolve, reject) => setTimeout(resolve, 250));
+    await new Promise((resolve, reject) => setTimeout(resolve, 5));
     setGoIcon(true);
     closeOptions();
     let sort_type;
@@ -175,7 +175,7 @@ export default function MarksPage({ branch, analysisData, aysYear }) {
     let li = document.getElementById(id);
     if (li) {
       li?.classList.add("go-selected");
-      await new Promise((res, rej) => setTimeout(res, 1000));
+      await new Promise((res, rej) => setTimeout(res, 1200));
       li.classList.remove("go-selected");
     }
   }
