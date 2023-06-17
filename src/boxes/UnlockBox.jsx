@@ -38,9 +38,9 @@ export default function unLockBox() {
   }, []);
 
   return ReactDOM.createPortal(
-    <>
+    <div className="box-cover">
       <motion.form
-        initial={{ y: -50, x: -207 }}
+        initial={{ y: -50 }}
         animate={{ y: isLocked ? 0 : -140 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="unlock-box"
@@ -64,7 +64,7 @@ export default function unLockBox() {
         />
         <button>Submit</button>
       </motion.form>
-    </>,
+    </div>,
     document.getElementById("overlay")
   );
 }

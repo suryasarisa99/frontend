@@ -1,14 +1,42 @@
 import RegisterContext from "../../context/registerId";
 import { motion } from "framer-motion";
-import { useEffect, useState, useContext } from "react";
-export default function Result({ data, yr, id }) {
-  if (!data?.subjects) {
+import { useEffect, useCallback, useState, useContext } from "react";
+export default function Result({ data: d, yr, id }) {
+  if (!d?.subjects) {
     return null;
   }
-  useEffect(() => {
-    // setPoints(calculateResults(data));
-  });
+  let [data, setData] = useState(d);
   let [points, setPoints] = useState(NaN);
+  let [fakeData, setFakeData] = useState(false);
+  let grades = ["F", "E", "D", "C", "B", "A", "A+"];
+
+  let startX = null;
+  let endX = null;
+
+  function handleTouchStart(e) {
+    startX = e.changedTouches[0].clientX;
+    console.log(startX);
+  }
+  function handleTouchMove(e) {
+    e.preventDefault();
+  }
+  const handleMarks = useCallback((e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    let endX = e.changedTouches[0].clientX;
+    let g = e.target.textContent;
+    let i = grades.indexOf(g);
+    if (endX - startX > 0 && i < 6) i++;
+    else if (endX - startX < 0 && i > 0) i--;
+    let subName = e.target.getAttribute("value");
+    data.subjects[subName].grade = grades[i];
+    data.points = calculateResults(data);
+
+    setData({ ...data });
+  });
+  useEffect(() => {
+    setData(d);
+  }, [d]);
 
   return (
     <div className="data-tables">
@@ -30,11 +58,15 @@ export default function Result({ data, yr, id }) {
           {console.log("inner:")}
           {console.log(data)}
           {Object?.entries(data?.subjects)?.map(([subject, result]) => (
-            <div className="row" key={subject}>
+            <div className="row" key={subject + 1}>
               <div className="cell">{subject}</div>
               <div
+                onTouchEnd={handleMarks}
+                onTouchMove={handleTouchMove}
+                onTouchStart={handleTouchStart}
+                value={subject}
                 className={
-                  "cell " +
+                  "cell m-cell " +
                   (result.grade == "F"
                     ? "failed"
                     : result.grade == "A+" || result.grade === "A"

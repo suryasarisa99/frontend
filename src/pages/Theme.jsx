@@ -1,7 +1,7 @@
 import RegisterContext from "../../context/registerId";
 import { useContext, useEffect } from "react";
 import ThemeLayout from "../components/ThemeLayout";
-
+import { motion } from "framer-motion";
 export default function Theme() {
   let {
     closeThemePage,
@@ -80,7 +80,11 @@ export default function Theme() {
 
   return (
     <>
-      <div className="theme-page">
+      <motion.div
+        className="theme-page"
+        initial={{ scale: 0.7 }}
+        animate={{ scale: 1 }}
+      >
         {/* <button onClick={()=>navigate("/")}>Back</button> */}
 
         <div className="default-themes">
@@ -308,7 +312,7 @@ export default function Theme() {
             ></div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="custom-theme-wrapper">
         <div className="custom-themes">

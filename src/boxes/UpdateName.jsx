@@ -53,10 +53,10 @@ export default function UpdateName() {
   }
 
   return ReactDOM.createPortal(
-    <>
+    <div className="box-cover">
       <motion.form
         action=""
-        initial={{ y: -50, x: -207 }}
+        initial={{ y: -60 }}
         animate={{ y: updateName ? 0 : -200 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-box"
@@ -64,9 +64,6 @@ export default function UpdateName() {
       >
         <GiCrossedSwords className="close-btn" onClick={onClose} />
         <input
-          // initial={{ height: 0 }}
-          // animate={{ height: updateName ? 80 : 0 }}
-          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="First Name"
           name="fname"
@@ -74,9 +71,6 @@ export default function UpdateName() {
           onChange={(e) => setFname(e.target.value)}
         />
         <input
-          // initial={{ height: 0 }}
-          // animate={{ height: updateName ? 80 : 0 }}
-          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="Second Name"
           name="sname"
@@ -84,9 +78,6 @@ export default function UpdateName() {
           onChange={(e) => setSname(e.target.value)}
         />
         <input
-          // initial={{ height: 0 }}
-          // animate={{ height: updateName ? 80 : 0 }}
-          // transition={{ duration: 0.3, ease: "easeInOut" }}
           type="text"
           placeholder="Last Name"
           name="lname"
@@ -95,7 +86,7 @@ export default function UpdateName() {
         />
         <button>Update</button>
       </motion.form>
-    </>,
+    </div>,
     document.getElementById("overlay")
   );
 }

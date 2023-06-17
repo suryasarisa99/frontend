@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import RegisterContext from "../../context/registerId";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 export default function AnalysisId({ params }) {
   let { aysYear, setAysYear, server, setAnalysisData } =
@@ -27,7 +28,11 @@ export default function AnalysisId({ params }) {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ scale: 0.7 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 1.5 }}
+    >
       {/* <Navbar /> */}
       <div className="years">
         <button onClick={() => onClick(21)}>2021 - 2025</button>
@@ -39,6 +44,6 @@ export default function AnalysisId({ params }) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

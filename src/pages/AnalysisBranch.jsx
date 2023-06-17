@@ -39,7 +39,11 @@ export default function AnalysisId({ params }) {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1 }}
+      className="ays-branch"
+    >
       <div className="ays-page-bar">
         <button
           className="ays-page graph selected"
@@ -71,6 +75,6 @@ export default function AnalysisId({ params }) {
           aysYear={aysYear}
         />
       )}
-    </div>
+    </motion.div>
   );
 }

@@ -48,11 +48,11 @@ export default function UpdatePhoto() {
     axios.delete(`${server}/photo/${data._id}`).then((res) => console.log(res));
   }
   return ReactDOM.createPortal(
-    <>
+    <div className="box-cover">
       <motion.form
-        // initial={{ y: -50, x: -205 }}
-        // animate={{ y: updatePhoto ? 0 : -180 }}
-        // transition={{ duration: 0.4, ease: "easeInOut" }}
+        initial={{ y: -50 }}
+        animate={{ y: updatePhoto ? 0 : -180 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-photo"
         encType="multipart/form-data"
         onSubmit={submitUpdatePhoto}
@@ -68,7 +68,7 @@ export default function UpdatePhoto() {
           <button>Submit</button>
         </div>
       </motion.form>
-    </>,
+    </div>,
     document.getElementById("root")
   );
 }

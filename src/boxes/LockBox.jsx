@@ -18,9 +18,9 @@ export default function LockBox() {
     };
   }, []);
   return (
-    <>
+    <div className="box-cover">
       <motion.form
-        initial={{ y: -50, x: -205 }}
+        initial={{ y: -50 }}
         animate={{ y: lockBox ? 0 : 0 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="lock-box"
@@ -33,6 +33,6 @@ export default function LockBox() {
         <input type="password" name="password" />
         <button>Submit</button>
       </motion.form>
-    </>
+    </div>
   );
 }

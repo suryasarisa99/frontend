@@ -78,13 +78,16 @@ input:focus {
   font-weight: 900;
 }
 
+.box-cover {
+  display: flex;
+  justify-content: center;
+}
+
 .update-box {
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid var(--acent-color);
   border-radius: 30px;
@@ -225,6 +228,9 @@ nav .left-bar {
 nav .left-bar h1 {
   font-size: 32px;
   color: var(--brand-color);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 nav input {
   height: 30px;
@@ -351,9 +357,7 @@ div .info-head,
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid var(--acent-color);
   border-radius: 30px;
@@ -411,9 +415,7 @@ div .info-head,
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid var(--acent-color);
   border-radius: 30px;
@@ -471,9 +473,7 @@ div .info-head,
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid var(--acent-color);
   border-radius: 30px;
@@ -535,9 +535,7 @@ div .info-head,
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
   box-shadow: 0px 5px 8px rgba(79, 79, 79, 0.54);
   border-top: 2px solid var(--acent-color);
   border-radius: 30px;
@@ -595,6 +593,8 @@ div .info-head,
   .update-box {
     top: 0px;
     transform: translateX(-50%);
+    width: 100%;
+    left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
@@ -606,6 +606,8 @@ div .info-head,
   .lock-box {
     top: 0px;
     transform: translateX(-50%);
+    width: 100%;
+    left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
@@ -617,6 +619,8 @@ div .info-head,
   .unlock-box {
     top: 0px;
     transform: translateX(-50%);
+    width: 100%;
+    left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
@@ -628,6 +632,8 @@ div .info-head,
   .update-password {
     top: 0px;
     transform: translateX(-50%);
+    width: 100%;
+    left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
@@ -639,6 +645,8 @@ div .info-head,
   .update-photo {
     top: 0px;
     transform: translateX(-50%);
+    width: 100%;
+    left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
@@ -1020,4 +1028,12 @@ div .info-head,
   100% {
     left: 0;
   }
+}
+.ays-branch {
+  max-width: 900px;
+  margin: 0px auto;
+}
+
+#root {
+  overflow-x: hidden;
 }/*# sourceMappingURL=index.css.map */
