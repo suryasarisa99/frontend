@@ -9,7 +9,7 @@
   - Both are Completely 100% Updated 
 
  ###### testing 
-- https://t546-res.vercel.app
+- https://t546.vercel.app
    - ###### note
      - In this Version There is a Swipe Gestures to open & close sidebar
      - It's 80% Up to Date
