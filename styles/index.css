@@ -199,8 +199,12 @@ input:focus {
   color: rgb(145, 255, 145);
 }
 
-root div {
+#root div {
   display: absolute;
+}
+
+.container {
+  height: 100%;
 }
 
 nav {
@@ -208,7 +212,6 @@ nav {
   background-color: var(--secondary-color);
   border-bottom: 2px solid var(--acent-color);
   display: flex;
-  position: absolute;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
@@ -1035,5 +1038,5 @@ div .info-head,
 }
 
 #root {
-  overflow-x: hidden;
+  height: 100%;
 }/*# sourceMappingURL=index.css.map */

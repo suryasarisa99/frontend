@@ -142,7 +142,7 @@ export default function Result({ data: d, yr, id }) {
         <motion.div
           initial={{ scale: 0.8 }}
           whileInView={{ scale: 1 }}
-          whileTap={{ scale: 1.07 }}
+          // whileTap={{ scale: 1.07 }}
           transition={{ duration: 0.2, ease: "easeInOut" }} // Transition properties
           className={
             "labs data " + (id.startsWith("21") ? "data-has-internals" : "")
@@ -178,14 +178,14 @@ function calculateResults(data) {
   Object.entries(data.subjects).map(([key, value]) => {
     points += getPoints(value.grade) * value.credits;
     credits += +value.credits;
-    // console.log(value);
+    console.log(value);
   });
   Object.entries(data.labs).map(([key, value]) => {
     points += getPoints(value.grade) * value.credits;
     credits += +value.credits;
   });
-  // console.log(`Total Points: ${points / credits}`);
-  // console.log(`Total Credits: ` + credits);
+  console.log(`Total Points: ${points / credits}`);
+  console.log(`Total Credits: ` + credits);
   // return Math.round(points / credits, 3);
   return points / credits;
 }

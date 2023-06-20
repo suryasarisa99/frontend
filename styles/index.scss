@@ -214,15 +214,17 @@ input {
     }
   }
 }
-root div {
+#root div {
   display: absolute;
+}
+.container {
+  height: 100%;
 }
 nav {
   height: 60px;
   background-color: var(--secondary-color);
   border-bottom: 2px solid var(--acent-color);
   display: flex;
-  position: absolute;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
@@ -839,5 +841,6 @@ div .info-head,
   margin: 0px auto;
 }
 #root {
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  height: 100%;
 }
