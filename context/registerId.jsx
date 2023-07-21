@@ -196,6 +196,7 @@ function RegisterProvider({ children }) {
         console.log(res.data);
         if (res.data?.mssg === "passwordNotMatch") {
           console.log("password Wrong");
+          console.log(res.data.ip);
           setWrongPass(true);
         } else {
           setImgUrl(false);
