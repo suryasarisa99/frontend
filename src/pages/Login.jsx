@@ -21,6 +21,8 @@ export default function Login() {
         }}
       >
         <input type="text" name="pass" />
+
+        <button>Submit</button>
       </form>
     </div>
   );
