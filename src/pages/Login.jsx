@@ -14,7 +14,10 @@ export default function Login() {
           e.preventDefault();
           axios
             .post(`${server}/auth`, { pass: e.target.pass.value })
-            .then((res) => localStorage.setItem("token", res.data.token));
+            .then((res) => {
+              console.log(res.data.token);
+              localStorage.setItem("token", res.data.token);
+            });
         }}
       >
         <input type="text" name="pass" />
