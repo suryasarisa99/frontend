@@ -15,6 +15,7 @@ import UnlockBox from "./boxes/UnlockBox";
 import UpdatePassword from "./boxes/UpdatePassword";
 import UpdatePhoto from "./boxes/UpdatePhoto";
 import Graph from "./components/Graph";
+import Login from "./pages/Login";
 export default function Home() {
   let {
     setLoadedThemes,
@@ -173,6 +174,7 @@ export default function Home() {
         <Route path="/themes" element={<Theme />} />
         <Route path="/g" element={<Graph />} />
         <Route path="/j" element={<UpdatePhoto />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<App />} />
       </Routes>
     </div>

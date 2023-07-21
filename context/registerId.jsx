@@ -45,8 +45,8 @@ function RegisterProvider({ children }) {
   let [updatePassword, setUpdatePassword] = useState(false);
   let [privateAccount, setPrivateAccount] = useState(false);
   let [server, setServer] = useState("https://get-std-res.vercel.app");
-  // let [server, setServer] = useState("http://localhost:4000");
   // let [server, setServer] = useState("http://192.168.0.169:4000");
+  // let [server, setServer] = useState("http://localhost:4000");
   let [passTerm, setPassTerm] = useState("");
   let [wrongPass, setWrongPass] = useState(false);
   let [updatePhoto, setUpdatePhoto] = useState(false);
@@ -188,9 +188,16 @@ function RegisterProvider({ children }) {
     console.log(e.target.password.value);
     console.log("post");
     axios
-      .post(`${server}/${tempId}`, {
-        pass: e.target.password.value,
-      })
+      .post(
+        `${server}/${tempId}`,
+        {
+          pass: e.target.password.value,
+        },
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setPassTerm("");
         console.log(res.data);
