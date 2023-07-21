@@ -195,6 +195,7 @@ function RegisterProvider({ children }) {
         },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          withCredentials: true,
         }
       )
       .then((res) => {
