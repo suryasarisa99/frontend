@@ -8,11 +8,6 @@
   "icons": [
     {
       "src": "/logo.png",
-      "sizes": "142x142",
-      "type": "image/png"
-    },
-    {
-      "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     },
@@ -33,6 +28,41 @@
     },
     {
       "src": "/src/asserts/logos/pink.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/pink.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/blue.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/cyan.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/green.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/red.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/violet.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/asserts/amoled-slant/yellow.png",
       "sizes": "512x512",
       "type": "image/png"
     }

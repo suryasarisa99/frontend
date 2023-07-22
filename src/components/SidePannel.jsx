@@ -117,8 +117,6 @@ const SidePannel = forwardRef((props, ref) => {
         >
           other site
         </motion.a>
-
-        <button onClick={() => navigate("/login")}>login</button>
       </motion.div>
     </>
   );
