@@ -25,8 +25,8 @@ export default function unLockBox() {
   return ReactDOM.createPortal(
     <div className="box-cover">
       <motion.form
-        initial={{ y: -220 }}
-        animate={{ y: updatePassword ? 0 : 0 }}
+        initial={{ y: -60 }}
+        animate={{ y: updatePassword ? 0 : -200 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="update-password"
         onSubmit={submitUpdatePassword}

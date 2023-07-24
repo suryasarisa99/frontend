@@ -44,10 +44,10 @@ const SidePannel = forwardRef((props, ref) => {
     <>
       <motion.div
         ref={ref}
-        initial={{ x: sidePannel ? -300 : 0 }} // Initial position outside the viewport
-        animate={{ x: sidePannel ? 0 : -300 }} // Move to the visible position
+        initial={{ x: sidePannel ? -300 : 0 }}
+        animate={{ x: sidePannel ? 0 : -300 }}
         exit={{ x: -300 }}
-        transition={{ duration: 0.3, ease: "easeOut" }} // Transition properties
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="side-pannel"
       >
         <motion.button
@@ -107,16 +107,6 @@ const SidePannel = forwardRef((props, ref) => {
         >
           Analysis
         </motion.button>
-        <motion.a
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5, delay: 5 * 0.05 }}
-          href="https://student546.vercel.app"
-          target="_blank"
-        >
-          other site
-        </motion.a>
       </motion.div>
     </>
   );

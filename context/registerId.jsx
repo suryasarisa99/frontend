@@ -25,8 +25,6 @@ import asCyan from "../src/asserts/amoled-slant/cyan.png";
 import asBlue from "../src/asserts/amoled-slant/blue.png";
 import asViolet from "../src/asserts/amoled-slant/violet.png";
 import asPink from "../src/asserts/amoled-slant/pink.png";
-// import asRed from
-// import slantBlue from "../src/asserts/slant/slant-blue.png"
 import { saveAs } from "file-saver";
 let RegisterContext = createContext();
 import { useNavigate } from "react-router-dom";
